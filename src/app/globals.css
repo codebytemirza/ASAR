@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primal Design System - HSL Values */
+    --background: 228 100% 97%;
+    /* #EEF1FF */
+    --foreground: 0 0% 0%;
+    /* #000000 */
+
+    --card: 0 0% 100%;
+    /* #FFFFFF */
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 232 100% 74%;
+    /* #7C8CFF */
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 233 55% 60%;
+    /* #6370CC */
+
+    --secondary: 232 100% 74%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 229 50% 92%;
+    /* #E0E4F5 */
+    --muted-foreground: 0 0% 20%;
+    /* #333333 */
+
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 0%;
+    /* Modern rigid black borders */
+    --input: 228 20% 86%;
+    --ring: 232 100% 74%;
+
+    --radius: 0px;
+  }
+
+  .dark {
+    --background: 228 10% 9%;
+    --foreground: 228 10% 95%;
+    --card: 228 10% 12%;
+    --card-foreground: 228 10% 95%;
+    --popover: 228 10% 12%;
+    --popover-foreground: 228 10% 95%;
+    --primary: 232 100% 74%;
+    --primary-foreground: 233 100% 10%;
+    --secondary: 228 10% 17%;
+    --secondary-foreground: 228 10% 95%;
+    --muted: 228 10% 17%;
+    --muted-foreground: 228 10% 65%;
+    --accent: 228 10% 17%;
+    --accent-foreground: 228 10% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 228 10% 25%;
+    --input: 228 10% 25%;
+    --ring: 232 100% 74%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.04) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+}
+
+@layer components {
+
+  /* Tech / Table Design System */
+  .btn {
+    @apply inline-flex items-center justify-center text-sm font-black uppercase h-12 px-8 cursor-pointer transition-all border-2 border-foreground whitespace-nowrap tracking-[0.15em] relative overflow-hidden;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground border-primary;
+    box-shadow: 6px 6px 0 var(--foreground);
+  }
+
+  .btn-primary:active {
+    @apply translate-y-[4px] translate-x-[4px];
+    box-shadow: 2px 2px 0 var(--foreground);
+  }
+
+  .btn-primary:hover {
+    @apply -translate-y-0.5;
+    box-shadow: 8px 8px 0 var(--foreground);
+  }
+
+  .btn-outline {
+    @apply bg-transparent border-2 border-foreground text-foreground;
+  }
+
+  .btn-outline:hover {
+    @apply bg-foreground text-background;
+  }
+
+  .card {
+    @apply border-2 border-foreground bg-white text-card-foreground p-8 md:p-10 relative transition-all duration-300 shadow-[8px_8px_0_#000] md:shadow-[12px_12px_0_#000];
+  }
+
+  .card:hover {
+    @apply border-primary -translate-y-1;
+    box-shadow: 16px 16px 0 var(--primary);
+  }
+
+  /* Table-like Grid Container */
+  .tech-grid {
+    @apply grid gap-px bg-foreground border-2 border-foreground overflow-hidden;
+  }
+
+  .tech-grid>* {
+    @apply bg-white p-8 md:p-10 lg:p-14 transition-colors duration-300;
+  }
+
+  .tech-grid>*:hover {
+    @apply bg-primary/5;
+  }
+
+  .card-icon {
+    @apply inline-flex items-center justify-center w-16 h-16 border-2 border-foreground bg-white text-foreground mb-8 text-2xl rounded-none transition-all;
+  }
+
+  .card:hover .card-icon,
+  .tech-grid>*:hover .card-icon {
+    @apply border-primary bg-primary text-white scale-110;
+  }
+
+  .badge {
+    @apply inline-flex items-center border-2 border-foreground px-3 md:px-4 py-1 md:py-1.5 text-[8px] md:text-[10px] font-black uppercase transition-all bg-white text-foreground tracking-[0.2em] shadow-[2px_2px_0_#000] md:shadow-[4px_4px_0_#000];
+  }
+
+  .badge:hover {
+    @apply translate-y-[2px] translate-x-[2px] shadow-none bg-primary text-white border-primary;
+  }
+
+  .section-label {
+    @apply text-primary font-black text-xs uppercase tracking-[0.3em] mb-6 block border-b-2 border-primary w-max pb-1;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black tracking-tighter mb-8 md:mb-10 leading-[0.85] uppercase;
+  }
+
+  .hero-h1 {
+    @apply text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 md:mb-8 uppercase leading-[0.85];
+  }
+
+  /* Grid Utilities */
+  .grid-2-cols {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-center;
+  }
+
+  .grid-1-2 {
+    @apply grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-16 md:gap-24 items-start;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-28 lg:py-40;
+  }
+
+  /* Custom Cursor Hide */
+  @media (hover: hover) {
+    .custom-cursor-area {
+      cursor: none !important;
+    }
+
+    .custom-cursor-area * {
+      cursor: none !important;
+    }
+  }
+}
