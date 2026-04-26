@@ -1,4 +1,6 @@
 import { ImageResponse } from 'next/og';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 export const alt = 'ASAR GLOBAL - Enterprise Technology & Compliance Solutions';
 export const size = {
@@ -9,6 +11,9 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function Image() {
+  const logoData = readFileSync(join(process.cwd(), 'public', 'logo.png'));
+  const logoBase64 = `data:image/png;base64,${logoData.toString('base64')}`;
+
   return new ImageResponse(
     (
       <div
@@ -52,14 +57,10 @@ export default async function Image() {
         <div
           style={{
             display: 'flex',
-            fontSize: '80px',
-            fontWeight: 900,
-            letterSpacing: '-0.02em',
-            marginBottom: '24px',
-            lineHeight: 1.1,
+            marginBottom: '32px',
           }}
         >
-          ASAR GLOBAL
+          <img src={logoBase64} alt="ASAR GLOBAL Logo" style={{ height: '80px', width: 'auto' }} />
         </div>
 
         <div
