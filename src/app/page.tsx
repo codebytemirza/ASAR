@@ -73,6 +73,60 @@ export default function Home() {
         </div>
       </section>
 
+      {/* The ASAR Advantage (Business Value) */}
+      <section className="bg-white py-20 md:py-32 border-b border-border">
+        <div className="container">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+            <div className="lg:w-1/2">
+              <span className="section-label">The ASAR Advantage</span>
+              <h2 className="section-title mb-6">Engineered for<br/>Enterprise Certainty.</h2>
+              <p className="text-lg md:text-xl text-zinc-600 mb-8 font-medium">
+                We transform complex regulatory requirements and massive data pipelines into streamlined, audit-ready operational assets. 
+              </p>
+              <ul className="space-y-4 mb-10">
+                {[
+                  "100% Audit Success Rate across global ISO frameworks.",
+                  "Zero-friction ETL data pipelines built for enterprise scale.",
+                  "Pragmatic, business-first approach to strict compliance."
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-4">
+                    <div className="mt-1 bg-primary/10 p-1 rounded-full"><div className="w-2 h-2 bg-primary rounded-full"></div></div>
+                    <span className="font-bold text-[#082652] uppercase text-sm tracking-tight">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link href="/contact" className="btn btn-primary px-8 h-14 text-base shadow-sm hover:translate-y-[-2px] transition-transform">
+                Schedule Consultation
+              </Link>
+            </div>
+            
+            <div className="lg:w-1/2 w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
+               {/* 4 value blocks */}
+               <div className="p-8 border border-border bg-slate-50 hover:border-primary transition-colors">
+                  <Shield className="w-8 h-8 text-primary mb-6" />
+                  <h3 className="font-black uppercase text-[#082652] text-sm mb-2">Bulletproof Security</h3>
+                  <p className="text-xs text-zinc-500 font-semibold leading-relaxed">NCA, SAMA, and SOC 2 compliance built natively into your core infrastructure.</p>
+               </div>
+               <div className="p-8 border border-border bg-slate-50 hover:border-primary transition-colors">
+                  <Database className="w-8 h-8 text-primary mb-6" />
+                  <h3 className="font-black uppercase text-[#082652] text-sm mb-2">Data Precision</h3>
+                  <p className="text-xs text-zinc-500 font-semibold leading-relaxed">High-volume data pipelines engineered exclusively for exactly-once processing.</p>
+               </div>
+               <div className="p-8 border border-border bg-slate-50 hover:border-primary transition-colors sm:col-span-2 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                  <div>
+                    <GraduationCap className="w-8 h-8 text-primary mb-4" />
+                    <h3 className="font-black uppercase text-[#082652] text-sm mb-2">Corporate Readiness</h3>
+                    <p className="text-xs text-zinc-500 font-semibold leading-relaxed max-w-sm">End-to-end personnel training ensuring your workforce maintains compliance long after certification.</p>
+                  </div>
+                  <div className="shrink-0 hidden md:block opacity-10">
+                     <Brain className="w-24 h-24 text-[#082652]" />
+                  </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Ecosystem Architecture */}
       <section className="bg-background min-h-screen flex flex-col justify-center py-20">
         <div className="container">

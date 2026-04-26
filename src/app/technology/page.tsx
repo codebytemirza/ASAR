@@ -1,89 +1,106 @@
+import Link from 'next/link';
+import { ArrowRight, Server, Lock, Zap, CheckCircle2 } from 'lucide-react';
+
 export const metadata = {
-    title: 'Technology Stack | ASAR Systech',
-    description: 'Our tech stack: Python, React, AWS, Docker, and more.',
+    title: 'Technology Stack & Infrastructure | ASAR Global',
+    description: 'Explore the high-performance data engineering and secure compliance infrastructure driving ASAR Global solutions.',
 };
 
 export default function TechnologyPage() {
     return (
         <>
-            <section className="section-padding bg-muted/20 border-b border-border pb-20">
+            <section className="section-padding bg-muted/20 border-b border-border pb-16">
                 <div className="container">
                     <div className="max-w-4xl">
-                        <span className="section-label">Our Stack</span>
-                        <h1 className="hero-h1 text-5xl md:text-7xl">Built on <span className="text-primary">Performance.</span></h1>
-                        <p className="text-xl md:text-2xl font-medium max-w-2xl text-zinc-600">
-                            We deploy battle-tested, scalable technologies to ensure your infrastructure is always on.
+                        <span className="section-label">Infrastructure</span>
+                        <h1 className="hero-h1 text-5xl md:text-7xl mb-6">
+                            Technology Built for <br /><span className="text-primary">Business Value.</span>
+                        </h1>
+                        <p className="text-xl md:text-2xl font-medium max-w-2xl text-zinc-600 leading-relaxed">
+                            We don't use technology for the sake of complexity. We deploy battle-tested infrastructure designed explicitly to guarantee speed, infinitely scale your operations, and secure your regulatory standing.
                         </p>
                     </div>
                 </div>
             </section>
 
-            <section className="section-padding bg-background border-t border-border overflow-hidden">
-                <div className="container px-4 md:px-8">
-                    <h2 className="section-title mb-10 md:mb-16">Ecosystem Architecture.</h2>
+            {/* Core Business Benefits of our Tech */}
+            <section className="bg-white py-20 border-b border-border">
+                <div className="container">
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-[#082652] mb-12 text-center">Translating Tech to Corporate Impact</h2>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                       <div className="bg-slate-50 border border-border p-8 rounded-xl hover:border-primary transition-all">
+                          <Zap className="w-10 h-10 text-primary mb-6" />
+                          <h3 className="font-bold text-xl text-[#082652] mb-3">Velocity & Performance</h3>
+                          <p className="text-sm text-zinc-600 leading-relaxed mb-4">Slow data pipelines cost millions in delayed decision-making. Our architectures (utilizing Apache Spark and dbt) process terabytes of data in real-time, delivering immediate BI insights.</p>
+                       </div>
 
-                    <div className="relative flex flex-col items-center gap-12">
-                        {/* Level 1: Root */}
-                        <div className="w-full max-w-sm border-2 border-foreground bg-white p-6 md:p-8 text-center shadow-[10px_10px_0_#000] md:shadow-[12px_12px_0_#000] group hover:bg-primary transition-all">
-                            <span className="font-mono text-[8px] md:text-[10px] uppercase font-bold block mb-2 opacity-60 group-hover:text-white transition-colors">Deployment_Unit // Core</span>
-                            <h3 className="text-xl md:text-2xl font-black uppercase tracking-widest group-hover:text-white transition-colors">ASAR SYSTEM OS</h3>
-                        </div>
+                       <div className="bg-slate-50 border border-border p-8 rounded-xl hover:border-primary transition-all">
+                          <Server className="w-10 h-10 text-primary mb-6" />
+                          <h3 className="font-bold text-xl text-[#082652] mb-3">Enterprise Scalability</h3>
+                          <p className="text-sm text-zinc-600 leading-relaxed mb-4">Your technology must evolve with your market. We implement modular Cloud capabilities that expand infinitely without requiring expensive underlying rewrites.</p>
+                       </div>
 
-                        <div className="h-16 w-0.5 bg-foreground"></div>
-
-                        {/* Level 2: Branches */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-foreground border-2 border-foreground shadow-[12px_12px_0_#000] md:shadow-[16px_16px_0_#000] w-full max-w-4xl">
-                            <div className="bg-white p-8 md:p-12 text-center group hover:bg-primary transition-colors">
-                                <h4 className="font-black uppercase text-lg md:text-xl mb-6 group-hover:text-white transition-colors">Data Engineering Plane</h4>
-                                <div className="flex flex-wrap justify-center gap-2">
-                                    <span className="badge shadow-none bg-primary/10 border-primary text-primary group-hover:bg-white group-hover:text-primary transition-colors">Apache Spark</span>
-                                    <span className="badge shadow-none bg-primary/10 border-primary text-primary group-hover:bg-white group-hover:text-primary transition-colors">Apache Airflow</span>
-                                    <span className="badge shadow-none bg-primary/10 border-primary text-primary group-hover:bg-white group-hover:text-primary transition-colors">dbt</span>
-                                </div>
-                            </div>
-                            <div className="bg-white p-8 md:p-12 text-center border-t md:border-t-0 md:border-l-2 border-foreground group hover:bg-primary transition-colors">
-                                <h4 className="font-black uppercase text-lg md:text-xl mb-6 group-hover:text-white transition-colors">ISO & Compliance Plane</h4>
-                                <div className="flex flex-wrap justify-center gap-2">
-                                    <span className="badge shadow-none bg-primary/10 border-primary text-primary group-hover:bg-white group-hover:text-primary transition-colors">Global ISO Standards</span>
-                                    <span className="badge shadow-none bg-primary/10 border-primary text-primary group-hover:bg-white group-hover:text-primary transition-colors">Regional Compliance</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="h-16 w-0.5 bg-foreground"></div>
-
-                        {/* Level 3: Output */}
-                        <div className="w-full border-2 border-foreground bg-white p-8 md:p-10 text-center border-dashed shadow-[6px_6px_0_#eee] md:shadow-[8px_8px_0_#eee]">
-                            <span className="font-black uppercase tracking-[0.2em] text-primary text-xs md:text-sm">Unified Autonomous Enterprise Infrastructure</span>
-                        </div>
+                       <div className="bg-slate-50 border border-border p-8 rounded-xl hover:border-primary transition-all">
+                          <Lock className="w-10 h-10 text-primary mb-6" />
+                          <h3 className="font-bold text-xl text-[#082652] mb-3">Zero-Trust Security</h3>
+                          <p className="text-sm text-zinc-600 leading-relaxed mb-4">Under strict regulatory environments like SAMA and NDMO, security is paramount. Our compliance planes ensure data is encrypted, tracked, and securely managed end-to-end.</p>
+                       </div>
+                    </div>
+                    
+                    <div className="flex justify-center mt-12">
+                       <Link href="/contact" className="btn btn-primary px-8 h-12 text-sm shadow-sm hover:-translate-y-1 transition-transform">
+                          Upgrade Your Infrastructure
+                       </Link>
                     </div>
                 </div>
             </section>
 
-            <section className="section-padding bg-background">
+            <section className="section-padding bg-slate-50">
                 <div className="container px-4 md:px-8">
-                    <div className="tech-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-2 border-foreground shadow-[10px_10px_0_#000] md:shadow-[16px_16px_0_#000]">
+                    <div className="mb-12 max-w-2xl">
+                       <h2 className="text-3xl md:text-4xl font-extrabold text-[#082652] mb-6">The Deployment Stack</h2>
+                       <p className="text-lg text-zinc-600">While our focus is strictly on business outcomes, our underlying architectural stack is built from industry-leading enterprise tooling.</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                         {[
                             { id: '01', title: 'Data Pipelines', techs: ['Python', 'SQL', 'Apache Spark', 'Kafka', 'Airflow', 'dbt', 'BigQuery', 'Snowflake'] },
                             { id: '02', title: 'ISO Frameworks', techs: ['ISO 27001', 'ISO 9001', 'ISO 27701', 'ISO 42001', 'ISO 18295', 'ISO 14001', 'ISO 45001', 'ISO 50001', 'ISO 55001', 'ISO 20000-1'] },
                             { id: '03', title: 'Regional Standards', techs: ['NCA', 'SAMA', 'PDPL', 'NDMO', 'SOC 2', 'HIPAA'] },
                             { id: '04', title: 'Assessments', techs: ['Gap Analysis', 'Documentation Design', 'Compliance Audits', 'Awareness Training', 'Implementer Training', 'Auditor Training'] },
                         ].map((category) => (
-                            <div key={category.id} className="group p-0 flex flex-col h-full transition-all hover:bg-primary border-b md:border-b-0 border-foreground last:border-b-0 md:border-l first:border-l-0">
-                                <div className="border-b border-foreground p-5 lg:p-6 bg-muted/30 group-hover:bg-primary-dark transition-colors">
-                                    <h3 className="font-black text-[10px] md:text-xs uppercase tracking-[0.2em] text-primary group-hover:text-white">{category.id} // {category.title}</h3>
+                            <div key={category.id} className="bg-white border border-border rounded-xl overflow-hidden hover:border-[#082652] transition-colors flex flex-col h-full shadow-sm">
+                                <div className="bg-muted/30 p-5 lg:p-6 border-b border-border">
+                                    <h3 className="font-bold text-xs uppercase tracking-widest text-[#082652]">{category.title}</h3>
                                 </div>
-                                <div className="p-6 md:p-8 lg:p-10 flex flex-wrap gap-2 md:gap-3">
+                                <div className="p-6 md:p-8 flex flex-col gap-3">
                                     {category.techs.map((tech) => (
-                                        <span key={tech} className="badge shadow-none translate-x-0 translate-y-0 bg-muted/20 border-transparent hover:bg-primary hover:text-white group-hover:bg-white group-hover:text-primary transition-all">
-                                            {tech}
-                                        </span>
+                                        <div key={tech} className="flex items-center gap-2">
+                                            <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                                            <span className="text-sm font-medium text-zinc-700">{tech}</span>
+                                        </div>
                                     ))}
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
+            </section>
+            
+            {/* Bottom CTA Block */}
+            <section className="bg-white py-16 border-t border-border">
+               <div className="container">
+                  <div className="bg-[#082652] text-white rounded-2xl p-10 md:p-16 text-center max-w-4xl mx-auto flex flex-col items-center shadow-xl">
+                     <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Deploy Without Risk</h2>
+                     <p className="text-lg text-white/80 font-medium mb-10 max-w-2xl">
+                       Stop gambling your compliance on patchwork technology. Speak to our architects to build a system guaranteed to pass external audits.
+                     </p>
+                     <Link href="/contact" className="btn bg-white text-[#082652] px-10 h-14 text-base shadow-lg hover:-translate-y-1 transition-transform">
+                       Request a Technical Review
+                     </Link>
+                  </div>
+               </div>
             </section>
         </>
     );

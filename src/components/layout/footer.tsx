@@ -55,7 +55,7 @@ export function Footer() {
             <div className="flex flex-col space-y-4">
               <div>
                 <span className="block text-xs uppercase tracking-widest text-white/50 mb-1">Email inquiries</span>
-                <a href="mailto:hello@asarglobal.com" className="text-sm font-semibold hover:underline">hello@asarglobal.com</a>
+                <a href="mailto:contact@asarglobal.com" className="text-sm font-semibold hover:underline">contact@asarglobal.com</a>
               </div>
               <div className="pt-2">
                 <Link href="https://www.linkedin.com/company/asar-global" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-10 h-10 rounded-md bg-white/10 hover:bg-white/20 transition-colors">
@@ -76,8 +76,8 @@ export function Footer() {
             &copy; {currentYear} ASAR GLOBAL. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link href="#" className="text-xs font-medium text-white/50 hover:text-white transition-colors tracking-wider">Privacy Policy</Link>
-            <Link href="#" className="text-xs font-medium text-white/50 hover:text-white transition-colors tracking-wider">Terms of Service</Link>
+            <Link href="/privacy-policy" className="text-xs font-medium text-white/50 hover:text-white transition-colors tracking-wider">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="text-xs font-medium text-white/50 hover:text-white transition-colors tracking-wider">Terms of Service</Link>
           </div>
         </div>
       </div>

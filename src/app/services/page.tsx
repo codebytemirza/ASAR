@@ -1,162 +1,235 @@
 import Link from 'next/link';
-import { Check, Brain, Eye, Database, Laptop, Network, ArrowRight, Shield, GraduationCap } from 'lucide-react';
+import { ArrowRight, Database, Shield, GraduationCap, CheckCircle2 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Services | ASAR Systech',
-  description: 'ISO Compliance, AI Automation, and SOC Services.',
+  title: 'Corporate Services | ASAR Global',
+  description: 'Enterprise Data Engineering, ISO Compliance Frameworks, and Corporate Governance Training.',
 };
 
 export default function ServicesPage() {
   return (
     <>
       {/* Header */}
-      <section className="min-h-[60vh] flex flex-col justify-center section-padding bg-muted/20 border-b border-border pb-20">
+      <section className="min-h-[50vh] flex flex-col justify-center section-padding bg-muted/20 border-b border-border pb-16">
         <div className="container">
           <div className="max-w-4xl">
-            <span className="section-label">Core Capabilities</span>
+            <span className="section-label">Enterprise Services</span>
             <h1 className="hero-h1 text-5xl md:text-7xl mb-6">
               Solutions That <br /><span className="text-primary">Scale & Secure.</span>
             </h1>
             <p className="text-xl md:text-2xl font-medium max-w-2xl leading-relaxed text-zinc-600">
-              From international compliance frameworks to autonomous AI agents, we provide the architectural blueprint for your digital future.
+              Transform your operational infrastructure with precision data engineering and uncompromising global compliance frameworks.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ISO Section */}
-      <section id="iso" className="min-h-screen flex flex-col justify-center section-padding bg-white relative">
+      {/* PILLAR 1: Data Analytics */}
+      <section id="data" className="section-padding bg-white border-b border-border">
         <div className="container">
-          <div className="border border-foreground bg-white shadow-[12px_12px_0_#000] md:shadow-[16px_16px_0_#000]">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr]">
-              <div className="p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-foreground bg-zinc-950 text-white">
-                <h2 className="text-3xl md:text-4xl font-black uppercase mb-8 leading-tight">ISO & <br className="hidden md:block" />Standards</h2>
-                <p className="text-gray-400 mb-8 leading-relaxed text-sm">
-                  Navigating the complex landscape of regulatory requirements. We offer end-to-end support from scoping to certification.
-                </p>
-                <ul className="space-y-4">
-                  {['Gap Assessment', 'Documentation Design', 'Implementation', 'Internal Audit', 'Certification Support'].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-xs md:text-sm font-bold uppercase tracking-wider">
-                      <div className="w-1.5 h-1.5 bg-primary"></div>
-                      {item}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            <div>
+              <div className="w-16 h-16 bg-primary/10 flex items-center justify-center rounded-xl mb-6 border border-primary/20">
+                <Database className="h-8 w-8 text-primary" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[#082652] mb-4">Data Analysis & Pipelines</h2>
+              <p className="text-lg text-zinc-600 mb-8 leading-relaxed">
+                We engineer robust ETL/ELT pipelines and data architectures designed to process massive corporate payloads with exactly-once precision. We turn fragmented data into intelligent business outcomes.
+              </p>
+
+              <div className="mb-8">
+                <h3 className="font-bold text-sm uppercase tracking-widest text-[#082652] w-full border-b border-border pb-2 mb-4">Key Benefits</h3>
+                <ul className="space-y-3">
+                  {['Automated, zero-maintenance data flows.', 'Predictable scalability for enterprise loads.', 'Clean data modeling for immediate BI dashboards.'].map((benefit, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                      <span className="text-zinc-700 font-medium">{benefit}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="p-8 md:p-12 bg-white">
-                <h3 className="font-bold text-lg md:text-xl uppercase mb-8 border-b-2 border-primary w-max pb-1">Covered Standards</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
+              <div className="mb-10">
+                <h3 className="font-bold text-sm uppercase tracking-widest text-[#082652] w-full border-b border-border pb-2 mb-4">Real-World Use Cases</h3>
+                <div className="space-y-4">
+                  <div className="bg-slate-50 border border-border p-4 rounded-lg">
+                    <h4 className="font-bold text-[#082652] mb-1">Regulatory Reporting Automation</h4>
+                    <p className="text-sm text-zinc-600">Aggregating transactional data into normalized views to instantly satisfy monthly SAMA formatting requirements.</p>
+                  </div>
+                  <div className="bg-slate-50 border border-border p-4 rounded-lg">
+                    <h4 className="font-bold text-[#082652] mb-1">Unified Customer Portfolios</h4>
+                    <p className="text-sm text-zinc-600">Connecting siloed CRMs through advanced ETL to give executives a single pane of glass into organizational health.</p>
+                  </div>
+                </div>
+              </div>
+
+              <Link href="/contact" className="btn btn-primary px-8 h-12 text-sm max-w-max">
+                Discuss Your Data Strategy
+              </Link>
+            </div>
+
+            <div className="bg-slate-50 border border-border rounded-2xl p-8 lg:p-12 hidden md:block">
+              <div className="aspect-[4/3] bg-white border border-border shadow-sm rounded-xl flex items-center justify-center">
+                 <div className="text-center text-zinc-400 font-bold uppercase tracking-widest text-xs">
+                     <Database className="w-16 h-16 mx-auto mb-4 opacity-50" />
+                     Pipeline Architecture Diagram
+                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PILLAR 2: ISO Frameworks */}
+      <section id="iso" className="section-padding bg-slate-50 border-b border-border">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start flex-col-reverse lg:flex-row-reverse">
+            
+            <div className="order-1 lg:order-2">
+              <div className="w-16 h-16 bg-primary/10 flex items-center justify-center rounded-xl mb-6 border border-primary/20">
+                <Shield className="h-8 w-8 text-primary" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[#082652] mb-4">ISO & Compliance Frameworks</h2>
+              <p className="text-lg text-zinc-600 mb-8 leading-relaxed">
+                Navigating the complex landscape of regulatory requirements. We offer end-to-end support—from scoping and documentation design to full implementation—for global standards.
+              </p>
+
+              <div className="mb-8">
+                <h3 className="font-bold text-sm uppercase tracking-widest text-[#082652] w-full border-b border-border pb-2 mb-4">Key Benefits</h3>
+                <ul className="space-y-3">
+                  {['Guaranteed audit readiness.', 'Streamlined policy architectures.', 'Aligns infrastructure directly with local laws (NCA, PDPL).'].map((benefit, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                      <span className="text-zinc-700 font-medium">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mb-10">
+                <h3 className="font-bold text-sm uppercase tracking-widest text-[#082652] w-full border-b border-border pb-2 mb-4">Real-World Use Cases</h3>
+                <div className="space-y-4">
+                  <div className="bg-white border border-border p-4 rounded-lg shadow-sm">
+                    <h4 className="font-bold text-[#082652] mb-1">SOC 2 Cloud Compliance</h4>
+                    <p className="text-sm text-zinc-600">Restructuring corporate cloud access policies to meet strict SOC 2 Type II trust service criteria for an enterprise SaaS deployment.</p>
+                  </div>
+                  <div className="bg-white border border-border p-4 rounded-lg shadow-sm">
+                    <h4 className="font-bold text-[#082652] mb-1">Healthcare PDPL Alignment</h4>
+                    <p className="text-sm text-zinc-600">Auditing and restricting patient data pipelines to ensure local PDPL and HIPAA regulatory compliance preceding a major health portal launch.</p>
+                  </div>
+                </div>
+              </div>
+
+              <Link href="/contact" className="btn btn-primary px-8 h-12 text-sm max-w-max">
+                Achieve ISO Certification
+              </Link>
+            </div>
+
+            <div className="order-2 lg:order-1 border border-border bg-white p-8 rounded-2xl shadow-sm">
+                <h3 className="font-extrabold text-lg uppercase mb-6 text-[#082652]">16 Supported Frameworks</h3>
+                <div className="grid grid-cols-2 gap-3">
                   {[
                     'ISO/IEC 20000-1', 'ISO/IEC 27001', 'ISO/IEC 27701', 'ISO/IEC 42001',
                     'ISO 9001', 'ISO 18295', 'ISO 14001', 'ISO 45001',
                     'ISO 50001', 'ISO 55001', 'NCA', 'SAMA',
                     'PDPL', 'NDMO', 'SOC 2', 'HIPAA'
                   ].map((iso) => (
-                    <div key={iso} className="flex items-center gap-2 md:gap-3 border border-border p-3 md:p-4 hover:border-foreground hover:shadow-[4px_4px_0_#000] transition-all bg-muted/10">
-                      <Check className="h-3 md:h-4 w-3 md:w-4 text-primary" />
-                      <span className="font-bold text-[10px] md:text-sm">{iso}</span>
+                    <div key={iso} className="flex items-center gap-2 bg-slate-50 border border-border p-3 rounded-lg text-xs font-bold text-[#082652]">
+                      <ArrowRight className="h-3 w-3 text-primary" /> {iso}
                     </div>
                   ))}
                 </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Service Flow Graph */}
-      <section className="section-padding bg-background border-t border-border">
+      {/* PILLAR 3: Audit & Training */}
+      <section id="training" className="section-padding bg-white border-b border-border">
         <div className="container">
-          <div className="text-center mb-16">
-            <span className="section-label mx-auto">The Protocol</span>
-            <h2 className="section-title">Integration Lifecycle.</h2>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div>
+              <div className="w-16 h-16 bg-primary/10 flex items-center justify-center rounded-xl mb-6 border border-primary/20">
+                <GraduationCap className="h-8 w-8 text-primary" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[#082652] mb-4">Corporate Audit & Training</h2>
+              <p className="text-lg text-zinc-600 mb-8 leading-relaxed">
+                Security is built by people. We offer rigorous internal compliance assessments, followed by specialized educational tracks—from general workforce awareness to elite auditor certifications.
+              </p>
 
-          <div className="relative">
-            {/* Connections (Desktop) */}
-            <div className="hidden lg:block absolute top-[60px] left-0 w-full h-0.5 bg-border -z-10"></div>
+              <div className="mb-8">
+                <h3 className="font-bold text-sm uppercase tracking-widest text-[#082652] w-full border-b border-border pb-2 mb-4">Key Benefits</h3>
+                <ul className="space-y-3">
+                  {['Identifies critical operational gaps before external penalties.', 'Eliminates compliance fatigue through practical instruction.', 'Generates a self-sustaining culture of internal governance.'].map((benefit, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                      <span className="text-zinc-700 font-medium">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
-              {[
-                { step: '01', title: 'Consultation', desc: 'Detailed gap analysis and capability assessment.' },
-                { step: '02', title: 'Architecture', desc: 'Design of AI agents or SOC infrastructure.' },
-                { step: '03', title: 'Deployment', desc: 'Seamless integration into existing cloud systems.' },
-                { step: '04', title: 'Audit', desc: 'Final validation and ISO certification support.' },
-              ].map((item, i) => (
-                <div key={i} className="relative group">
-                  <div className="w-16 h-16 md:w-20 md:h-20 mb-6 border-2 border-foreground bg-white text-primary flex items-center justify-center text-2xl md:text-3xl font-black shadow-[6px_6px_0_#000] group-hover:bg-foreground group-hover:text-white transition-all">
-                    {item.step}
+              <div className="mb-10">
+                <h3 className="font-bold text-sm uppercase tracking-widest text-[#082652] w-full border-b border-border pb-2 mb-4">Real-World Use Cases</h3>
+                <div className="space-y-4">
+                  <div className="bg-slate-50 border border-border p-4 rounded-lg">
+                    <h4 className="font-bold text-[#082652] mb-1">Pre-Certification Gap Analysis</h4>
+                    <p className="text-sm text-zinc-600">Simulating a hostile compliance audit to test controls and generate an exact remediation roadmap before official ISO 27001 evaluation.</p>
                   </div>
-                  <div className="card h-full min-h-[160px] p-6 md:p-8 border-2 border-foreground shadow-none group-hover:bg-primary transition-colors">
-                    <h3 className="font-black uppercase mb-3 text-lg group-hover:text-white transition-colors leading-tight">{item.title}</h3>
-                    <p className="text-[10px] md:text-xs font-bold leading-relaxed uppercase tracking-tight group-hover:text-white/90 transition-colors">{item.desc}</p>
+                  <div className="bg-slate-50 border border-border p-4 rounded-lg">
+                    <h4 className="font-bold text-[#082652] mb-1">Implementer Workshops</h4>
+                    <p className="text-sm text-zinc-600">Training your internal IT leads on the exact architectural standards necessary to maintain newly minted compliance frameworks sustainably.</p>
                   </div>
-                  {i < 3 && (
-                    <div className="hidden xl:block absolute top-10 -right-8 text-foreground">
-                      <ArrowRight className="h-8 w-8" />
-                    </div>
-                  )}
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* AI & Automation - Tech Grid */}
-      <section id="ai" className="section-padding bg-muted/20">
-        <div className="container">
-          <div className="mb-16">
-            <span className="section-label">Core Verticals</span>
-            <h2 className="section-title">Specialized Services.</h2>
-          </div>
-
-          <div className="tech-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-2 border-foreground shadow-[16px_16px_0_#000]">
-            {/* Data Engineering */}
-            <div className="group hover:bg-primary transition-all duration-300 p-10">
-              <div className="card-icon group-hover:bg-white group-hover:text-primary border-foreground transition-all">
-                <Database className="h-8 w-8" />
               </div>
-              <div className="h-px w-full bg-border mb-6 group-hover:bg-white/30 transition-colors"></div>
-              <h3 className="text-2xl font-black uppercase mb-4 group-hover:text-white transition-colors">Data Analysis & Pipelines</h3>
-              <p className="text-zinc-600 group-hover:text-white/90 mb-6 font-bold leading-relaxed transition-colors uppercase text-xs tracking-tight">
-                Data Engineering, robust ETL processes, and EDA leading to intelligent business outcomes.
-              </p>
-            </div>
 
-            {/* ISO Standards */}
-            <div className="group hover:bg-primary transition-all duration-300 border-l border-foreground p-10">
-              <div className="card-icon group-hover:bg-white group-hover:text-primary border-foreground transition-all">
-                <Shield className="h-8 w-8" />
-              </div>
-              <div className="h-px w-full bg-border mb-6 group-hover:bg-white/30 transition-colors"></div>
-              <h3 className="text-2xl font-black uppercase mb-4 group-hover:text-white transition-colors">ISO Frameworks</h3>
-              <p className="text-zinc-600 group-hover:text-white/90 mb-6 font-bold leading-relaxed transition-colors uppercase text-xs tracking-tight">
-                Scoping, Design, documentation, and Implementation for 16 specialized frameworks including ISO 27001, SOC 2, HIPAA, NCA, PDPL.
-              </p>
-            </div>
-
-            {/* Audit & Training */}
-            <div className="group hover:bg-primary transition-all duration-300 border-l border-foreground p-10">
-              <div className="card-icon group-hover:bg-white group-hover:text-primary border-foreground transition-all">
-                <GraduationCap className="h-8 w-8" />
-              </div>
-              <div className="h-px w-full bg-border mb-6 group-hover:bg-white/30 transition-colors"></div>
-              <h3 className="text-2xl font-black uppercase mb-4 group-hover:text-white transition-colors">Audit & Training</h3>
-              <p className="text-zinc-600 group-hover:text-white/90 mb-6 font-bold leading-relaxed transition-colors uppercase text-xs tracking-tight">
-                Assessments, Internal Audits, and professional Awareness, Implementer, and Auditor track trainings.
-              </p>
-            </div>
-
-            <div className="col-span-1 md:col-span-2 lg:col-span-3 bg-[#082652] text-white p-12 flex flex-col md:flex-row justify-between items-start md:items-center border-t border-l-0 border-border gap-8">
-              <h3 className="text-3xl lg:text-4xl font-black uppercase mb-0 leading-none">Ready to<br className="hidden lg:block"/>Automate?</h3>
-              <Link href="/contact" className="inline-flex items-center font-bold uppercase tracking-wider text-sm hover:underline bg-white text-[#082652] px-8 py-4">
-                Get a Proposal <ArrowRight className="ml-2 h-4 w-4" />
+              <Link href="/contact" className="btn btn-primary px-8 h-12 text-sm max-w-max">
+                Build Corporate Resilience
               </Link>
             </div>
+
+            <div className="bg-[#082652] text-white p-10 lg:p-14 rounded-2xl shadow-xl">
+               <h3 className="font-black text-2xl uppercase mb-8">Training Modules</h3>
+               <div className="space-y-6">
+                 <div>
+                    <h4 className="font-bold text-primary mb-1 uppercase tracking-wider text-sm flex items-center gap-2">
+                      <Shield className="w-4 h-4"/> General Awareness
+                    </h4>
+                    <p className="text-sm text-zinc-400 font-medium">Equips the broad workforce with anti-phishing, data hygiene, and day-to-day policy adherence techniques.</p>
+                 </div>
+                 <div className="bg-white/10 h-px w-full"></div>
+                 <div>
+                    <h4 className="font-bold text-primary mb-1 uppercase tracking-wider text-sm flex items-center gap-2">
+                       <Database className="w-4 h-4"/> Certified Implementer
+                    </h4>
+                    <p className="text-sm text-zinc-400 font-medium">Technical curriculum for mid-level managers tasked with deploying and administering frameworks.</p>
+                 </div>
+                 <div className="bg-white/10 h-px w-full"></div>
+                 <div>
+                    <h4 className="font-bold text-primary mb-1 uppercase tracking-wider text-sm flex items-center gap-2">
+                       <CheckCircle2 className="w-4 h-4"/> Internal Auditor Track
+                    </h4>
+                    <p className="text-sm text-zinc-400 font-medium">Advanced protocols equipping governance personnel to self-audit systems ahead of regulatory deadlines.</p>
+                 </div>
+               </div>
+            </div>
           </div>
         </div>
+      </section>
+
+      {/* Bottom CTA Block */}
+      <section className="bg-white py-16">
+         <div className="container">
+            <div className="bg-slate-50 border border-border rounded-xl p-10 md:p-16 text-center max-w-4xl mx-auto flex flex-col items-center">
+               <h2 className="text-3xl md:text-5xl font-extrabold text-[#082652] mb-6 tracking-tight">Ready to fortify your operations?</h2>
+               <p className="text-lg text-zinc-600 font-medium mb-10 max-w-2xl">
+                 Schedule a consultation with our system architects. We will blueprint your exact compliance and data engineering needs within 48 hours.
+               </p>
+               <Link href="/contact" className="btn btn-primary px-10 h-14 text-base shadow-lg hover:-translate-y-1 transition-transform">
+                 Get an Official Proposal
+               </Link>
+            </div>
+         </div>
       </section>
     </>
   );
