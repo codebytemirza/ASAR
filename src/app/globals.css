@@ -4,121 +4,102 @@
 
 @layer base {
   :root {
-    /* Primal Design System - HSL Values */
-    --background: 228 100% 97%;
-    /* #EEF1FF */
-    --foreground: 0 0% 0%;
-    /* #000000 */
+    /* Premium Corporate Design System - HSL Values */
+    --background: 0 0% 100%; /* #FFFFFF */
+    --foreground: 215 82% 18%; /* #082652 Deep Navy Blue */
 
     --card: 0 0% 100%;
-    /* #FFFFFF */
-    --card-foreground: 0 0% 0%;
+    --card-foreground: 215 82% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: 215 82% 18%;
 
-    --primary: 232 100% 74%;
-    /* #7C8CFF */
-    --primary-foreground: 0 0% 100%;
-    --primary-dark: 233 55% 60%;
-    /* #6370CC */
+    --primary: 215 82% 18%; /* #082652 Deep Navy Blue */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+    --primary-dark: 215 82% 10%; /* Darker Navy */
 
-    --secondary: 232 100% 74%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 215 20% 98%; /* Very light blue-gray for slight contrast cards */
+    --secondary-foreground: 215 82% 18%;
 
-    --muted: 229 50% 92%;
-    /* #E0E4F5 */
-    --muted-foreground: 0 0% 20%;
-    /* #333333 */
+    --muted: 215 20% 95%; /* Soft gray blue */
+    --muted-foreground: 215 30% 40%; /* Subdued blue-gray */
 
-    --accent: 0 0% 100%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 215 20% 96%;
+    --accent-foreground: 215 82% 18%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 0%;
-    /* Modern rigid black borders */
-    --input: 228 20% 86%;
-    --ring: 232 100% 74%;
+    --border: 215 20% 90%; /* Soft light border */
+    --input: 215 20% 90%;
+    --ring: 215 82% 18%;
 
-    --radius: 0px;
+    --radius: 0.375rem; /* Soft rounded corners matching professional design */
   }
 
   .dark {
-    --background: 228 10% 9%;
-    --foreground: 228 10% 95%;
-    --card: 228 10% 12%;
-    --card-foreground: 228 10% 95%;
-    --popover: 228 10% 12%;
-    --popover-foreground: 228 10% 95%;
-    --primary: 232 100% 74%;
-    --primary-foreground: 233 100% 10%;
-    --secondary: 228 10% 17%;
-    --secondary-foreground: 228 10% 95%;
-    --muted: 228 10% 17%;
-    --muted-foreground: 228 10% 65%;
-    --accent: 228 10% 17%;
-    --accent-foreground: 228 10% 95%;
+    /* For dark mode, invert gracefully using same hue */
+    --background: 215 82% 5%;
+    --foreground: 215 20% 95%;
+    --card: 215 82% 8%;
+    --card-foreground: 215 20% 95%;
+    --popover: 215 82% 8%;
+    --popover-foreground: 215 20% 95%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 215 82% 18%;
+    --secondary: 215 82% 12%;
+    --secondary-foreground: 215 20% 95%;
+    --muted: 215 82% 12%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 215 82% 15%;
+    --accent-foreground: 215 20% 95%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 228 10% 25%;
-    --input: 228 10% 25%;
-    --ring: 232 100% 74%;
+    --border: 215 82% 20%;
+    --input: 215 82% 20%;
+    --ring: 0 0% 100%;
   }
 }
 
 @layer base {
   body {
-    @apply bg-background text-foreground;
-    background-image:
-      radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.04) 1px, transparent 0);
-    background-size: 24px 24px;
+    @apply bg-background text-foreground antialiased selection:bg-primary/20;
+    /* Soft premium grid background */
+    background-image: radial-gradient(circle at 1px 1px, rgba(8, 38, 82, 0.05) 1px, transparent 0);
+    background-size: 32px 32px;
   }
 }
 
 @layer components {
 
-  /* Tech / Table Design System */
+  /* Corporate Premium Design System */
   .btn {
-    @apply inline-flex items-center justify-center text-sm font-black uppercase h-12 px-8 cursor-pointer transition-all border-2 border-foreground whitespace-nowrap tracking-[0.15em] relative overflow-hidden;
+    @apply inline-flex items-center justify-center text-sm font-semibold h-12 px-8 cursor-pointer transition-all border border-transparent whitespace-nowrap rounded-md relative overflow-hidden;
   }
 
   .btn-primary {
-    @apply bg-primary text-primary-foreground border-primary;
-    box-shadow: 6px 6px 0 var(--foreground);
+    @apply bg-primary text-primary-foreground shadow-sm hover:shadow-md hover:bg-primary/95 hover:-translate-y-0.5;
   }
 
   .btn-primary:active {
-    @apply translate-y-[4px] translate-x-[4px];
-    box-shadow: 2px 2px 0 var(--foreground);
-  }
-
-  .btn-primary:hover {
-    @apply -translate-y-0.5;
-    box-shadow: 8px 8px 0 var(--foreground);
+    @apply scale-[0.98] translate-y-0;
   }
 
   .btn-outline {
-    @apply bg-transparent border-2 border-foreground text-foreground;
-  }
-
-  .btn-outline:hover {
-    @apply bg-foreground text-background;
+    @apply bg-transparent border-input text-foreground hover:bg-muted font-medium hover:-translate-y-0.5;
   }
 
   .card {
-    @apply border-2 border-foreground bg-white text-card-foreground p-8 md:p-10 relative transition-all duration-300 shadow-[8px_8px_0_#000] md:shadow-[12px_12px_0_#000];
+    @apply border border-border bg-white text-card-foreground p-8 md:p-10 relative transition-all duration-300 rounded-xl shadow-sm;
   }
 
   .card:hover {
-    @apply border-primary -translate-y-1;
-    box-shadow: 16px 16px 0 var(--primary);
+    @apply border-primary/20 shadow-lg -translate-y-1;
   }
 
-  /* Table-like Grid Container */
+  /* Table-like Grid Container (Refined) */
   .tech-grid {
-    @apply grid gap-px bg-foreground border-2 border-foreground overflow-hidden;
+    @apply grid gap-px bg-border overflow-hidden rounded-xl border border-border shadow-sm;
   }
 
   .tech-grid>* {
@@ -126,36 +107,36 @@
   }
 
   .tech-grid>*:hover {
-    @apply bg-primary/5;
+    @apply bg-slate-50/80;
   }
 
   .card-icon {
-    @apply inline-flex items-center justify-center w-16 h-16 border-2 border-foreground bg-white text-foreground mb-8 text-2xl rounded-none transition-all;
+    @apply inline-flex items-center justify-center w-16 h-16 border border-border bg-slate-50 text-primary mb-8 text-2xl rounded-xl transition-all shadow-sm;
   }
 
   .card:hover .card-icon,
   .tech-grid>*:hover .card-icon {
-    @apply border-primary bg-primary text-white scale-110;
+    @apply border-primary/20 bg-primary/5 text-primary scale-110;
   }
 
   .badge {
-    @apply inline-flex items-center border-2 border-foreground px-3 md:px-4 py-1 md:py-1.5 text-[8px] md:text-[10px] font-black uppercase transition-all bg-white text-foreground tracking-[0.2em] shadow-[2px_2px_0_#000] md:shadow-[4px_4px_0_#000];
+    @apply inline-flex items-center border border-border px-3 rounded-full md:px-4 py-1 md:py-1.5 text-[10px] md:text-sm font-semibold uppercase tracking-wider transition-all bg-secondary text-secondary-foreground;
   }
 
   .badge:hover {
-    @apply translate-y-[2px] translate-x-[2px] shadow-none bg-primary text-white border-primary;
+    @apply bg-primary/10 border-primary/20 text-primary;
   }
 
   .section-label {
-    @apply text-primary font-black text-xs uppercase tracking-[0.3em] mb-6 block border-b-2 border-primary w-max pb-1;
+    @apply text-primary font-bold text-sm uppercase tracking-widest mb-6 block w-max opacity-90;
   }
 
   .section-title {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black tracking-tighter mb-8 md:mb-10 leading-[0.85] uppercase;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8 md:mb-10 leading-[1.1] text-[#082652];
   }
 
   .hero-h1 {
-    @apply text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 md:mb-8 uppercase leading-[0.85];
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 md:mb-8 leading-[1.1] text-[#082652];
   }
 
   /* Grid Utilities */
@@ -168,10 +149,10 @@
   }
 
   .section-padding {
-    @apply py-16 md:py-28 lg:py-40;
+    @apply py-16 md:py-24 lg:py-32;
   }
 
-  /* Custom Cursor Hide */
+  /* Custom Cursor Hide (Optional) */
   @media (hover: hover) {
     .custom-cursor-area {
       cursor: none !important;

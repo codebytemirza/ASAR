@@ -1,88 +1,83 @@
 import Link from 'next/link';
 import { Logo } from '../icons/logo';
-import { Linkedin, Twitter } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white border-t-2 border-foreground mt-auto">
-      {/* Top Grid */}
-      <div className="container px-0 md:px-4">
-        <div className="tech-grid grid-cols-1 md:grid-cols-4 border-b-2 border-foreground shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
+    <footer className="bg-[#082652] text-white mt-auto">
+      {/* Main Grid */}
+      <div className="container py-16 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
+          
           {/* Brand Col */}
-          <div className="p-6 md:p-8 lg:p-12 flex flex-col justify-between border-b md:border-b-0 border-foreground group hover:bg-primary transition-all duration-300">
-            <div>
-              <Logo className="h-8 w-auto text-foreground group-hover:text-white mb-8 transition-colors" />
-              <div className="space-y-4 font-black text-[10px] uppercase tracking-[0.2em] text-zinc-500 group-hover:text-white transition-colors">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-green-500 group-hover:bg-white shadow-[0_0_8px_rgba(34,197,94,0.4)] group-hover:shadow-none transition-all"></div>
-                  {/* [FIXED: Updated brand name to ASAR GLOBAL] */}
-                  <span>System Status: Online</span>
-                </div>
-                <div className="opacity-60 group-hover:opacity-100">Protocol Version: 2.4.0</div>
-                <div className="pt-6 text-foreground group-hover:text-white border-t border-muted group-hover:border-white/10">Secure by Architecture.</div>
+          <div className="flex flex-col space-y-6">
+            <div className="flex items-center gap-3">
+              <Logo className="h-8 w-auto text-white" />
+              <div className="flex flex-col">
+                <span className="font-extrabold uppercase tracking-tight text-lg leading-none">ASAR</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-[#F8FAFC]/80">GLOBAL</span>
               </div>
+            </div>
+            <p className="text-sm text-white/70 leading-relaxed max-w-xs">
+              Enterprise technology and security solutions built on robust, premium architectural standards.
+            </p>
+            <div className="flex items-center gap-2 pt-2">
+              <div className="w-2 h-2 rounded-full bg-green-400"></div>
+              <span className="text-xs font-semibold uppercase tracking-widest text-white/80">Systems Online</span>
             </div>
           </div>
 
           {/* Services Col */}
-          <div className="p-6 md:p-8 lg:p-12 border-b md:border-b-0 md:border-l-2 border-foreground group hover:bg-primary transition-all duration-300">
-            <h4 className="font-black text-foreground group-hover:text-white mb-8 text-[10px] uppercase tracking-[0.3em] border-b border-muted group-hover:border-white/20 pb-2 w-max transition-colors">Services</h4>
-            <div className="flex flex-col gap-4">
-              <Link href="/services#iso" className="text-xs font-bold text-zinc-500 group-hover:text-white hover:translate-x-1 transition-all uppercase tracking-widest">ISO Compliance</Link>
-              <Link href="/services#ai" className="text-xs font-bold text-zinc-500 group-hover:text-white hover:translate-x-1 transition-all uppercase tracking-widest">AI Automation</Link>
-              <Link href="/services#soc" className="text-xs font-bold text-zinc-500 group-hover:text-white hover:translate-x-1 transition-all uppercase tracking-widest">SOC Services</Link>
-            </div>
+          <div className="flex flex-col space-y-6">
+            <h4 className="font-bold text-sm uppercase tracking-widest text-white/50">Services</h4>
+            <nav className="flex flex-col space-y-3">
+              <Link href="/services#iso" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">ISO Compliance</Link>
+              <Link href="/services#ai" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">AI Automation</Link>
+              <Link href="/services#soc" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">SOC Implementation</Link>
+            </nav>
           </div>
 
           {/* Company Col */}
-          <div className="p-6 md:p-8 lg:p-12 border-b md:border-b-0 md:border-l-2 border-foreground group hover:bg-primary transition-all duration-300">
-            <h4 className="font-black text-foreground group-hover:text-white mb-8 text-[10px] uppercase tracking-[0.3em] border-b border-muted group-hover:border-white/20 pb-2 w-max transition-colors">Navigation</h4>
-            <div className="flex flex-col gap-4">
-              <Link href="/about" className="text-xs font-bold text-zinc-500 group-hover:text-white hover:translate-x-1 transition-all uppercase tracking-widest">Strategic Mission</Link>
-              <Link href="/technology" className="text-xs font-bold text-zinc-500 group-hover:text-white hover:translate-x-1 transition-all uppercase tracking-widest">Tech Stack</Link>
-              <Link href="/contact" className="text-xs font-bold text-zinc-500 group-hover:text-white hover:translate-x-1 transition-all uppercase tracking-widest">Ready Protocol</Link>
-            </div>
+          <div className="flex flex-col space-y-6">
+            <h4 className="font-bold text-sm uppercase tracking-widest text-white/50">Company</h4>
+            <nav className="flex flex-col space-y-3">
+              <Link href="/about" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">About Us</Link>
+              <Link href="/technology" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">Technology</Link>
+              <Link href="/contact" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">Contact</Link>
+            </nav>
           </div>
 
           {/* Connect Col */}
-          {/* [FIXED: Replaced personal Gmail with official business email] */}
-          <div className="p-6 md:p-8 lg:p-12 border-l-0 md:border-l-2 border-foreground bg-muted/5 group hover:bg-primary transition-all duration-300">
-            <h4 className="font-black text-foreground group-hover:text-white mb-8 text-[10px] uppercase tracking-[0.3em] border-b border-muted group-hover:border-white/20 pb-2 w-max transition-colors">Connect_Node</h4>
-
-            <div className="mb-8">
-              <div className="text-[10px] font-black uppercase text-zinc-400 group-hover:text-white/60 mb-3 tracking-widest transition-colors">Registry_Email:</div>
-              <div className="border-2 border-foreground bg-white p-4 shadow-[6px_6px_0_#000] group-hover:shadow-none group-hover:translate-x-1 group-hover:translate-y-1 transition-all">
-                <p className="text-[10px] font-black break-all uppercase tracking-tighter text-foreground">
-                  hello@asarglobal.com
-                </p>
+          <div className="flex flex-col space-y-6">
+            <h4 className="font-bold text-sm uppercase tracking-widest text-white/50">Connect</h4>
+            <div className="flex flex-col space-y-4">
+              <div>
+                <span className="block text-xs uppercase tracking-widest text-white/50 mb-1">Email inquiries</span>
+                <a href="mailto:hello@asarglobal.com" className="text-sm font-semibold hover:underline">hello@asarglobal.com</a>
+              </div>
+              <div className="pt-2">
+                <Link href="https://www.linkedin.com/company/asar-global" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-10 h-10 rounded-md bg-white/10 hover:bg-white/20 transition-colors">
+                  <Linkedin className="h-5 w-5" />
+                  <span className="sr-only">LinkedIn</span>
+                </Link>
               </div>
             </div>
-
-            <div className="flex gap-4">
-              {/* [FIXED: Changed to company LinkedIn page — remove personal URL] */}
-              <Link href="https://www.linkedin.com/company/asar-global" target="_blank" rel="noopener noreferrer" className="w-12 h-12 border-2 border-foreground flex items-center justify-center bg-white hover:bg-black hover:text-white transition-all shadow-[6px_6px_0_#000] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
-                <Linkedin className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="w-12 h-12 border-2 border-foreground flex items-center justify-center bg-white hover:bg-black hover:text-white transition-all shadow-[6px_6px_0_#000] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
-                <Twitter className="h-5 w-5" />
-              </Link>
-            </div>
           </div>
+          
         </div>
       </div>
 
       {/* Bottom Bar */}
-      {/* [FIXED: Updated copyright to ASAR GLOBAL] */}
-      <div className="border-t-2 border-foreground bg-white">
-        <div className="container flex flex-col md:flex-row justify-between items-center py-10 gap-6">
-          <p className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em]">
-            &copy; {currentYear} ASAR GLOBAL. Secure Intelligence Unit.
+      <div className="border-t border-white/10 bg-[#082652]/90">
+        <div className="container flex flex-col md:flex-row justify-between items-center py-6 gap-4">
+          <p className="text-xs font-medium text-white/50 tracking-wider">
+            &copy; {currentYear} ASAR GLOBAL. All rights reserved.
           </p>
-          <div className="flex gap-10">
-            <Link href="#" className="text-[10px] font-black text-muted-foreground hover:text-primary uppercase tracking-[0.2em] transition-colors">Privacy_Protocol</Link>
-            <Link href="#" className="text-[10px] font-black text-muted-foreground hover:text-primary uppercase tracking-[0.2em] transition-colors">Terms_Of_Service</Link>
+          <div className="flex gap-6">
+            <Link href="#" className="text-xs font-medium text-white/50 hover:text-white transition-colors tracking-wider">Privacy Policy</Link>
+            <Link href="#" className="text-xs font-medium text-white/50 hover:text-white transition-colors tracking-wider">Terms of Service</Link>
           </div>
         </div>
       </div>
