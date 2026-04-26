@@ -34,17 +34,18 @@ export default function TechnologyPage() {
                         {/* Level 2: Branches */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-foreground border-2 border-foreground shadow-[12px_12px_0_#000] md:shadow-[16px_16px_0_#000] w-full max-w-4xl">
                             <div className="bg-white p-8 md:p-12 text-center group hover:bg-primary transition-colors">
-                                <h4 className="font-black uppercase text-lg md:text-xl mb-6 group-hover:text-white transition-colors">Automation Plane</h4>
+                                <h4 className="font-black uppercase text-lg md:text-xl mb-6 group-hover:text-white transition-colors">Data Engineering Plane</h4>
                                 <div className="flex flex-wrap justify-center gap-2">
-                                    <span className="badge shadow-none bg-primary/10 border-primary text-primary group-hover:bg-white group-hover:text-primary transition-colors">LangChain</span>
-                                    <span className="badge shadow-none bg-primary/10 border-primary text-primary group-hover:bg-white group-hover:text-primary transition-colors">n8n</span>
+                                    <span className="badge shadow-none bg-primary/10 border-primary text-primary group-hover:bg-white group-hover:text-primary transition-colors">Apache Spark</span>
+                                    <span className="badge shadow-none bg-primary/10 border-primary text-primary group-hover:bg-white group-hover:text-primary transition-colors">Apache Airflow</span>
+                                    <span className="badge shadow-none bg-primary/10 border-primary text-primary group-hover:bg-white group-hover:text-primary transition-colors">dbt</span>
                                 </div>
                             </div>
                             <div className="bg-white p-8 md:p-12 text-center border-t md:border-t-0 md:border-l-2 border-foreground group hover:bg-primary transition-colors">
-                                <h4 className="font-black uppercase text-lg md:text-xl mb-6 group-hover:text-white transition-colors">Security Plane</h4>
+                                <h4 className="font-black uppercase text-lg md:text-xl mb-6 group-hover:text-white transition-colors">ISO & Compliance Plane</h4>
                                 <div className="flex flex-wrap justify-center gap-2">
-                                    <span className="badge shadow-none bg-primary/10 border-primary text-primary group-hover:bg-white group-hover:text-primary transition-colors">Wazuh</span>
-                                    <span className="badge shadow-none bg-primary/10 border-primary text-primary group-hover:bg-white group-hover:text-primary transition-colors">SIEM</span>
+                                    <span className="badge shadow-none bg-primary/10 border-primary text-primary group-hover:bg-white group-hover:text-primary transition-colors">Global ISO Standards</span>
+                                    <span className="badge shadow-none bg-primary/10 border-primary text-primary group-hover:bg-white group-hover:text-primary transition-colors">Regional Compliance</span>
                                 </div>
                             </div>
                         </div>
@@ -63,10 +64,10 @@ export default function TechnologyPage() {
                 <div className="container px-4 md:px-8">
                     <div className="tech-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-2 border-foreground shadow-[10px_10px_0_#000] md:shadow-[16px_16px_0_#000]">
                         {[
-                            { id: '01', title: 'AI & ML', techs: ['n8n', 'LangChain', 'OpenAI', 'YOLO', 'LlamaIndex', 'PyTorch', 'TensorFlow'] },
-                            { id: '02', title: 'Backend', techs: ['Python', 'FastAPI', 'Node.js', 'Docker', 'Kubernetes', 'AWS', 'Azure'] },
-                            { id: '03', title: 'Security', techs: ['Wazuh', 'Splunk', 'ELK Stack', 'Kali Linux', 'Wireshark'] },
-                            { id: '04', title: 'Frontend', techs: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'Figma'] },
+                            { id: '01', title: 'Data Pipelines', techs: ['Python', 'SQL', 'Apache Spark', 'Kafka', 'Airflow', 'dbt', 'BigQuery', 'Snowflake'] },
+                            { id: '02', title: 'ISO Frameworks', techs: ['ISO 27001', 'ISO 9001', 'ISO 27701', 'ISO 42001', 'ISO 18295', 'ISO 14001', 'ISO 45001', 'ISO 50001', 'ISO 55001', 'ISO 20000-1'] },
+                            { id: '03', title: 'Regional Standards', techs: ['NCA', 'SAMA', 'PDPL', 'NDMO', 'SOC 2', 'HIPAA'] },
+                            { id: '04', title: 'Assessments', techs: ['Gap Analysis', 'Documentation Design', 'Compliance Audits', 'Awareness Training', 'Implementer Training', 'Auditor Training'] },
                         ].map((category) => (
                             <div key={category.id} className="group p-0 flex flex-col h-full transition-all hover:bg-primary border-b md:border-b-0 border-foreground last:border-b-0 md:border-l first:border-l-0">
                                 <div className="border-b border-foreground p-5 lg:p-6 bg-muted/30 group-hover:bg-primary-dark transition-colors">

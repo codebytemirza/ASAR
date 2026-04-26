@@ -103,11 +103,7 @@
   }
 
   .tech-grid>* {
-    @apply bg-white p-8 md:p-10 lg:p-14 transition-colors duration-300;
-  }
-
-  .tech-grid>*:hover {
-    @apply bg-slate-50/80;
+    @apply bg-white transition-colors duration-300 p-8 md:p-10 lg:p-12;
   }
 
   .card-icon {

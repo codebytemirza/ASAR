@@ -23,8 +23,8 @@ export default function Home() {
 
             <div className="h-0.5 w-32 bg-foreground mb-12"></div>
 
-            <p className="text-xl md:text-2xl font-bold max-w-[45ch] mb-12 leading-relaxed text-zinc-800 uppercase tracking-tight">
-              Enterprise-grade AI agents, fortified SOC infrastructure, and seamless cloud automation for the modern era.
+            <p className="text-xl md:text-2xl font-bold max-w-[45ch] mb-12 leading-relaxed text-[#082652] tracking-tight">
+              Enterprise-grade Data Engineering pipelines, robust ISO frameworks, and precise compliance audits for the modern era.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
@@ -49,15 +49,15 @@ export default function Home() {
               </div>
               <div className="tech-grid grid-cols-2">
                 <div className="p-8 border-r border-b border-foreground group hover:bg-primary transition-all">
-                  <span className="text-[10px] font-black uppercase text-muted-foreground block mb-4 group-hover:text-white/70 transition-colors">Core_AI</span>
+                  <span className="text-[10px] font-black uppercase text-muted-foreground block mb-4 group-hover:text-white/70 transition-colors">Data_Flow</span>
                   <div className="text-3xl font-black group-hover:text-white transition-colors">24/7</div>
                 </div>
                 <div className="p-8 border-b border-foreground group hover:bg-primary transition-all">
-                  <span className="text-[10px] font-black uppercase text-muted-foreground block mb-4 group-hover:text-white/70 transition-colors">Threat_Level</span>
-                  <div className="text-3xl font-black text-primary group-hover:text-white transition-colors">0.0</div>
+                  <span className="text-[10px] font-black uppercase text-muted-foreground block mb-4 group-hover:text-white/70 transition-colors">ISO_Status</span>
+                  <div className="text-3xl font-black text-primary group-hover:text-white transition-colors">Ready</div>
                 </div>
                 <div className="p-8 border-r border-foreground group hover:bg-primary transition-all">
-                  <span className="text-[10px] font-black uppercase text-muted-foreground block mb-4 group-hover:text-white/70 transition-colors">Integrations</span>
+                  <span className="text-[10px] font-black uppercase text-muted-foreground block mb-4 group-hover:text-white/70 transition-colors">Pipelines</span>
                   <div className="text-3xl font-black group-hover:text-white transition-colors">99%</div>
                 </div>
                 <div className="p-8 group hover:bg-primary transition-all">
@@ -83,9 +83,9 @@ export default function Home() {
 
           <div className="tech-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-2 border-foreground shadow-[12px_12px_0_#000] md:shadow-[16px_16px_0_#000]">
             {[
-              { title: 'Data Analytics', desc: 'Data Engineering, ETL, Data Pipelines, and EDA driving intelligent outcomes.', icon: Database, href: '/services#data' },
-              { title: 'ISO Frameworks', desc: 'Implementation and assessments for ISO 27001, 9001, SOC 2, HIPAA, NCA, and more.', icon: Shield, href: '/services#iso' },
-              { title: 'Audit & Training', desc: 'End-to-end compliance reviews, alongside specialized Awareness and Auditor training.', icon: GraduationCap, href: '/services#training' }
+              { title: 'Data Analytics', desc: 'Comprehensive Data Engineering, ETL, Data Pipelines, and Exploratory Data Analysis (EDA) driving outcomes.', icon: Database, href: '/services#data' },
+              { title: 'ISO Frameworks', desc: 'Implementation for 16 specialized frameworks including ISO 27001, ISO 9001, SOC 2, HIPAA, NCA, SAMA, NDMO, and PDPL.', icon: Shield, href: '/services#iso' },
+              { title: 'Audit & Training', desc: 'End-to-end compliance reviews, with specialized Implementer, Auditor, and general Awareness trainings.', icon: GraduationCap, href: '/services#training' }
             ].map((item, i) => (
               <div key={i} className="group hover:bg-primary transition-all duration-300 p-8 md:p-10 border-b md:border-b-0 md:border-l border-foreground first:border-l-0">
                 <div className="card-icon group-hover:bg-white group-hover:text-primary border-foreground transition-all">
@@ -103,22 +103,24 @@ export default function Home() {
             ))}
 
             {/* Featured Stat Node */}
-            <div className="col-span-1 md:col-span-2 bg-black text-white p-8 md:p-12 border-t md:border-l border-foreground relative overflow-hidden group hover:bg-primary transition-all duration-500 min-h-[300px] flex flex-col justify-center">
+            <div className="col-span-1 md:col-span-2 lg:col-span-3 bg-[#082652] text-white p-8 md:p-12 border-t md:border-l-0 border-foreground relative overflow-hidden group hover:bg-primary transition-all duration-500 min-h-[300px] flex flex-col md:flex-row justify-between items-center gap-8">
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
                 <Activity className="h-64 w-64 rotate-[-15deg] group-hover:text-white" />
               </div>
-              <h3 className="text-3xl font-black uppercase mb-6 relative z-10 group-hover:text-white transition-colors">Data-Driven<br />Transformation</h3>
-              <p className="text-zinc-400 group-hover:text-white/80 max-w-md mb-8 relative z-10 leading-relaxed transition-colors uppercase text-xs font-bold">
-                "Turn noise into narrative. We help you understand the feeling of your market through precision data."
-              </p>
-              <div className="flex gap-4 relative z-10">
+              <div className="text-left md:max-w-md relative z-10 w-full">
+                <h3 className="text-3xl lg:text-4xl font-black uppercase mb-6 group-hover:text-white transition-colors leading-tight">Data-Driven<br />Transformation</h3>
+                <p className="text-zinc-400 group-hover:text-white/80 mb-0 leading-relaxed transition-colors uppercase text-xs font-bold">
+                  "Turn noise into narrative. We help you understand the feeling of your market through precision data."
+                </p>
+              </div>
+              <div className="flex gap-4 relative z-10 w-full md:w-auto mt-6 md:mt-0 justify-start md:justify-end">
                 <div className="border border-white/20 p-4 group-hover:border-white/40 transition-colors">
-                  <div className="text-4xl font-black text-primary group-hover:text-white transition-colors">15+</div>
-                  <div className="text-xs uppercase tracking-widest text-zinc-400 group-hover:text-white/60 transition-colors">Industries</div>
+                  <div className="text-4xl font-black text-white group-hover:text-white transition-colors">15+</div>
+                  <div className="text-xs uppercase tracking-widest text-zinc-300 group-hover:text-white/80 transition-colors">Industries</div>
                 </div>
                 <div className="border border-white/20 p-4 group-hover:border-white/40 transition-colors">
-                  <div className="text-4xl font-black text-primary group-hover:text-white transition-colors">100%</div>
-                  <div className="text-xs uppercase tracking-widest text-zinc-400 group-hover:text-white/60 transition-colors">Success Rate</div>
+                  <div className="text-4xl font-black text-white group-hover:text-white transition-colors">100%</div>
+                  <div className="text-xs uppercase tracking-widest text-zinc-300 group-hover:text-white/80 transition-colors">Success Rate</div>
                 </div>
               </div>
             </div>

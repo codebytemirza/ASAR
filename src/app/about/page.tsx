@@ -40,9 +40,9 @@ export default function AboutPage() {
             {/* Branches Container */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 w-full max-w-5xl mt-6 md:mt-0">
               {[
-                { title: 'Intelligence', tech: 'AI & Automation', icon: '01' },
-                { title: 'Fortress', tech: 'Cybersecurity SOC', icon: '02' },
-                { title: 'Framework', tech: 'ISO & Compliance', icon: '03' }
+                { title: 'Data Analytics', tech: 'Engineering & ETL', icon: '01' },
+                { title: 'Frameworks', tech: 'ISO & Regional Standards', icon: '02' },
+                { title: 'Assessments', tech: 'Compliance & Training', icon: '03' }
               ].map((item, i) => (
                 <div key={i} className="flex flex-col items-center">
                   {/* Vertical connector for mobile/desktop */}

@@ -48,9 +48,10 @@ export default function ServicesPage() {
                 <h3 className="font-bold text-lg md:text-xl uppercase mb-8 border-b-2 border-primary w-max pb-1">Covered Standards</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
                   {[
-                    'ISO 27001', 'ISO 9001', 'ISO 20000-1', 'ISO 22301',
-                    'ISO 14001', 'ISO 45001', 'ISO 50001', 'ISO 55001',
-                    'NCA', 'SAMA'
+                    'ISO/IEC 20000-1', 'ISO/IEC 27001', 'ISO/IEC 27701', 'ISO/IEC 42001',
+                    'ISO 9001', 'ISO 18295', 'ISO 14001', 'ISO 45001',
+                    'ISO 50001', 'ISO 55001', 'NCA', 'SAMA',
+                    'PDPL', 'NDMO', 'SOC 2', 'HIPAA'
                   ].map((iso) => (
                     <div key={iso} className="flex items-center gap-2 md:gap-3 border border-border p-3 md:p-4 hover:border-foreground hover:shadow-[4px_4px_0_#000] transition-all bg-muted/10">
                       <Check className="h-3 md:h-4 w-3 md:w-4 text-primary" />
@@ -132,7 +133,7 @@ export default function ServicesPage() {
               <div className="h-px w-full bg-border mb-6 group-hover:bg-white/30 transition-colors"></div>
               <h3 className="text-2xl font-black uppercase mb-4 group-hover:text-white transition-colors">ISO Frameworks</h3>
               <p className="text-zinc-600 group-hover:text-white/90 mb-6 font-bold leading-relaxed transition-colors uppercase text-xs tracking-tight">
-                Scoping, Design, documentation, and Implementation for ISO 27001, SOC 2, HIPAA, NCA, PDPL, etc.
+                Scoping, Design, documentation, and Implementation for 16 specialized frameworks including ISO 27001, SOC 2, HIPAA, NCA, PDPL.
               </p>
             </div>
 
@@ -148,9 +149,9 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="bg-primary text-white p-12 flex flex-col justify-center border-t border-l border-border">
-              <h3 className="text-3xl font-black uppercase mb-4 leading-none">Ready to<br />Automate?</h3>
-              <Link href="/contact" className="inline-flex items-center font-bold uppercase tracking-wider text-sm hover:underline">
+            <div className="col-span-1 md:col-span-2 lg:col-span-3 bg-[#082652] text-white p-12 flex flex-col md:flex-row justify-between items-start md:items-center border-t border-l-0 border-border gap-8">
+              <h3 className="text-3xl lg:text-4xl font-black uppercase mb-0 leading-none">Ready to<br className="hidden lg:block"/>Automate?</h3>
+              <Link href="/contact" className="inline-flex items-center font-bold uppercase tracking-wider text-sm hover:underline bg-white text-[#082652] px-8 py-4">
                 Get a Proposal <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
