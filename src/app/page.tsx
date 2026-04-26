@@ -1,13 +1,18 @@
 import Link from 'next/link';
 import { ArrowRight, Shield, Brain, Activity, Eye, Play, Database, GraduationCap } from 'lucide-react';
-import { CorporateGrid, TechMesh, AmbientGlow } from '@/components/ui/AbstractDecorators';
+import { CorporateGrid, TechMesh, AmbientGlow, CornerAccent, DotsPattern, DiagonalLines } from '@/components/ui/AbstractDecorators';
+import { NewsTicker } from '@/components/ui/NewsTicker';
 
 export default function Home() {
   return (
     <>
       <section className="hero min-h-screen flex items-center relative overflow-hidden bg-background">
-        <AmbientGlow position="center" color="primary" />
+        {/* Grid: fine structural depth across the full hero */}
         <CorporateGrid />
+        {/* Soft bloom: perceived depth centered behind the headline */}
+        <AmbientGlow position="center" color="primary" size="lg" />
+        {/* Corner bracket: top-left corporate framing */}
+        <CornerAccent corner="top-left" />
 
         <div className="container grid-2-cols relative z-10 py-20 min-h-screen">
           {/* Text Content */}
@@ -56,7 +61,7 @@ export default function Home() {
                 </div>
                 <div className="p-8 border-b border-foreground group hover:bg-primary transition-all">
                   <span className="text-[10px] font-black uppercase text-muted-foreground block mb-4 group-hover:text-white/70 transition-colors">ISO_Status</span>
-                  <div className="text-3xl font-black text-primary group-hover:text-white transition-colors">Ready</div>
+                  <div className="text-3xl font-black text-accent group-hover:text-white transition-colors">Ready</div>
                 </div>
                 <div className="p-8 border-r border-foreground group hover:bg-primary transition-all">
                   <span className="text-[10px] font-black uppercase text-muted-foreground block mb-4 group-hover:text-white/70 transition-colors">Pipelines</span>
@@ -67,17 +72,23 @@ export default function Home() {
                   <div className="badge shadow-none translate-x-0 translate-y-0 text-[8px] group-hover:bg-white group-hover:text-primary transition-colors">ISO_READY</div>
                 </div>
               </div>
-              <div className="p-6 border-t-2 border-foreground bg-foreground text-white font-mono text-[10px] uppercase tracking-widest">
-                Secure Data Link Established // Region: MEA
+              <div className="p-6 border-t-2 border-foreground bg-gradient-to-r from-primary to-primary-light">
+                <span className="text-white font-mono text-[10px] uppercase tracking-widest">Secure Data Link Established // Region: MEA</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* ── News Ticker ── Strategic placement between hero and first content section */}
+      <NewsTicker />
+
       {/* The ASAR Advantage (Business Value) */}
       <section className="bg-white py-20 md:py-32 border-b border-border relative overflow-hidden">
+        {/* TechMesh: data connectivity narrative */}
         <TechMesh />
+        {/* DotsPattern: fills the wide background area on either side of the content */}
+        <DotsPattern />
         <div className="container relative z-10">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
             <div className="lg:w-1/2">
@@ -93,8 +104,8 @@ export default function Home() {
                   "Pragmatic, business-first approach to strict compliance."
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-4">
-                    <div className="mt-1 bg-primary/10 p-1 rounded-full"><div className="w-2 h-2 bg-primary rounded-full"></div></div>
-                    <span className="font-bold text-[#082652] uppercase text-sm tracking-tight">{item}</span>
+                    <div className="mt-1.5 w-2 h-2 rounded-full flex-shrink-0 bg-accent"></div>
+                    <span className="font-bold text-primary uppercase text-sm tracking-tight">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -107,22 +118,22 @@ export default function Home() {
               {/* 4 value blocks */}
               <div className="p-8 border border-border bg-slate-50 hover:border-primary transition-colors">
                 <Shield className="w-8 h-8 text-primary mb-6" />
-                <h3 className="font-black uppercase text-[#082652] text-sm mb-2">Bulletproof Security</h3>
+                <h3 className="font-black uppercase text-primary text-sm mb-2">Bulletproof Security</h3>
                 <p className="text-xs text-zinc-500 font-semibold leading-relaxed">NCA, SAMA, and SOC 2 compliance built natively into your core infrastructure.</p>
               </div>
               <div className="p-8 border border-border bg-slate-50 hover:border-primary transition-colors">
                 <Database className="w-8 h-8 text-primary mb-6" />
-                <h3 className="font-black uppercase text-[#082652] text-sm mb-2">Data Precision</h3>
+                <h3 className="font-black uppercase text-primary text-sm mb-2">Data Precision</h3>
                 <p className="text-xs text-zinc-500 font-semibold leading-relaxed">High-volume data pipelines engineered exclusively for exactly-once processing.</p>
               </div>
               <div className="p-8 border border-border bg-slate-50 hover:border-primary transition-colors sm:col-span-2 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                 <div>
                   <GraduationCap className="w-8 h-8 text-primary mb-4" />
-                  <h3 className="font-black uppercase text-[#082652] text-sm mb-2">Corporate Readiness</h3>
+                  <h3 className="font-black uppercase text-primary text-sm mb-2">Corporate Readiness</h3>
                   <p className="text-xs text-zinc-500 font-semibold leading-relaxed max-w-sm">End-to-end personnel training ensuring your workforce maintains compliance long after certification.</p>
                 </div>
                 <div className="shrink-0 hidden md:block opacity-10">
-                  <Brain className="w-24 h-24 text-[#082652]" />
+                  <Brain className="w-24 h-24 text-primary" />
                 </div>
               </div>
             </div>
@@ -132,8 +143,10 @@ export default function Home() {
 
       {/* Ecosystem Architecture */}
       <section className="bg-background min-h-screen flex flex-col justify-center py-20 relative overflow-hidden">
+        {/* Grid: structured architecture theme */}
         <CorporateGrid />
-        <AmbientGlow position="bottom-right" color="accent" />
+        {/* Glow bottom-right: soft depth, primary navy only */}
+        <AmbientGlow position="bottom-right" color="primary" size="md" />
         <div className="container relative z-10">
           <div className="mb-16">
             <span className="section-label">System Architecture</span>
@@ -163,6 +176,10 @@ export default function Home() {
 
             {/* Featured Stat Node */}
             <div className="col-span-1 md:col-span-2 lg:col-span-3 bg-[#082652] text-white p-8 md:p-12 border-t md:border-l-0 border-foreground relative overflow-hidden group hover:bg-primary transition-all duration-500 min-h-[300px] flex flex-col md:flex-row justify-between items-center gap-8">
+              {/* Diagonal lines: fills the dark background of this CTA block subtly */}
+              <DiagonalLines />
+              {/* White corner accent: frames the dark block professionally */}
+              <CornerAccent corner="bottom-right" color="white" />
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
                 <Activity className="h-64 w-64 rotate-[-15deg] group-hover:text-white" />
               </div>
@@ -188,13 +205,13 @@ export default function Home() {
       </section>
 
       {/* CTA Band */}
-      <section className="min-h-[40vh] md:min-h-[50vh] flex flex-col justify-center bg-primary text-white border-y-2 border-foreground py-16 md:py-20 lg:py-24">
+      <section className="min-h-[40vh] md:min-h-[50vh] flex flex-col justify-center bg-primary text-white py-16 md:py-20 lg:py-24">
         <div className="container flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-12">
           <div className="text-left">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-none mb-4">Ready to <br />Deploy?</h2>
             <p className="text-lg md:text-xl opacity-90 font-bold uppercase tracking-tight">Schedule your consultation today.</p>
           </div>
-          <Link href="/contact" className="btn bg-white text-black h-16 md:h-20 px-8 md:px-12 text-lg md:text-xl hover:bg-black hover:text-white border-2 border-foreground shadow-[12px_12px_0_#000] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all w-full md:w-auto text-center">
+          <Link href="/contact" className="btn bg-white text-primary h-16 md:h-20 px-8 md:px-12 text-lg md:text-xl hover:bg-white/90 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all w-full md:w-auto text-center">
             Get Started
           </Link>
         </div>

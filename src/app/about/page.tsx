@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Shield, ArrowRight, Database, Target, CheckCircle2, Eye } from 'lucide-react';
+import { CorporateGrid, AmbientGlow, DotsPattern, HexGrid, DiagonalLines, CornerAccent } from '@/components/ui/AbstractDecorators';
 
 export const metadata = {
   title: 'About ASAR Global | Corporate Overview',
@@ -9,7 +10,9 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="section-padding bg-muted/20 border-b border-border pb-16">
+      <section className="section-padding bg-muted/20 border-b border-border pb-16 relative overflow-hidden">
+        {/* Grid: frames the large hero text, adds premium structured feel */}
+        <CorporateGrid />
         <div className="container">
           <div className="max-w-4xl">
             <span className="section-label">Corporate Overview</span>
@@ -24,11 +27,13 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="bg-white py-20 border-b border-border">
+      <section className="bg-white py-20 border-b border-border relative overflow-hidden">
+        {/* DotsPattern: fills the large white background on both sides of the 2-col layout */}
+        <DotsPattern />
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
             <div>
-              <h2 className="text-sm font-black uppercase tracking-widest text-[#082652] mb-4 flex items-center gap-2">
+              <h2 className="text-sm font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
                 <Target className="w-5 h-5 text-primary" /> Our Mission
               </h2>
               <p className="text-xl font-bold text-zinc-800 leading-relaxed">
@@ -36,7 +41,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div>
-              <h2 className="text-sm font-black uppercase tracking-widest text-[#082652] mb-4 flex items-center gap-2">
+              <h2 className="text-sm font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
                 <Eye className="w-5 h-5 text-primary" /> Our Vision
               </h2>
               <p className="text-xl font-bold text-zinc-800 leading-relaxed">
@@ -48,10 +53,12 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose ASAR Global */}
-      <section className="bg-slate-50 py-20 border-b border-border">
+      <section className="bg-secondary py-20 border-b border-border relative overflow-hidden">
+        {/* CorporateGrid: structural depth to the 3-card section */}
+        <CorporateGrid />
         <div className="container">
           <div className="max-w-3xl mb-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#082652] mb-6">Why Choose ASAR Global?</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-6">Why Choose ASAR Global?</h2>
             <p className="text-lg text-zinc-600">
               Partnering with us means ending the cycle of trial-and-error. We bring battle-tested blueprints that guarantee operational success.
             </p>
@@ -60,17 +67,17 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="bg-white p-8 rounded-xl border border-border shadow-sm">
               <Shield className="w-8 h-8 text-primary mb-4" />
-              <h3 className="font-bold text-lg text-[#082652] mb-3">Zero-Compromise Security</h3>
+              <h3 className="font-bold text-lg text-primary mb-3">Zero-Compromise Security</h3>
               <p className="text-sm text-zinc-600 leading-relaxed">Our methodologies natively embed global ISO standards into every data pipeline, ensuring seamless, penalty-free audits.</p>
             </div>
             <div className="bg-white p-8 rounded-xl border border-border shadow-sm">
               <Database className="w-8 h-8 text-primary mb-4" />
-              <h3 className="font-bold text-lg text-[#082652] mb-3">Architectural Precision</h3>
+              <h3 className="font-bold text-lg text-primary mb-3">Architectural Precision</h3>
               <p className="text-sm text-zinc-600 leading-relaxed">We bypass generic solutions. Every ETL flow and compliance framework is architected specifically for your corporate environment.</p>
             </div>
             <div className="bg-white p-8 rounded-xl border border-border shadow-sm">
               <CheckCircle2 className="w-8 h-8 text-primary mb-4" />
-              <h3 className="font-bold text-lg text-[#082652] mb-3">Proven Success Blueprint</h3>
+              <h3 className="font-bold text-lg text-primary mb-3">Proven Success Blueprint</h3>
               <p className="text-sm text-zinc-600 leading-relaxed">With a 100% certification success rate, we actively eliminate the massive risk associated with regulatory compliance.</p>
             </div>
           </div>
@@ -82,10 +89,12 @@ export default function AboutPage() {
       </section>
 
       {/* Industry Expertise */}
-      <section id="industries" className="section-padding bg-white">
+      <section id="industries" className="section-padding bg-white relative overflow-hidden">
+        {/* HexGrid: fills the wide white background around the industry cards */}
+        <HexGrid />
         <div className="container">
           <div className="mb-16 max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#082652] mb-6">Sector Expertise</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-6">Sector Expertise</h2>
             <p className="text-lg text-zinc-600">
               We secure and scale operations across highly regulated industries. Explore how our exact frameworks resolve critical sectoral challenges.
             </p>
@@ -100,10 +109,10 @@ export default function AboutPage() {
               { title: 'Manufacturing', usecase: 'Integrating IIoT (Industrial IoT) logs into centralized data lakes while maintaining ISO 14001 Environmental management architectures.', color: '#1e293b' },
               { title: 'Data Centers', usecase: 'Delivering end-to-end ISO 50001 (Energy Management) certification readiness and engineering zero-downtime ETL backups.', color: '#334155' }
             ].map((item, i) => (
-              <div key={i} className="bg-slate-50 border border-border p-8 rounded-xl hover:border-[#082652] transition-colors">
+              <div key={i} className="bg-secondary border border-border p-8 rounded-xl hover:border-primary transition-colors">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-2 h-6 rounded-full" style={{ backgroundColor: item.color }}></div>
-                  <h3 className="font-bold text-lg text-[#082652] uppercase tracking-tight">{item.title}</h3>
+                  <h3 className="font-bold text-lg text-primary uppercase tracking-tight">{item.title}</h3>
                 </div>
                 <div className="h-px w-full bg-border mb-4"></div>
                 <h4 className="text-[10px] font-black uppercase text-primary tracking-widest mb-2">Corporate Use Case</h4>
@@ -117,12 +126,18 @@ export default function AboutPage() {
       {/* Bottom CTA Block */}
       <section className="bg-muted/10 py-16 border-t border-border">
         <div className="container">
-          <div className="bg-[#082652] text-white rounded-2xl p-10 md:p-16 text-center max-w-4xl mx-auto flex flex-col items-center">
+          <div className="bg-primary text-white rounded-2xl p-10 md:p-16 text-center max-w-4xl mx-auto flex flex-col items-center relative overflow-hidden">
+            {/* DiagonalLines: fills the dark background area */}
+            <DiagonalLines />
+            {/* White glow: depth in top area of navy CTA block */}
+            <AmbientGlow position="top-right" color="white" size="sm" />
+            {/* White corner accent: bottom-left framing bracket */}
+            <CornerAccent corner="bottom-left" color="white" />
             <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Secure Your Market Position</h2>
             <p className="text-lg text-white/80 font-medium mb-10 max-w-2xl">
               Equip your enterprise with the data architecture and regulatory certifications required to dominate the modern corporate landscape.
             </p>
-            <Link href="/contact" className="btn bg-white text-[#082652] px-10 h-14 text-base shadow-lg hover:-translate-y-1 transition-transform">
+            <Link href="/contact" className="btn bg-white text-primary px-10 h-14 text-base shadow-lg hover:-translate-y-1 transition-transform">
               Initiate Consultation
             </Link>
           </div>

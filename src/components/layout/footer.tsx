@@ -6,7 +6,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#082652] text-white mt-auto">
+    <footer className="bg-primary text-white mt-auto">
       {/* Main Grid */}
       <div className="container py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
@@ -70,7 +70,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10 bg-[#082652]/90">
+      <div className="border-t border-white/10 bg-primary-dark">
         <div className="container flex flex-col md:flex-row justify-between items-center py-6 gap-4">
           <p className="text-xs font-medium text-white/50 tracking-wider">
             &copy; {currentYear} ASAR GLOBAL. All rights reserved.

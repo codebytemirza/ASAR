@@ -21,8 +21,10 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#082652] text-white h-20 flex items-center shadow-md">
-      <div className="container flex h-full items-center justify-between">
+    <header className="sticky top-0 z-50 w-full text-white flex flex-col shadow-md bg-primary">
+      {/* Thin accent line at very bottom of header */}
+      <div className="order-last h-[2px] w-full bg-gradient-to-r from-accent via-accent/30 to-transparent" />
+      <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
           <div className="transition-transform group-hover:scale-105">
             <Logo className="h-8 w-auto text-white" />
@@ -50,7 +52,7 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button asChild className="btn btn-outline border-white/20 text-white hover:bg-white hover:text-[#082652]">
+          <Button asChild className="btn btn-outline border-white/20 text-white hover:bg-white hover:text-primary">
             <Link href="/contact">Get in Touch</Link>
           </Button>
         </div>
@@ -64,7 +66,7 @@ export function Header() {
                 <span className="sr-only">Open Menu</span>
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] bg-[#082652] border-l border-white/10 p-0 text-white">
+            <SheetContent side="right" className="w-[300px] bg-primary border-l border-white/10 p-0 text-white">
               <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
               <div className="flex flex-col h-full">
                 <div className="p-6 border-b border-white/10 bg-white/5">
@@ -88,7 +90,7 @@ export function Header() {
                 <div className="p-8 mt-auto">
                   <Link
                     href="/contact"
-                    className="btn bg-white text-[#082652] w-full text-center flex items-center justify-center font-bold hover:bg-white/90"
+                    className="btn bg-white text-primary w-full text-center flex items-center justify-center font-bold hover:bg-white/90"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Get in Touch

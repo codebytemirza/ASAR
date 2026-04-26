@@ -2,53 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── News Ticker Animation ────────────────────────────────────────────────── */
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes ticker-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 @layer base {
   :root {
-    /* Premium Corporate Design System - HSL Values */
-    --background: 0 0% 100%;
-    /* #FFFFFF */
-    --foreground: 215 82% 18%;
-    /* #082652 Deep Navy Blue */
+    /* ── Primary Brand Palette (Ultra-Premium) ─────────────────── */
+    --background: 0 0% 100%; /* #FFFFFF */
+    --foreground: 222 47% 11%; /* #0F172A Slate 900 */
 
     --card: 0 0% 100%;
-    --card-foreground: 215 82% 18%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 82% 18%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 215 82% 18%;
-    /* #082652 Deep Navy Blue */
-    --primary-foreground: 0 0% 100%;
-    /* #FFFFFF */
-    --primary-dark: 215 82% 10%;
-    /* Darker Navy */
+    --primary: 216 80% 11%; /* #061833 Midnight Navy */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+    --primary-dark: 218 80% 8%; /* #040F22 Deep Navy */
+    --primary-light: 214 74% 20%; /* #0D2B5A Rich Navy */
 
-    --secondary: 215 20% 98%;
-    /* Very light blue-gray for slight contrast cards */
-    --secondary-foreground: 215 82% 18%;
+    --secondary: 210 40% 98%; /* #F8FAFC Slate 50 */
+    --secondary-foreground: 216 80% 11%;
 
-    --muted: 215 20% 95%;
-    /* Soft gray blue */
-    --muted-foreground: 215 30% 40%;
-    /* Subdued blue-gray */
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 16% 47%; /* #64748B Slate 500 */
 
-    --accent: 215 20% 96%;
-    --accent-foreground: 215 82% 18%;
+    --accent: 211 100% 50%; /* #007BFF Electric Azure */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 215 20% 90%;
-    /* Soft light border */
-    --input: 215 20% 90%;
-    --ring: 215 82% 18%;
+    --border: 214 32% 91%; /* #E2E8F0 Slate 200 */
+    --input: 214 32% 91%;
+    --ring: 211 100% 50%; /* Electric Azure */
 
     --radius: 0.375rem;
-    /* Soft rounded corners matching professional design */
+
+    /* ── Extended Brand Palette ────────────────────────────────── */
+    --brand-cyan: 211 100% 50%;       /* Redefined as Azure #007BFF */
+    --brand-cyan-light: 210 100% 97%; /* Very light azure #F0F8FF */
+    --brand-mid-blue: 214 74% 20%;   /* #0D2B5A Rich Navy */
+    --brand-slate: 215 25% 27%;      /* #354a62 */
   }
 
   .dark {
-    /* For dark mode, invert gracefully using same hue */
     --background: 215 82% 5%;
     --foreground: 215 20% 95%;
     --card: 215 82% 8%;
@@ -73,22 +80,26 @@
 
 @layer base {
   body {
-    @apply bg-background text-foreground antialiased selection:bg-primary/20;
-    /* Soft premium grid background */
-    background-image: radial-gradient(circle at 1px 1px, rgba(8, 38, 82, 0.05) 1px, transparent 0);
+    @apply bg-background text-foreground antialiased selection:bg-accent/20;
+    background-image: radial-gradient(circle at 1px 1px, hsl(var(--primary) / 0.04) 1px, transparent 0);
     background-size: 32px 32px;
   }
 }
 
 @layer components {
 
-  /* Corporate Premium Design System */
+  /* ─── Core Buttons ──────────────────────────────────────────────────────── */
   .btn {
     @apply inline-flex items-center justify-center text-sm font-semibold h-12 px-8 cursor-pointer transition-all border border-transparent whitespace-nowrap rounded-md relative overflow-hidden;
   }
 
   .btn-primary {
-    @apply bg-primary text-primary-foreground shadow-sm hover:shadow-md hover:bg-primary/95 hover:-translate-y-0.5;
+    @apply text-primary-foreground shadow-sm hover:shadow-md hover:-translate-y-0.5;
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, hsl(var(--primary-light)) 0%, hsl(var(--accent)) 100%);
   }
 
   .btn-primary:active {
@@ -99,53 +110,68 @@
     @apply bg-transparent border-input text-foreground hover:bg-muted font-medium hover:-translate-y-0.5;
   }
 
+  /* ─── Cards ─────────────────────────────────────────────────────────────── */
   .card {
     @apply border border-border bg-white text-card-foreground p-8 md:p-10 relative transition-all duration-300 rounded-xl shadow-sm;
   }
 
   .card:hover {
-    @apply border-primary/20 shadow-lg -translate-y-1;
+    border-color: hsl(var(--accent) / 0.3);
+    @apply shadow-lg -translate-y-1;
   }
 
-  /* Table-like Grid Container (Refined) */
+  /* ─── Table Grid ─────────────────────────────────────────────────────────── */
   .tech-grid {
     @apply grid gap-px bg-border overflow-hidden rounded-xl border border-border shadow-sm;
   }
 
-  .tech-grid>* {
+  .tech-grid > * {
     @apply bg-white transition-colors duration-300 p-8 md:p-10 lg:p-12;
   }
 
+  /* ─── Card Icon ──────────────────────────────────────────────────────────── */
   .card-icon {
-    @apply inline-flex items-center justify-center w-16 h-16 border border-border bg-slate-50 text-primary mb-8 text-2xl rounded-xl transition-all shadow-sm;
+    @apply inline-flex items-center justify-center w-16 h-16 border border-border bg-secondary text-primary mb-8 text-2xl rounded-xl transition-all shadow-sm;
   }
 
   .card:hover .card-icon,
-  .tech-grid>*:hover .card-icon {
-    @apply border-primary/20 bg-primary/5 text-primary scale-110;
+  .tech-grid > *:hover .card-icon {
+    background-color: hsl(var(--accent) / 0.1);
+    border-color: hsl(var(--accent) / 0.3);
+    color: hsl(var(--accent));
+    @apply scale-110;
   }
 
+  /* ─── Badge ──────────────────────────────────────────────────────────────── */
   .badge {
-    @apply inline-flex items-center border border-border px-3 rounded-full md:px-4 py-1 md:py-1.5 text-[10px] md:text-sm font-semibold uppercase tracking-wider transition-all bg-secondary text-secondary-foreground;
+    @apply inline-flex items-center border border-border px-3 rounded-full md:px-4 py-1 md:py-1.5 text-[10px] md:text-sm font-semibold uppercase tracking-wider transition-all bg-secondary text-foreground;
   }
 
   .badge:hover {
-    @apply bg-primary/10 border-primary/20 text-primary;
+    background-color: hsl(var(--accent) / 0.1);
+    border-color: hsl(var(--accent) / 0.3);
+    color: hsl(var(--accent));
   }
 
+  /* ─── Section Label ──────────────────────────────────────────────────────── */
   .section-label {
-    @apply text-primary font-bold text-sm uppercase tracking-widest mb-6 block w-max opacity-90;
+    @apply font-bold text-xs uppercase tracking-[0.2em] mb-5 block w-max;
+    color: hsl(var(--accent));
+    padding-left: 10px;
+    border-left: 2px solid hsl(var(--accent));
   }
 
+  /* ─── Section Title ──────────────────────────────────────────────────────── */
   .section-title {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8 md:mb-10 leading-[1.1] text-[#082652];
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8 md:mb-10 leading-[1.1] text-primary;
   }
 
+  /* ─── Hero H1 ────────────────────────────────────────────────────────────── */
   .hero-h1 {
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 md:mb-8 leading-[1.1] text-[#082652];
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 md:mb-8 leading-[1.1] text-primary;
   }
 
-  /* Grid Utilities */
+  /* ─── Layout Utilities ───────────────────────────────────────────────────── */
   .grid-2-cols {
     @apply grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-center;
   }
@@ -158,7 +184,116 @@
     @apply py-16 md:py-24 lg:py-32;
   }
 
-  /* Custom Cursor Hide (Optional) */
+  /* ─── Gradient Rule ──────────────────────────────────────────────────────── */
+  /* Decorative horizontal line, cyan fade — use as section visual accent */
+  .gradient-rule {
+    height: 1px;
+    background: linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--accent) / 0.3) 50%, transparent 100%);
+    margin-bottom: 1.5rem;
+  }
+
+  /* ─── Stat Highlight ─────────────────────────────────────────────────────── */
+  /* Use on large stat numbers to add gradient depth */
+  .stat-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)) 30%, hsl(var(--accent)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ─── News Ticker ────────────────────────────────────────────────────────── */
+  .ticker-bar {
+    display: flex;
+    align-items: stretch;
+    background: #FDFBF7; /* Classic paper off-white */
+    border-top: 1px solid #E5E0D8;
+    border-bottom: 1px solid #E5E0D8;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+    height: 44px;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+  }
+
+  .ticker-badge {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0 18px 0 20px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: hsl(var(--primary));
+    border-right: 1px solid #E5E0D8;
+    background: #F4EFE6; /* Slightly darker paper for badge */
+    position: relative;
+  }
+
+  .ticker-badge-text {
+    color: hsl(var(--primary));
+  }
+
+  .ticker-divider-bar {
+    flex-shrink: 0;
+    width: 1px;
+    background: hsl(var(--primary));
+    opacity: 0.15;
+    align-self: stretch;
+  }
+
+  .ticker-track {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .ticker-content {
+    display: inline-flex;
+    align-items: center;
+    animation: ticker-scroll 48s linear infinite;
+    white-space: nowrap;
+  }
+
+  .ticker-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 28px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: hsl(var(--primary));
+    text-transform: uppercase;
+    tracking: wider;
+  }
+
+  .ticker-item span {
+    color: hsl(var(--accent));
+    font-size: 8px;
+  }
+
+  .ticker-cta-link {
+    color: hsl(var(--primary));
+    font-weight: 800;
+    text-decoration: none;
+    padding: 2px 8px;
+    border: 1px solid hsl(var(--primary) / 0.2);
+    border-radius: 3px;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    transition: all 0.2s;
+  }
+
+  .ticker-cta-link:hover {
+    background: hsl(var(--primary) / 0.05);
+    border-color: hsl(var(--primary) / 0.4);
+  }
+
+  /* ─── Custom Cursor ──────────────────────────────────────────────────────── */
   @media (hover: hover) {
     .custom-cursor-area {
       cursor: none !important;
