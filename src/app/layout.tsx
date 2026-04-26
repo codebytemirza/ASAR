@@ -9,9 +9,11 @@ import CustomCursor from '@/components/ui/custom-cursor';
 // [FIXED: Updated branding to ASAR GLOBAL]
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL 
   ? process.env.NEXT_PUBLIC_SITE_URL 
-  : process.env.VERCEL_URL 
-    ? `https://${process.env.VERCEL_URL}` 
-    : 'https://asarglobal.com';
+  : process.env.VERCEL_PROJECT_PRODUCTION_URL 
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` 
+    : process.env.VERCEL_URL 
+      ? `https://${process.env.VERCEL_URL}` 
+      : 'https://asarsystech.vercel.app';
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
