@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, Database, Shield, GraduationCap, CheckCircle2 } from 'lucide-react';
+import { PipelineDiagram } from '@/components/illustrations/PipelineDiagram';
 
 export const metadata = {
   title: 'Corporate Services | ASAR Global',
@@ -68,13 +69,8 @@ export default function ServicesPage() {
               </Link>
             </div>
 
-            <div className="bg-slate-50 border border-border rounded-2xl p-8 lg:p-12 hidden md:block">
-              <div className="aspect-[4/3] bg-white border border-border shadow-sm rounded-xl flex items-center justify-center">
-                 <div className="text-center text-zinc-400 font-bold uppercase tracking-widest text-xs">
-                     <Database className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                     Pipeline Architecture Diagram
-                 </div>
-              </div>
+            <div className="bg-[#FFFFFF] border-4 border-[#082652] rounded-2xl p-4 lg:p-6 hidden md:flex items-center justify-center shadow-[12px_12px_0_#000] rotate-[1deg] hover:rotate-0 transition-transform duration-500 relative overflow-hidden">
+              <PipelineDiagram className="w-full h-auto" />
             </div>
           </div>
         </div>
