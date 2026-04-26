@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -23,13 +23,14 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b-2 border-foreground bg-background h-20 flex items-center shadow-[0_4px_0_rgba(0,0,0,0.05)]">
       <div className="container flex h-full items-center justify-between">
+        {/* [FIXED: Updated branding to ASAR GLOBAL] */}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="border-2 border-transparent group-hover:border-primary p-1 transition-colors">
             <Logo className="h-8 w-auto text-primary" />
           </div>
           <div className="flex flex-col">
             <span className="font-black uppercase tracking-tighter text-lg leading-none">ASAR</span>
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground group-hover:text-primary transition-colors">Systech</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground group-hover:text-primary transition-colors">GLOBAL</span>
           </div>
         </Link>
 

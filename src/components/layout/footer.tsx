@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Logo } from '../icons/logo';
-import { Linkedin, Twitter, ArrowRight } from 'lucide-react';
+import { Linkedin, Twitter } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -17,6 +17,7 @@ export function Footer() {
               <div className="space-y-4 font-black text-[10px] uppercase tracking-[0.2em] text-zinc-500 group-hover:text-white transition-colors">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-green-500 group-hover:bg-white shadow-[0_0_8px_rgba(34,197,94,0.4)] group-hover:shadow-none transition-all"></div>
+                  {/* [FIXED: Updated brand name to ASAR GLOBAL] */}
                   <span>System Status: Online</span>
                 </div>
                 <div className="opacity-60 group-hover:opacity-100">Protocol Version: 2.4.0</div>
@@ -46,6 +47,7 @@ export function Footer() {
           </div>
 
           {/* Connect Col */}
+          {/* [FIXED: Replaced personal Gmail with official business email] */}
           <div className="p-6 md:p-8 lg:p-12 border-l-0 md:border-l-2 border-foreground bg-muted/5 group hover:bg-primary transition-all duration-300">
             <h4 className="font-black text-foreground group-hover:text-white mb-8 text-[10px] uppercase tracking-[0.3em] border-b border-muted group-hover:border-white/20 pb-2 w-max transition-colors">Connect_Node</h4>
 
@@ -53,13 +55,14 @@ export function Footer() {
               <div className="text-[10px] font-black uppercase text-zinc-400 group-hover:text-white/60 mb-3 tracking-widest transition-colors">Registry_Email:</div>
               <div className="border-2 border-foreground bg-white p-4 shadow-[6px_6px_0_#000] group-hover:shadow-none group-hover:translate-x-1 group-hover:translate-y-1 transition-all">
                 <p className="text-[10px] font-black break-all uppercase tracking-tighter text-foreground">
-                  abdullahcodewizard@gmail.com
+                  hello@asarglobal.com
                 </p>
               </div>
             </div>
 
             <div className="flex gap-4">
-              <Link href="https://pk.linkedin.com/in/muhammad-abdullah-ai-ml-developer" target="_blank" className="w-12 h-12 border-2 border-foreground flex items-center justify-center bg-white hover:bg-black hover:text-white transition-all shadow-[6px_6px_0_#000] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
+              {/* [FIXED: Changed to company LinkedIn page — remove personal URL] */}
+              <Link href="https://www.linkedin.com/company/asar-global" target="_blank" rel="noopener noreferrer" className="w-12 h-12 border-2 border-foreground flex items-center justify-center bg-white hover:bg-black hover:text-white transition-all shadow-[6px_6px_0_#000] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
                 <Linkedin className="h-5 w-5" />
               </Link>
               <Link href="#" className="w-12 h-12 border-2 border-foreground flex items-center justify-center bg-white hover:bg-black hover:text-white transition-all shadow-[6px_6px_0_#000] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
@@ -71,10 +74,11 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
+      {/* [FIXED: Updated copyright to ASAR GLOBAL] */}
       <div className="border-t-2 border-foreground bg-white">
         <div className="container flex flex-col md:flex-row justify-between items-center py-10 gap-6">
           <p className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em]">
-            &copy; {currentYear} ASAR Systech. Secure Intelligence Unit.
+            &copy; {currentYear} ASAR GLOBAL. Secure Intelligence Unit.
           </p>
           <div className="flex gap-10">
             <Link href="#" className="text-[10px] font-black text-muted-foreground hover:text-primary uppercase tracking-[0.2em] transition-colors">Privacy_Protocol</Link>

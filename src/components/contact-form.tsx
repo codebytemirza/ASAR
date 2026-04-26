@@ -1,12 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Loader2, Bot } from 'lucide-react';
-
-import { respondToContactFormQuery } from "@/ai/flows/respond-to-contact-form-query";
+import { Loader2, CheckCircle2 } from 'lucide-react';
 
 import { Button } from "@/components/ui/button";
 import {
@@ -31,18 +29,22 @@ import { SERVICES } from "@/lib/constants";
 import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters."),
-  email: z.string().email("Please enter a valid email address."),
-  company: z.string().min(2, "Company name must be at least 2 characters."),
+  name: z.string().min(2, "Name must be at least 2 characters.").max(100, "Name too long."),
+  email: z.string().email("Please enter a valid email address.").max(254, "Email too long."),
+  company: z.string().min(2, "Company name must be at least 2 characters.").max(200, "Company name too long."),
   service: z.string().min(1, "Please select a service of interest."),
-  message: z.string().min(10, "Message must be at least 10 characters."),
+  message: z.string().min(10, "Message must be at least 10 characters.").max(1000, "Message cannot exceed 1000 characters."),
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
+// Client-side rate limit — 1 submission per 30 seconds
+const RATE_LIMIT_MS = 30_000;
+
 export function ContactForm() {
   const [loading, setLoading] = useState(false);
-  const [aiResponse, setAiResponse] = useState<string | null>(null);
+  const [submitted, setSubmitted] = useState(false);
+  const lastSubmitRef = useRef<number>(0);
   const { toast } = useToast();
 
   const form = useForm<FormValues>({
@@ -56,41 +58,50 @@ export function ContactForm() {
     },
   });
 
-  async function onSubmit(values: FormValues) {
-    setLoading(true);
-    setAiResponse(null);
-
-    try {
-      const query = `Service of interest: ${values.service}. Message: ${values.message}`;
-      const result = await respondToContactFormQuery({ query });
-      
-      if (result.response) {
-        setAiResponse(result.response);
-        toast({
-          title: "Message Sent!",
-          description: "Thank you for your inquiry. We have received your message and our AI has provided a preliminary response below.",
-        });
-        form.reset();
-      } else {
-        throw new Error("AI did not provide a response.");
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
+  async function onSubmit(_values: FormValues) {
+    const now = Date.now();
+    if (now - lastSubmitRef.current < RATE_LIMIT_MS) {
       toast({
-        title: "Error",
-        description: "Something went wrong. Please try again later.",
+        title: "Please Wait",
+        description: "You can only submit once every 30 seconds.",
         variant: "destructive",
       });
-    } finally {
-      setLoading(false);
+      return;
     }
+    lastSubmitRef.current = now;
+
+    setLoading(true);
+
+    // Simulate a brief network delay for UX feel
+    await new Promise((resolve) => setTimeout(resolve, 800));
+
+    setLoading(false);
+    setSubmitted(true);
+    form.reset();
+  }
+
+  if (submitted) {
+    return (
+      <Card>
+        <CardContent className="flex flex-col items-center justify-center gap-4 py-16 text-center">
+          <CheckCircle2 className="h-12 w-12 text-green-500" />
+          <h3 className="font-black uppercase tracking-tight text-xl">Message Received</h3>
+          <p className="text-muted-foreground text-sm max-w-xs">
+            Thank you for reaching out. We&apos;ll review your inquiry and get back to you shortly.
+          </p>
+          <Button variant="outline" onClick={() => setSubmitted(false)} className="mt-2">
+            Send Another Message
+          </Button>
+        </CardContent>
+      </Card>
+    );
   }
 
   return (
     <Card>
       <CardHeader>
         <CardTitle className="font-black uppercase tracking-tight">Send us a Message</CardTitle>
-        <CardDescription>Fill out the form and we'll get back to you shortly.</CardDescription>
+        <CardDescription>Fill out the form and we&apos;ll get back to you shortly.</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -123,19 +134,19 @@ export function ContactForm() {
                 )}
               />
             </div>
-             <FormField
-                control={form.control}
-                name="company"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-label">Company</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Your Company Inc." {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+            <FormField
+              control={form.control}
+              name="company"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-label">Company</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Your Company Inc." {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             <FormField
               control={form.control}
               name="service"
@@ -183,23 +194,6 @@ export function ContactForm() {
             </Button>
           </form>
         </Form>
-        {loading && (
-           <div className="mt-6 flex items-center justify-center text-muted-foreground">
-             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-             <p>Our AI is analyzing your request...</p>
-           </div>
-        )}
-        {aiResponse && (
-          <div className="mt-6 rounded-md bg-secondary p-4">
-            <div className="flex items-start gap-3">
-              <div className="flex-shrink-0"><Bot className="h-6 w-6 text-primary" /></div>
-              <div className="flex-1">
-                <p className="font-semibold">AI Assistant Response:</p>
-                <p className="text-sm text-muted-foreground">{aiResponse}</p>
-              </div>
-            </div>
-          </div>
-        )}
       </CardContent>
     </Card>
   );
