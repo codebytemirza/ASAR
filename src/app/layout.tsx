@@ -7,7 +7,11 @@ import { Toaster } from "@/components/ui/toaster"
 import CustomCursor from '@/components/ui/custom-cursor';
 
 // [FIXED: Updated branding to ASAR GLOBAL]
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asarglobal.com';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL 
+  ? process.env.NEXT_PUBLIC_SITE_URL 
+  : process.env.VERCEL_URL 
+    ? `https://${process.env.VERCEL_URL}` 
+    : 'https://asarglobal.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
