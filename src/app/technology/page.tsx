@@ -27,31 +27,31 @@ export default function TechnologyPage() {
             <section className="bg-white py-20 border-b border-border">
                 <div className="container">
                     <h2 className="text-3xl md:text-4xl font-extrabold text-[#082652] mb-12 text-center">Translating Tech to Corporate Impact</h2>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                       <div className="bg-slate-50 border border-border p-8 rounded-xl hover:border-primary transition-all">
-                          <Zap className="w-10 h-10 text-primary mb-6" />
-                          <h3 className="font-bold text-xl text-[#082652] mb-3">Velocity & Performance</h3>
-                          <p className="text-sm text-zinc-600 leading-relaxed mb-4">Slow data pipelines cost millions in delayed decision-making. Our architectures (utilizing Apache Spark and dbt) process terabytes of data in real-time, delivering immediate BI insights.</p>
-                       </div>
+                        <div className="bg-slate-50 border border-border p-8 rounded-xl hover:border-primary transition-all">
+                            <Zap className="w-10 h-10 text-primary mb-6" />
+                            <h3 className="font-bold text-xl text-[#082652] mb-3">Velocity & Performance</h3>
+                            <p className="text-sm text-zinc-600 leading-relaxed mb-4">Slow data pipelines cost millions in delayed decision-making. Our architectures (utilizing Apache Spark and dbt) process terabytes of data in real-time, delivering immediate BI insights.</p>
+                        </div>
 
-                       <div className="bg-slate-50 border border-border p-8 rounded-xl hover:border-primary transition-all">
-                          <Server className="w-10 h-10 text-primary mb-6" />
-                          <h3 className="font-bold text-xl text-[#082652] mb-3">Enterprise Scalability</h3>
-                          <p className="text-sm text-zinc-600 leading-relaxed mb-4">Your technology must evolve with your market. We implement modular Cloud capabilities that expand infinitely without requiring expensive underlying rewrites.</p>
-                       </div>
+                        <div className="bg-slate-50 border border-border p-8 rounded-xl hover:border-primary transition-all">
+                            <Server className="w-10 h-10 text-primary mb-6" />
+                            <h3 className="font-bold text-xl text-[#082652] mb-3">Enterprise Scalability</h3>
+                            <p className="text-sm text-zinc-600 leading-relaxed mb-4">Your technology must evolve with your market. We implement modular Cloud capabilities that expand infinitely without requiring expensive underlying rewrites.</p>
+                        </div>
 
-                       <div className="bg-slate-50 border border-border p-8 rounded-xl hover:border-primary transition-all">
-                          <Lock className="w-10 h-10 text-primary mb-6" />
-                          <h3 className="font-bold text-xl text-[#082652] mb-3">Zero-Trust Security</h3>
-                          <p className="text-sm text-zinc-600 leading-relaxed mb-4">Under strict regulatory environments like SAMA and NDMO, security is paramount. Our compliance planes ensure data is encrypted, tracked, and securely managed end-to-end.</p>
-                       </div>
+                        <div className="bg-slate-50 border border-border p-8 rounded-xl hover:border-primary transition-all">
+                            <Lock className="w-10 h-10 text-primary mb-6" />
+                            <h3 className="font-bold text-xl text-[#082652] mb-3">Zero-Trust Security</h3>
+                            <p className="text-sm text-zinc-600 leading-relaxed mb-4">Under strict regulatory environments like SAMA and NDMO, security is paramount. Our compliance planes ensure data is encrypted, tracked, and securely managed end-to-end.</p>
+                        </div>
                     </div>
-                    
+
                     <div className="flex justify-center mt-12">
-                       <Link href="/contact" className="btn btn-primary px-8 h-12 text-sm shadow-sm hover:-translate-y-1 transition-transform">
-                          Upgrade Your Infrastructure
-                       </Link>
+                        <Link href="/contact" className="btn btn-primary px-8 h-12 text-sm shadow-sm hover:-translate-y-1 transition-transform">
+                            Upgrade Your Infrastructure
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -59,8 +59,8 @@ export default function TechnologyPage() {
             <section className="section-padding bg-slate-50">
                 <div className="container px-4 md:px-8">
                     <div className="mb-12 max-w-2xl">
-                       <h2 className="text-3xl md:text-4xl font-extrabold text-[#082652] mb-6">The Deployment Stack</h2>
-                       <p className="text-lg text-zinc-600">While our focus is strictly on business outcomes, our underlying architectural stack is built from industry-leading enterprise tooling.</p>
+                        <h2 className="text-3xl md:text-4xl font-extrabold text-[#082652] mb-6">The Deployment Stack</h2>
+                        <p className="text-lg text-zinc-600">While our focus is strictly on business outcomes, our underlying architectural stack is built from industry-leading enterprise tooling.</p>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -87,20 +87,20 @@ export default function TechnologyPage() {
                     </div>
                 </div>
             </section>
-            
+
             {/* Bottom CTA Block */}
             <section className="bg-white py-16 border-t border-border">
-               <div className="container">
-                  <div className="bg-[#082652] text-white rounded-2xl p-10 md:p-16 text-center max-w-4xl mx-auto flex flex-col items-center shadow-xl">
-                     <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Deploy Without Risk</h2>
-                     <p className="text-lg text-white/80 font-medium mb-10 max-w-2xl">
-                       Stop gambling your compliance on patchwork technology. Speak to our architects to build a system guaranteed to pass external audits.
-                     </p>
-                     <Link href="/contact" className="btn bg-white text-[#082652] px-10 h-14 text-base shadow-lg hover:-translate-y-1 transition-transform">
-                       Request a Technical Review
-                     </Link>
-                  </div>
-               </div>
+                <div className="container">
+                    <div className="bg-[#082652] text-white rounded-2xl p-10 md:p-16 text-center max-w-4xl mx-auto flex flex-col items-center shadow-xl">
+                        <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Deploy Without Risk</h2>
+                        <p className="text-lg text-white/80 font-medium mb-10 max-w-2xl">
+                            Stop gambling your compliance on patchwork technology. Speak to our architects to build a system guaranteed to pass external audits.
+                        </p>
+                        <Link href="/contact" className="btn bg-white text-[#082652] px-10 h-14 text-base shadow-lg hover:-translate-y-1 transition-transform">
+                            Request a Technical Review
+                        </Link>
+                    </div>
+                </div>
             </section>
         </>
     );

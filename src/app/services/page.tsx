@@ -80,7 +80,7 @@ export default function ServicesPage() {
       <section id="iso" className="section-padding bg-slate-50 border-b border-border">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start flex-col-reverse lg:flex-row-reverse">
-            
+
             <div className="order-1 lg:order-2">
               <div className="w-16 h-16 bg-primary/10 flex items-center justify-center rounded-xl mb-6 border border-primary/20">
                 <Shield className="h-8 w-8 text-primary" />
@@ -122,19 +122,19 @@ export default function ServicesPage() {
             </div>
 
             <div className="order-2 lg:order-1 border border-border bg-white p-8 rounded-2xl shadow-sm">
-                <h3 className="font-extrabold text-lg uppercase mb-6 text-[#082652]">16 Supported Frameworks</h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {[
-                    'ISO/IEC 20000-1', 'ISO/IEC 27001', 'ISO/IEC 27701', 'ISO/IEC 42001',
-                    'ISO 9001', 'ISO 18295', 'ISO 14001', 'ISO 45001',
-                    'ISO 50001', 'ISO 55001', 'NCA', 'SAMA',
-                    'PDPL', 'NDMO', 'SOC 2', 'HIPAA'
-                  ].map((iso) => (
-                    <div key={iso} className="flex items-center gap-2 bg-slate-50 border border-border p-3 rounded-lg text-xs font-bold text-[#082652]">
-                      <ArrowRight className="h-3 w-3 text-primary" /> {iso}
-                    </div>
-                  ))}
-                </div>
+              <h3 className="font-extrabold text-lg uppercase mb-6 text-[#082652]">16 Supported Frameworks</h3>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  'ISO/IEC 20000-1', 'ISO/IEC 27001', 'ISO/IEC 27701', 'ISO/IEC 42001',
+                  'ISO 9001', 'ISO 18295', 'ISO 14001', 'ISO 45001',
+                  'ISO 50001', 'ISO 55001', 'NCA', 'SAMA',
+                  'PDPL', 'NDMO', 'SOC 2', 'HIPAA'
+                ].map((iso) => (
+                  <div key={iso} className="flex items-center gap-2 bg-slate-50 border border-border p-3 rounded-lg text-xs font-bold text-[#082652]">
+                    <ArrowRight className="h-3 w-3 text-primary" /> {iso}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -185,29 +185,29 @@ export default function ServicesPage() {
             </div>
 
             <div className="bg-[#082652] text-white p-10 lg:p-14 rounded-2xl shadow-xl">
-               <h3 className="font-black text-2xl uppercase mb-8">Training Modules</h3>
-               <div className="space-y-6">
-                 <div>
-                    <h4 className="font-bold text-primary mb-1 uppercase tracking-wider text-sm flex items-center gap-2">
-                      <Shield className="w-4 h-4"/> General Awareness
-                    </h4>
-                    <p className="text-sm text-zinc-400 font-medium">Equips the broad workforce with anti-phishing, data hygiene, and day-to-day policy adherence techniques.</p>
-                 </div>
-                 <div className="bg-white/10 h-px w-full"></div>
-                 <div>
-                    <h4 className="font-bold text-primary mb-1 uppercase tracking-wider text-sm flex items-center gap-2">
-                       <Database className="w-4 h-4"/> Certified Implementer
-                    </h4>
-                    <p className="text-sm text-zinc-400 font-medium">Technical curriculum for mid-level managers tasked with deploying and administering frameworks.</p>
-                 </div>
-                 <div className="bg-white/10 h-px w-full"></div>
-                 <div>
-                    <h4 className="font-bold text-primary mb-1 uppercase tracking-wider text-sm flex items-center gap-2">
-                       <CheckCircle2 className="w-4 h-4"/> Internal Auditor Track
-                    </h4>
-                    <p className="text-sm text-zinc-400 font-medium">Advanced protocols equipping governance personnel to self-audit systems ahead of regulatory deadlines.</p>
-                 </div>
-               </div>
+              <h3 className="font-black text-2xl uppercase mb-8">Training Modules</h3>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="font-bold text-primary mb-1 uppercase tracking-wider text-sm flex items-center gap-2">
+                    <Shield className="w-4 h-4" /> General Awareness
+                  </h4>
+                  <p className="text-sm text-zinc-400 font-medium">Equips the broad workforce with anti-phishing, data hygiene, and day-to-day policy adherence techniques.</p>
+                </div>
+                <div className="bg-white/10 h-px w-full"></div>
+                <div>
+                  <h4 className="font-bold text-primary mb-1 uppercase tracking-wider text-sm flex items-center gap-2">
+                    <Database className="w-4 h-4" /> Certified Implementer
+                  </h4>
+                  <p className="text-sm text-zinc-400 font-medium">Technical curriculum for mid-level managers tasked with deploying and administering frameworks.</p>
+                </div>
+                <div className="bg-white/10 h-px w-full"></div>
+                <div>
+                  <h4 className="font-bold text-primary mb-1 uppercase tracking-wider text-sm flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4" /> Internal Auditor Track
+                  </h4>
+                  <p className="text-sm text-zinc-400 font-medium">Advanced protocols equipping governance personnel to self-audit systems ahead of regulatory deadlines.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -215,17 +215,17 @@ export default function ServicesPage() {
 
       {/* Bottom CTA Block */}
       <section className="bg-white py-16">
-         <div className="container">
-            <div className="bg-slate-50 border border-border rounded-xl p-10 md:p-16 text-center max-w-4xl mx-auto flex flex-col items-center">
-               <h2 className="text-3xl md:text-5xl font-extrabold text-[#082652] mb-6 tracking-tight">Ready to fortify your operations?</h2>
-               <p className="text-lg text-zinc-600 font-medium mb-10 max-w-2xl">
-                 Schedule a consultation with our system architects. We will blueprint your exact compliance and data engineering needs within 48 hours.
-               </p>
-               <Link href="/contact" className="btn btn-primary px-10 h-14 text-base shadow-lg hover:-translate-y-1 transition-transform">
-                 Get an Official Proposal
-               </Link>
-            </div>
-         </div>
+        <div className="container">
+          <div className="bg-slate-50 border border-border rounded-xl p-10 md:p-16 text-center max-w-4xl mx-auto flex flex-col items-center">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-[#082652] mb-6 tracking-tight">Ready to fortify your operations?</h2>
+            <p className="text-lg text-zinc-600 font-medium mb-10 max-w-2xl">
+              Schedule a consultation with our system architects. We will blueprint your exact compliance and data engineering needs within 48 hours.
+            </p>
+            <Link href="/contact" className="btn btn-primary px-10 h-14 text-base shadow-lg hover:-translate-y-1 transition-transform">
+              Get an Official Proposal
+            </Link>
+          </div>
+        </div>
       </section>
     </>
   );

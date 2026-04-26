@@ -5,8 +5,10 @@
 @layer base {
   :root {
     /* Premium Corporate Design System - HSL Values */
-    --background: 0 0% 100%; /* #FFFFFF */
-    --foreground: 215 82% 18%; /* #082652 Deep Navy Blue */
+    --background: 0 0% 100%;
+    /* #FFFFFF */
+    --foreground: 215 82% 18%;
+    /* #082652 Deep Navy Blue */
 
     --card: 0 0% 100%;
     --card-foreground: 215 82% 18%;
@@ -14,15 +16,21 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 82% 18%;
 
-    --primary: 215 82% 18%; /* #082652 Deep Navy Blue */
-    --primary-foreground: 0 0% 100%; /* #FFFFFF */
-    --primary-dark: 215 82% 10%; /* Darker Navy */
+    --primary: 215 82% 18%;
+    /* #082652 Deep Navy Blue */
+    --primary-foreground: 0 0% 100%;
+    /* #FFFFFF */
+    --primary-dark: 215 82% 10%;
+    /* Darker Navy */
 
-    --secondary: 215 20% 98%; /* Very light blue-gray for slight contrast cards */
+    --secondary: 215 20% 98%;
+    /* Very light blue-gray for slight contrast cards */
     --secondary-foreground: 215 82% 18%;
 
-    --muted: 215 20% 95%; /* Soft gray blue */
-    --muted-foreground: 215 30% 40%; /* Subdued blue-gray */
+    --muted: 215 20% 95%;
+    /* Soft gray blue */
+    --muted-foreground: 215 30% 40%;
+    /* Subdued blue-gray */
 
     --accent: 215 20% 96%;
     --accent-foreground: 215 82% 18%;
@@ -30,11 +38,13 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 215 20% 90%; /* Soft light border */
+    --border: 215 20% 90%;
+    /* Soft light border */
     --input: 215 20% 90%;
     --ring: 215 82% 18%;
 
-    --radius: 0.375rem; /* Soft rounded corners matching professional design */
+    --radius: 0.375rem;
+    /* Soft rounded corners matching professional design */
   }
 
   .dark {

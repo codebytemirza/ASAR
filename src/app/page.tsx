@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import { ArrowRight, Shield, Brain, Activity, Eye, Play, Database, GraduationCap } from 'lucide-react';
+import { CorporateGrid, TechMesh, AmbientGlow } from '@/components/ui/AbstractDecorators';
 
 export default function Home() {
   return (
     <>
       <section className="hero min-h-screen flex items-center relative overflow-hidden bg-background">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] animate-pulse -z-10"></div>
+        <AmbientGlow position="center" color="primary" />
+        <CorporateGrid />
 
         <div className="container grid-2-cols relative z-10 py-20 min-h-screen">
           {/* Text Content */}
@@ -74,14 +76,15 @@ export default function Home() {
       </section>
 
       {/* The ASAR Advantage (Business Value) */}
-      <section className="bg-white py-20 md:py-32 border-b border-border">
-        <div className="container">
+      <section className="bg-white py-20 md:py-32 border-b border-border relative overflow-hidden">
+        <TechMesh />
+        <div className="container relative z-10">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
             <div className="lg:w-1/2">
               <span className="section-label">The ASAR Advantage</span>
-              <h2 className="section-title mb-6">Engineered for<br/>Enterprise Certainty.</h2>
+              <h2 className="section-title mb-6">Engineered for<br />Enterprise Certainty.</h2>
               <p className="text-lg md:text-xl text-zinc-600 mb-8 font-medium">
-                We transform complex regulatory requirements and massive data pipelines into streamlined, audit-ready operational assets. 
+                We transform complex regulatory requirements and massive data pipelines into streamlined, audit-ready operational assets.
               </p>
               <ul className="space-y-4 mb-10">
                 {[
@@ -99,37 +102,39 @@ export default function Home() {
                 Schedule Consultation
               </Link>
             </div>
-            
+
             <div className="lg:w-1/2 w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
-               {/* 4 value blocks */}
-               <div className="p-8 border border-border bg-slate-50 hover:border-primary transition-colors">
-                  <Shield className="w-8 h-8 text-primary mb-6" />
-                  <h3 className="font-black uppercase text-[#082652] text-sm mb-2">Bulletproof Security</h3>
-                  <p className="text-xs text-zinc-500 font-semibold leading-relaxed">NCA, SAMA, and SOC 2 compliance built natively into your core infrastructure.</p>
-               </div>
-               <div className="p-8 border border-border bg-slate-50 hover:border-primary transition-colors">
-                  <Database className="w-8 h-8 text-primary mb-6" />
-                  <h3 className="font-black uppercase text-[#082652] text-sm mb-2">Data Precision</h3>
-                  <p className="text-xs text-zinc-500 font-semibold leading-relaxed">High-volume data pipelines engineered exclusively for exactly-once processing.</p>
-               </div>
-               <div className="p-8 border border-border bg-slate-50 hover:border-primary transition-colors sm:col-span-2 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                  <div>
-                    <GraduationCap className="w-8 h-8 text-primary mb-4" />
-                    <h3 className="font-black uppercase text-[#082652] text-sm mb-2">Corporate Readiness</h3>
-                    <p className="text-xs text-zinc-500 font-semibold leading-relaxed max-w-sm">End-to-end personnel training ensuring your workforce maintains compliance long after certification.</p>
-                  </div>
-                  <div className="shrink-0 hidden md:block opacity-10">
-                     <Brain className="w-24 h-24 text-[#082652]" />
-                  </div>
-               </div>
+              {/* 4 value blocks */}
+              <div className="p-8 border border-border bg-slate-50 hover:border-primary transition-colors">
+                <Shield className="w-8 h-8 text-primary mb-6" />
+                <h3 className="font-black uppercase text-[#082652] text-sm mb-2">Bulletproof Security</h3>
+                <p className="text-xs text-zinc-500 font-semibold leading-relaxed">NCA, SAMA, and SOC 2 compliance built natively into your core infrastructure.</p>
+              </div>
+              <div className="p-8 border border-border bg-slate-50 hover:border-primary transition-colors">
+                <Database className="w-8 h-8 text-primary mb-6" />
+                <h3 className="font-black uppercase text-[#082652] text-sm mb-2">Data Precision</h3>
+                <p className="text-xs text-zinc-500 font-semibold leading-relaxed">High-volume data pipelines engineered exclusively for exactly-once processing.</p>
+              </div>
+              <div className="p-8 border border-border bg-slate-50 hover:border-primary transition-colors sm:col-span-2 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                <div>
+                  <GraduationCap className="w-8 h-8 text-primary mb-4" />
+                  <h3 className="font-black uppercase text-[#082652] text-sm mb-2">Corporate Readiness</h3>
+                  <p className="text-xs text-zinc-500 font-semibold leading-relaxed max-w-sm">End-to-end personnel training ensuring your workforce maintains compliance long after certification.</p>
+                </div>
+                <div className="shrink-0 hidden md:block opacity-10">
+                  <Brain className="w-24 h-24 text-[#082652]" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Ecosystem Architecture */}
-      <section className="bg-background min-h-screen flex flex-col justify-center py-20">
-        <div className="container">
+      <section className="bg-background min-h-screen flex flex-col justify-center py-20 relative overflow-hidden">
+        <CorporateGrid />
+        <AmbientGlow position="bottom-right" color="accent" />
+        <div className="container relative z-10">
           <div className="mb-16">
             <span className="section-label">System Architecture</span>
             <h2 className="section-title">The Ecosystem.</h2>
