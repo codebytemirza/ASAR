@@ -1,6 +1,5 @@
 import { ImageResponse } from 'next/og';
 
-export const runtime = 'edge';
 export const alt = 'ASAR GLOBAL - Enterprise Technology & Compliance Solutions';
 export const size = {
   width: 1200,
