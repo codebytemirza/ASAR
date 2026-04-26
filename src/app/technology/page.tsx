@@ -2,9 +2,16 @@ import Link from 'next/link';
 import { ArrowRight, Server, Lock, Zap, CheckCircle2 } from 'lucide-react';
 import { CorporateGrid, TechMesh, AmbientGlow, DiagonalLines, CornerAccent, HexGrid } from '@/components/ui/AbstractDecorators';
 
-export const metadata = {
-    title: 'Technology Stack & Infrastructure | ASAR Global',
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Technology Stack & Infrastructure',
     description: 'Explore the high-performance data engineering and secure compliance infrastructure driving ASAR Global solutions.',
+    openGraph: {
+        title: 'Technology Stack & Infrastructure | ASAR Global',
+        description: 'Explore the high-performance data engineering and secure compliance infrastructure driving ASAR Global solutions.',
+        url: '/technology',
+    },
 };
 
 export default function TechnologyPage() {

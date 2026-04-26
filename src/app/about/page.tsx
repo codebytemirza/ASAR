@@ -2,9 +2,16 @@ import Link from 'next/link';
 import { Shield, ArrowRight, Database, Target, CheckCircle2, Eye } from 'lucide-react';
 import { CorporateGrid, AmbientGlow, DotsPattern, HexGrid, DiagonalLines, CornerAccent } from '@/components/ui/AbstractDecorators';
 
-export const metadata = {
-  title: 'About ASAR Global | Corporate Overview',
-  description: 'Learn about ASAR Global, our mission, vision, and the specific industries we empower through Data Engineering and ISO Compliance.',
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Corporate Overview & Mission',
+  description: 'Learn about ASAR Global, our vision, and the specific industries we empower through precision Data Engineering and ISO Compliance architectures.',
+  openGraph: {
+    title: 'About ASAR Global | Corporate Overview',
+    description: 'Learn about ASAR Global, our vision, and the specific industries we empower through precision Data Engineering and ISO Compliance architectures.',
+    url: '/about',
+  },
 };
 
 export default function AboutPage() {

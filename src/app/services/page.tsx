@@ -4,9 +4,16 @@ import { PipelineDiagram } from '@/components/illustrations/PipelineDiagram';
 import { CorporateGrid, AmbientGlow, DotsPattern, HexGrid, DiagonalLines, CornerAccent } from '@/components/ui/AbstractDecorators';
 import { NewsTicker } from '@/components/ui/NewsTicker';
 
-export const metadata = {
-  title: 'Corporate Services | ASAR Global',
-  description: 'Enterprise Data Engineering, ISO Compliance Frameworks, and Corporate Governance Training.',
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Enterprise Services',
+  description: 'Enterprise Data Engineering, exactly-once ETL pipelines, ISO Compliance Frameworks, and Corporate Governance Training.',
+  openGraph: {
+    title: 'Enterprise Services | ASAR Global',
+    description: 'Enterprise Data Engineering, exactly-once ETL pipelines, ISO Compliance Frameworks, and Corporate Governance Training.',
+    url: '/services',
+  },
 };
 
 export default function ServicesPage() {

@@ -122,7 +122,7 @@
 
   /* ─── Table Grid ─────────────────────────────────────────────────────────── */
   .tech-grid {
-    @apply grid gap-px bg-border overflow-hidden rounded-xl border border-border shadow-sm;
+    @apply grid gap-px bg-border overflow-hidden border border-border shadow-sm;
   }
 
   .tech-grid > * {

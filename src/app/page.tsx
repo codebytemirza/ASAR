@@ -2,7 +2,17 @@ import Link from 'next/link';
 import { ArrowRight, Shield, Brain, Activity, Eye, Play, Database, GraduationCap } from 'lucide-react';
 import { CorporateGrid, TechMesh, AmbientGlow, CornerAccent, DotsPattern, DiagonalLines } from '@/components/ui/AbstractDecorators';
 import { NewsTicker } from '@/components/ui/NewsTicker';
+import type { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'ASAR GLOBAL | Enterprise Technology & Compliance Solutions',
+  description: 'ASAR Global specializes in Data Engineering, ISO Consultancy, automated ETL pipelines, and uncompromising corporate compliance architectures.',
+  openGraph: {
+    title: 'ASAR GLOBAL | Enterprise Technology & Compliance Solutions',
+    description: 'Transform your operational infrastructure with precision data engineering and uncompromising global compliance frameworks.',
+    url: '/',
+  },
+};
 export default function Home() {
   return (
     <>
@@ -24,7 +34,7 @@ export default function Home() {
 
             <h1 className="hero-h1">
               BUILD SMART.<br />
-              <span className="text-primary" style={{ WebkitTextStroke: '2px black' }}>SECURE BETTER.</span><br />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">SECURE BETTER.</span><br />
               AUTOMATE ALL.
             </h1>
 
