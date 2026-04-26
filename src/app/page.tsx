@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Shield, Brain, Activity, Eye, Play } from 'lucide-react';
+import { ArrowRight, Shield, Brain, Activity, Eye, Play, Database, GraduationCap } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -83,10 +83,9 @@ export default function Home() {
 
           <div className="tech-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-2 border-foreground shadow-[12px_12px_0_#000] md:shadow-[16px_16px_0_#000]">
             {[
-              { title: 'Agentic AI', desc: 'Autonomous workflows that understand intent. Not just chatbots, but workforce multipliers.', icon: Brain, href: '/services#ai' },
-              { title: 'SOC Defense', desc: 'Fortified security operations. SIEM deployment, incident response, and perimeter monitoring.', icon: Shield, href: '/services#soc' },
-              { title: 'Computer Vision', desc: 'Visual intelligence for manufacturing, retail, and safety. Seeing what others miss.', icon: Eye, href: '/services#vision' },
-              { title: 'ISO Compliance', desc: 'Gap assessment to certification. 16+ Standards including 27001, 9001, and 20000-1.', icon: Activity, href: '/services#iso' }
+              { title: 'Data Analytics', desc: 'Data Engineering, ETL, Data Pipelines, and EDA driving intelligent outcomes.', icon: Database, href: '/services#data' },
+              { title: 'ISO Frameworks', desc: 'Implementation and assessments for ISO 27001, 9001, SOC 2, HIPAA, NCA, and more.', icon: Shield, href: '/services#iso' },
+              { title: 'Audit & Training', desc: 'End-to-end compliance reviews, alongside specialized Awareness and Auditor training.', icon: GraduationCap, href: '/services#training' }
             ].map((item, i) => (
               <div key={i} className="group hover:bg-primary transition-all duration-300 p-8 md:p-10 border-b md:border-b-0 md:border-l border-foreground first:border-l-0">
                 <div className="card-icon group-hover:bg-white group-hover:text-primary border-foreground transition-all">

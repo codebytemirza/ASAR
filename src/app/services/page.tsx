@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Check, Brain, Eye, Database, Laptop, Network, ArrowRight } from 'lucide-react';
+import { Check, Brain, Eye, Database, Laptop, Network, ArrowRight, Shield, GraduationCap } from 'lucide-react';
 
 export const metadata = {
   title: 'Services | ASAR Systech',
@@ -107,67 +107,44 @@ export default function ServicesPage() {
       <section id="ai" className="section-padding bg-muted/20">
         <div className="container">
           <div className="mb-16">
-            <span className="section-label">Future Tech</span>
-            <h2 className="section-title">Intelligence Grid.</h2>
+            <span className="section-label">Core Verticals</span>
+            <h2 className="section-title">Specialized Services.</h2>
           </div>
 
           <div className="tech-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-2 border-foreground shadow-[16px_16px_0_#000]">
-            {/* Agentic AI */}
-            <div className="group hover:bg-primary transition-all duration-300 p-10">
-              <div className="card-icon group-hover:bg-white group-hover:text-primary border-foreground transition-all">
-                <Brain className="h-8 w-8" />
-              </div>
-              <div className="h-px w-full bg-border mb-6 group-hover:bg-white/30 transition-colors"></div>
-              <h3 className="text-2xl font-black uppercase mb-4 group-hover:text-white transition-colors">Agentic AI</h3>
-              <p className="text-zinc-600 group-hover:text-white/90 mb-6 font-bold leading-relaxed transition-colors uppercase text-xs tracking-tight">
-                Agents that understand intent. Customer support, market analysis, and internal ops automation.
-              </p>
-            </div>
-
-            {/* Computer Vision */}
-            <div className="group hover:bg-primary transition-all duration-300 border-l border-foreground p-10">
-              <div className="card-icon group-hover:bg-white group-hover:text-primary border-foreground transition-all">
-                <Eye className="h-8 w-8" />
-              </div>
-              <div className="h-px w-full bg-border mb-6 group-hover:bg-white/30 transition-colors"></div>
-              <h3 className="text-2xl font-black uppercase mb-4 group-hover:text-white transition-colors">Computer Vision</h3>
-              <p className="text-zinc-600 group-hover:text-white/90 mb-6 font-bold leading-relaxed transition-colors uppercase text-xs tracking-tight">
-                YOLO & Pose Detection models for security surveillance, QC, and retail analytics.
-              </p>
-            </div>
-
             {/* Data Engineering */}
-            <div className="group hover:bg-primary transition-all duration-300 border-l border-foreground p-10">
+            <div className="group hover:bg-primary transition-all duration-300 p-10">
               <div className="card-icon group-hover:bg-white group-hover:text-primary border-foreground transition-all">
                 <Database className="h-8 w-8" />
               </div>
               <div className="h-px w-full bg-border mb-6 group-hover:bg-white/30 transition-colors"></div>
-              <h3 className="text-2xl font-black uppercase mb-4 group-hover:text-white transition-colors">Data Pipelines</h3>
+              <h3 className="text-2xl font-black uppercase mb-4 group-hover:text-white transition-colors">Data Analysis & Pipelines</h3>
               <p className="text-zinc-600 group-hover:text-white/90 mb-6 font-bold leading-relaxed transition-colors uppercase text-xs tracking-tight">
-                Robust ETL and BI dashboards. Turning raw chaos into structured intelligence.
+                Data Engineering, robust ETL processes, and EDA leading to intelligent business outcomes.
               </p>
             </div>
 
-            {/* Row 2 */}
-            <div className="group hover:bg-primary transition-all duration-300 border-t border-foreground p-10">
+            {/* ISO Standards */}
+            <div className="group hover:bg-primary transition-all duration-300 border-l border-foreground p-10">
               <div className="card-icon group-hover:bg-white group-hover:text-primary border-foreground transition-all">
-                <Laptop className="h-8 w-8" />
+                <Shield className="h-8 w-8" />
               </div>
               <div className="h-px w-full bg-border mb-6 group-hover:bg-white/30 transition-colors"></div>
-              <h3 className="text-2xl font-black uppercase mb-4 group-hover:text-white transition-colors">Custom Software</h3>
+              <h3 className="text-2xl font-black uppercase mb-4 group-hover:text-white transition-colors">ISO Frameworks</h3>
               <p className="text-zinc-600 group-hover:text-white/90 mb-6 font-bold leading-relaxed transition-colors uppercase text-xs tracking-tight">
-                Tailored CRM and workflow engines designed for your specific operational needs.
+                Scoping, Design, documentation, and Implementation for ISO 27001, SOC 2, HIPAA, NCA, PDPL, etc.
               </p>
             </div>
 
-            <div className="group hover:bg-primary transition-all duration-300 border-t border-l border-foreground p-10">
+            {/* Audit & Training */}
+            <div className="group hover:bg-primary transition-all duration-300 border-l border-foreground p-10">
               <div className="card-icon group-hover:bg-white group-hover:text-primary border-foreground transition-all">
-                <Network className="h-8 w-8" />
+                <GraduationCap className="h-8 w-8" />
               </div>
               <div className="h-px w-full bg-border mb-6 group-hover:bg-white/30 transition-colors"></div>
-              <h3 className="text-2xl font-black uppercase mb-4 group-hover:text-white transition-colors">IoT Systems</h3>
+              <h3 className="text-2xl font-black uppercase mb-4 group-hover:text-white transition-colors">Audit & Training</h3>
               <p className="text-zinc-600 group-hover:text-white/90 mb-6 font-bold leading-relaxed transition-colors uppercase text-xs tracking-tight">
-                Bridging physical and digital. Smart sensors and adaptive logic controls.
+                Assessments, Internal Audits, and professional Awareness, Implementer, and Auditor track trainings.
               </p>
             </div>
 
