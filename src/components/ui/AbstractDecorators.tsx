@@ -113,9 +113,9 @@ export const AmbientGlow = ({
     'center':       'top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2',
   };
   const sizeClasses = {
-    'sm': 'w-[400px] h-[400px]',
-    'md': 'w-[600px] h-[600px]',
-    'lg': 'w-[800px] h-[800px]',
+    'sm': 'w-[300px] h-[300px] md:w-[400px] md:h-[400px]',
+    'md': 'w-[400px] h-[400px] md:w-[600px] md:h-[600px]',
+    'lg': 'w-[500px] h-[500px] md:w-[800px] md:h-[800px]',
   };
   // Only hsl(var(--primary)) (navy) or #ffffff (white) — no third colors
   const bgColors = {
@@ -152,43 +152,6 @@ export const SweepingGradient = ({ className = '' }: DecoratorProps) => {
   );
 };
 
-// ─────────────────────────────────────────────────────────────────────────────
-// CORNER ACCENT
-// Purpose: Minimal L-bracket — corporate framing on section headers.
-// Use on: Top corners of hero or major page headers.
-// ─────────────────────────────────────────────────────────────────────────────
-interface CornerAccentProps extends DecoratorProps {
-  corner?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
-  color?: 'primary' | 'white';
-}
-
-export const CornerAccent = ({
-  corner = 'top-left',
-  color = 'primary',
-  className = '',
-}: CornerAccentProps) => {
-  const posMap = {
-    'top-left':     'top-8 left-8',
-    'top-right':    'top-8 right-8 rotate-90',
-    'bottom-left':  'bottom-8 left-8 -rotate-90',
-    'bottom-right': 'bottom-8 right-8 rotate-180',
-  };
-  const stroke = color === 'white' ? '#ffffff' : 'hsl(var(--primary))';
-
-  return (
-    <DecoratorWrapper className={className}>
-      <svg
-        className={`absolute ${posMap[corner]} w-20 h-20 opacity-[0.07]`}
-        viewBox="0 0 80 80"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M2 78 L2 2 L78 2" stroke={stroke} strokeWidth="1.5" strokeLinecap="square" />
-        <path d="M14 78 L14 14 L78 14" stroke={stroke} strokeWidth="0.5" strokeLinecap="square" strokeOpacity="0.4" />
-      </svg>
-    </DecoratorWrapper>
-  );
-};
 
 // ─────────────────────────────────────────────────────────────────────────────
 // RADIAL LINES
@@ -229,7 +192,7 @@ export const RadialLines = ({
   return (
     <DecoratorWrapper className={className}>
       <svg
-        className={`absolute ${cornerStyles[corner]} w-[420px] h-[420px]`}
+        className={`absolute ${cornerStyles[corner]} w-[250px] h-[250px] md:w-[420px] md:h-[420px]`}
         viewBox="0 0 420 420"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -332,10 +295,10 @@ export const FloatingISOAccents = ({ className = '', color = 'primary' }: Decora
   return (
     <DecoratorWrapper className={className}>
       <div className="absolute inset-0 overflow-hidden opacity-[0.05] pointer-events-none">
-        <Shield className={`absolute top-[15%] left-[10%] w-32 h-32 ${textColor} rotate-[-10deg]`} />
-        <Lock className={`absolute bottom-[20%] right-[15%] w-40 h-40 ${textColor} rotate-[15deg]`} />
-        <FileText className={`absolute top-[40%] right-[10%] w-24 h-24 ${textColor} rotate-[5deg]`} />
-        <CheckCircle2 className={`absolute bottom-[30%] left-[20%] w-28 h-28 ${textColor} rotate-[-5deg]`} />
+        <Shield className={`absolute top-[15%] left-[10%] w-16 h-16 md:w-32 md:h-32 ${textColor} rotate-[-10deg]`} />
+        <Lock className={`absolute bottom-[20%] right-[15%] w-20 h-20 md:w-40 md:h-40 ${textColor} rotate-[15deg]`} />
+        <FileText className={`absolute top-[40%] right-[10%] w-12 h-12 md:w-24 md:h-24 ${textColor} rotate-[5deg]`} />
+        <CheckCircle2 className={`absolute bottom-[30%] left-[20%] w-14 h-14 md:w-28 md:h-28 ${textColor} rotate-[-5deg]`} />
       </div>
     </DecoratorWrapper>
   );
@@ -351,10 +314,10 @@ export const HeroFloatingIcons = ({ className = '', color = 'primary' }: Decorat
     <DecoratorWrapper className={className}>
       <div className="absolute inset-0 overflow-hidden opacity-[0.06] pointer-events-none">
         {/* Placed predominantly on the middle-to-right side to fill empty space */}
-        <Shield className={`absolute top-[20%] right-[30%] w-48 h-48 ${textColor} rotate-[12deg]`} />
-        <CheckCircle2 className={`absolute bottom-[15%] right-[15%] w-32 h-32 ${textColor} rotate-[-15deg]`} />
-        <Lock className={`absolute top-[60%] right-[40%] w-20 h-20 ${textColor} rotate-[5deg]`} />
-        <FileText className={`absolute top-[10%] right-[5%] w-24 h-24 ${textColor} rotate-[-8deg]`} />
+        <Shield className={`absolute top-[20%] right-[30%] w-24 h-24 md:w-48 md:h-48 ${textColor} rotate-[12deg]`} />
+        <CheckCircle2 className={`absolute bottom-[15%] right-[15%] w-16 h-16 md:w-32 md:h-32 ${textColor} rotate-[-15deg]`} />
+        <Lock className={`absolute top-[60%] right-[40%] w-10 h-10 md:w-20 md:h-20 ${textColor} rotate-[5deg]`} />
+        <FileText className={`absolute top-[10%] right-[5%] w-12 h-12 md:w-24 md:h-24 ${textColor} rotate-[-8deg]`} />
       </div>
     </DecoratorWrapper>
   );

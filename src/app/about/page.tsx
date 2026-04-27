@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Shield, ArrowRight, Database, Target, CheckCircle2, Eye } from 'lucide-react';
-import { CorporateGrid, AmbientGlow, DotsPattern, HexGrid, DiagonalLines, CornerAccent, FloatingISOAccents, SweepingGradient, HeroFloatingIcons } from '@/components/ui/AbstractDecorators';
+import { CorporateGrid, AmbientGlow, DotsPattern, HexGrid, DiagonalLines, FloatingISOAccents, SweepingGradient, HeroFloatingIcons } from '@/components/ui/AbstractDecorators';
 
 import type { Metadata } from 'next';
 
@@ -162,8 +162,7 @@ export default function AboutPage() {
             <FloatingISOAccents color="white" />
             {/* White glow: depth in top area of navy CTA block */}
             <AmbientGlow position="top-right" color="white" size="sm" />
-            {/* White corner accent: bottom-left framing bracket */}
-            <CornerAccent corner="bottom-left" color="white" />
+
             <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Secure Your Market Position</h2>
             <p className="text-lg text-white/80 font-medium mb-10 max-w-2xl">
               Equip your enterprise with the data architecture and regulatory certifications required to dominate the modern corporate landscape. Contact our MEA-based enterprise architects today.

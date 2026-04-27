@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, Shield, Brain, Activity, Eye, Play, Database, GraduationCap } from 'lucide-react';
-import { CorporateGrid, TechMesh, AmbientGlow, CornerAccent, DotsPattern, DiagonalLines, SweepingGradient, FloatingISOAccents, HeroFloatingIcons } from '@/components/ui/AbstractDecorators';
+import { CorporateGrid, TechMesh, AmbientGlow, DotsPattern, DiagonalLines, SweepingGradient, FloatingISOAccents, HeroFloatingIcons } from '@/components/ui/AbstractDecorators';
 import { NewsTicker } from '@/components/ui/NewsTicker';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import type { Metadata } from 'next';
@@ -17,18 +17,16 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <section className="hero min-h-screen flex items-center relative overflow-hidden bg-background">
+      <section className="hero min-h-[100svh] flex items-center relative overflow-hidden bg-background">
         {/* Sweeping blue background blur */}
         <SweepingGradient />
         {/* Grid: fine structural depth across the full hero */}
         <CorporateGrid />
         {/* Soft bloom: perceived depth centered behind the headline */}
         <AmbientGlow position="center" color="primary" size="lg" />
-        {/* Corner bracket: top-left corporate framing */}
-        <CornerAccent corner="top-left" />
         <HeroFloatingIcons />
 
-        <div className="container grid-2-cols relative z-10 py-20 min-h-screen">
+        <div className="container grid-2-cols relative z-10 pt-32 pb-20 lg:py-20 min-h-[100svh] lg:min-h-0">
           {/* Text Content */}
           <div className="flex flex-col justify-center h-full">
             <div className="inline-flex items-center gap-3 border-2 border-foreground pl-4 pr-5 py-2 mb-10 bg-white w-max shadow-[6px_6px_0_#000]">
@@ -59,8 +57,8 @@ export default function Home() {
           </div>
 
           {/* Visual Content: The "Architectural Table" Design */}
-          <div className="hidden lg:flex justify-end items-center h-full">
-            <div className="w-full max-w-md border-2 border-foreground bg-white shadow-[20px_20px_0_#000] overflow-hidden">
+          <div className="flex justify-center lg:justify-end items-center h-full mt-12 lg:mt-0 w-full">
+            <div className="w-full max-w-md border-2 border-foreground bg-white shadow-[12px_12px_0_#000] lg:shadow-[20px_20px_0_#000] overflow-hidden">
               <div className="border-b-2 border-foreground p-6 bg-muted/10 flex justify-between items-center">
                 <span className="font-black text-xs uppercase tracking-widest text-foreground">/// ASAR_STATUS_GRID</span>
                 <div className="flex gap-2">
@@ -195,7 +193,7 @@ export default function Home() {
               {/* Diagonal lines: fills the dark background of this CTA block subtly */}
               <DiagonalLines />
               {/* White corner accent: frames the dark block professionally */}
-              <CornerAccent corner="bottom-right" color="white" />
+
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
                 <Shield className="h-64 w-64 rotate-[-15deg] group-hover:text-white" />
               </div>

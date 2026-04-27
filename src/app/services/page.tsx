@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Database, Shield, GraduationCap, CheckCircle2 } from 'lucide-react';
 import { PipelineDiagram } from '@/components/illustrations/PipelineDiagram';
-import { CorporateGrid, AmbientGlow, DotsPattern, HexGrid, DiagonalLines, CornerAccent, SweepingGradient, FloatingISOAccents, HeroFloatingIcons } from '@/components/ui/AbstractDecorators';
+import { CorporateGrid, AmbientGlow, DotsPattern, HexGrid, DiagonalLines, SweepingGradient, FloatingISOAccents, HeroFloatingIcons } from '@/components/ui/AbstractDecorators';
 import { NewsTicker } from '@/components/ui/NewsTicker';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 
@@ -170,7 +170,7 @@ export default function ServicesPage() {
               {/* White glow: top-left depth on dark card */}
               <AmbientGlow position="top-left" color="white" size="sm" />
               {/* White corner: bottom-right bracket framing */}
-              <CornerAccent corner="bottom-right" color="white" />
+
               <h3 className="font-black text-2xl uppercase mb-8">Training Modules</h3>
               <div className="space-y-6">
                 <div>

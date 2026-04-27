@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label";
 import { CheckCircle2, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { CorporateGrid, CornerAccent, DotsPattern, FloatingISOAccents, SweepingGradient, AmbientGlow, HeroFloatingIcons } from "@/components/ui/AbstractDecorators";
+import { CorporateGrid, DotsPattern, FloatingISOAccents, SweepingGradient, AmbientGlow, HeroFloatingIcons } from "@/components/ui/AbstractDecorators";
 
 export default function ContactPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -39,8 +39,7 @@ export default function ContactPage() {
         {/* DotsPattern: fills the wide header background above the content */}
         <DotsPattern />
         <HeroFloatingIcons />
-        {/* Corner accent: top-right bracket framing */}
-        <CornerAccent corner="top-right" />
+
         <div className="container overflow-hidden">
           <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24">
             <span className="section-label mx-auto">Initiate Consultation</span>

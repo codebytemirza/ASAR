@@ -9,7 +9,7 @@ export function Footer() {
     <footer className="bg-primary text-white mt-auto">
       {/* Main Grid */}
       <div className="container py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8">
           
           {/* Brand Col */}
           <div className="flex flex-col space-y-6">

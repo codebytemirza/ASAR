@@ -25,13 +25,13 @@ export function Header() {
       {/* Thin accent line at very bottom of header */}
       <div className="order-last h-[2px] w-full bg-gradient-to-r from-accent via-accent/30 to-transparent" />
       <div className="container flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-2 md:gap-3 group">
           <div className="transition-transform group-hover:scale-105">
-            <Logo className="h-8 w-auto text-white" />
+            <Logo className="h-6 md:h-8 w-auto text-white" />
           </div>
           <div className="flex flex-col">
-            <span className="font-extrabold uppercase tracking-tight text-lg leading-none text-white">ASAR</span>
-            <span className="text-[10px] font-bold uppercase tracking-widest text-[#F8FAFC]/80 group-hover:text-white transition-colors">GLOBAL</span>
+            <span className="font-extrabold uppercase tracking-tight text-base md:text-lg leading-none text-white">ASAR</span>
+            <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-[#F8FAFC]/80 group-hover:text-white transition-colors">GLOBAL</span>
           </div>
         </Link>
 

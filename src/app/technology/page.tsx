@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, Server, Lock, Zap, CheckCircle2 } from 'lucide-react';
-import { CorporateGrid, TechMesh, AmbientGlow, DiagonalLines, CornerAccent, HexGrid, FloatingISOAccents, SweepingGradient, HeroFloatingIcons } from '@/components/ui/AbstractDecorators';
+import { CorporateGrid, TechMesh, AmbientGlow, DiagonalLines, HexGrid, FloatingISOAccents, SweepingGradient, HeroFloatingIcons } from '@/components/ui/AbstractDecorators';
 
 import type { Metadata } from 'next';
 
@@ -118,7 +118,7 @@ export default function TechnologyPage() {
                         {/* White glow: warmth bottom-left, purely from white */}
                         <AmbientGlow position="bottom-left" color="white" size="sm" />
                         {/* White corner accent: top-right bracket on dark block */}
-                        <CornerAccent corner="top-right" color="white" />
+
                         <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Build Audit-Ready Pipelines</h2>
                         <p className="text-lg text-white/80 font-medium mb-10 max-w-2xl">
                             Stop gambling your compliance on patchwork technology. Speak to our architects to build a secure data infrastructure guaranteed to pass external ISO audits.
