@@ -25,7 +25,7 @@ export default function ContactPage() {
     },
     {
       q: "How do you price your data engineering and compliance services?",
-      a: "We operate on massive organizational scale, so pricing is custom-architected based on exact data payload size and the number of legal frameworks required. We provide transparent, flat-fee quotes post-discovery."
+      a: "We operate on massive organizational scale, so pricing is custom-architected based on exact data payload size and the number of legal standards required. We provide transparent, flat-fee quotes post-discovery."
     }
   ];
 
@@ -67,7 +67,7 @@ export default function ContactPage() {
                     </div>
                     <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-border bg-secondary">
                       <h3 className="font-bold text-primary mb-1">Discovery Call</h3>
-                      <p className="text-sm text-zinc-600 font-medium">A 30-minute deep dive with a senior architect to analyze your regulatory or data bottlenecks.</p>
+                      <p className="text-sm text-zinc-600 font-medium">A 30-minute deep dive with a senior architect to analyze your regulatory or operational expansion goals.</p>
                     </div>
                   </div>
                   {/* Step 2 */}
@@ -142,7 +142,7 @@ export default function ContactPage() {
                         <SelectValue placeholder="Select a service" />
                       </SelectTrigger>
                       <SelectContent className="rounded-xl border border-border">
-                        <SelectItem value="iso">ISO Frameworks & Certification</SelectItem>
+                        <SelectItem value="iso">ISO Standards & Certification</SelectItem>
                         <SelectItem value="training">Internal Audit & Training</SelectItem>
                         <SelectItem value="data">Data Analysis & Pipelines</SelectItem>
                         <SelectItem value="other">General Consulting</SelectItem>
@@ -152,7 +152,7 @@ export default function ContactPage() {
 
                   <div className="space-y-2">
                     <Label htmlFor="message" className="text-xs uppercase font-bold tracking-widest text-zinc-500">Project Specifics</Label>
-                    <Textarea id="message" placeholder="Provide a brief overview of your infrastructure or compliance bottlenecks..." rows={4} className="resize-none border border-border focus:border-primary rounded-xl font-medium p-4 bg-secondary" />
+                    <Textarea id="message" placeholder="Provide a brief overview of your infrastructure or compliance expansion goals..." rows={4} className="resize-none border border-border focus:border-primary rounded-xl font-medium p-4 bg-secondary" />
                   </div>
 
                   <div className="flex items-start space-x-3 pt-2">

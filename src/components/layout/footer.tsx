@@ -9,10 +9,10 @@ export function Footer() {
     <footer className="bg-primary text-white mt-auto">
       {/* Main Grid */}
       <div className="container py-16 md:py-24">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 md:gap-8">
           
           {/* Brand Col */}
-          <div className="flex flex-col space-y-6">
+          <div className="flex flex-col space-y-6 lg:col-span-2">
             <div className="flex items-center gap-3">
               <Logo className="h-8 w-auto text-white" />
               <div className="flex flex-col">
@@ -20,11 +20,12 @@ export function Footer() {
                 <span className="text-[10px] font-bold uppercase tracking-widest text-[#F8FAFC]/80">GLOBAL</span>
               </div>
             </div>
+            <div className="h-px bg-gradient-to-r from-accent via-white/20 to-transparent w-full" />
             <p className="text-sm text-white/70 leading-relaxed max-w-xs">
-              Enterprise technology and security solutions built on robust, premium architectural standards.
+              Enterprise ISO compliance, AI-powered automation, and precision data engineering — built for the modern regulatory landscape.
             </p>
             <div className="flex items-center gap-2 pt-2">
-              <div className="w-2 h-2 rounded-full bg-green-400"></div>
+              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
               <span className="text-xs font-semibold uppercase tracking-widest text-white/80">Systems Online</span>
             </div>
           </div>
@@ -33,19 +34,23 @@ export function Footer() {
           <div className="flex flex-col space-y-6">
             <h4 className="font-bold text-sm uppercase tracking-widest text-white/50">Services</h4>
             <nav className="flex flex-col space-y-3">
-              <Link href="/services#iso" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">ISO & Frameworks</Link>
+              <Link href="/services#iso" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">ISO & Standards</Link>
               <Link href="/services#training" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">Audit & Training</Link>
               <Link href="/services#data" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">Data Engineering</Link>
             </nav>
           </div>
 
-          {/* Company Col */}
+          {/* AI Services Col */}
           <div className="flex flex-col space-y-6">
-            <h4 className="font-bold text-sm uppercase tracking-widest text-white/50">Company</h4>
+            <h4 className="font-bold text-sm uppercase tracking-widest text-white/50 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>
+              AI Services
+            </h4>
             <nav className="flex flex-col space-y-3">
-              <Link href="/about" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">About Us</Link>
-              <Link href="/technology" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">Technology</Link>
-              <Link href="/contact" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">Contact</Link>
+              <Link href="/services#ai" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">AI Agent Services</Link>
+              <Link href="/services#ai" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">RAG Knowledge Systems</Link>
+              <Link href="/services#ai" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">ISO 42001 AI Governance</Link>
+              <Link href="/services#ai" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">LLM Pipeline Automation</Link>
             </nav>
           </div>
 

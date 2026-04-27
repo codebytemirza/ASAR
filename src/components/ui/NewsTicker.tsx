@@ -27,7 +27,7 @@ const TICKER_MESSAGES = [
     href: '/services#data',
   },
   {
-    text: 'ISO 27001 · SOC 2 · HIPAA · NCA · SAMA · PDPL — 16 Frameworks Supported',
+    text: 'ISO 27001 · SOC 2 · HIPAA · NCA · SAMA · PDPL — 17 Standards Supported',
     cta: null,
     href: null,
   },

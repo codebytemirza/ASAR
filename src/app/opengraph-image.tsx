@@ -132,7 +132,7 @@ export default async function Image() {
               maxWidth: '800px',
             }}
           >
-            ISO Compliance Frameworks, Corporate Governance Training, and Enterprise Data Engineering.
+            ISO Compliance Standards, Corporate Governance Training, and Enterprise Data Engineering.
           </div>
         </div>
 

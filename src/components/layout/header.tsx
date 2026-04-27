@@ -12,6 +12,7 @@ import { Logo } from '../icons/logo';
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
+  { href: '/services#ai', label: 'AI Services' },
   { href: '/technology', label: 'Technology' },
   { href: '/about', label: 'About' },
 ];

@@ -21,7 +21,7 @@ export const HOME_SERVICES = [
     imageId: 'service-data',
   },
   { 
-    title: 'ISO & Risk Frameworks', 
+    title: 'ISO & Risk Standards', 
     description: 'Expert implementation, Gap Assessments, and readiness for major global standards spanning ISO, SOC 2, HIPAA, NCA, and PDPL.',
     imageId: 'service-iso',
   },
@@ -41,14 +41,14 @@ export const SERVICES = [
   },
   {
     icon: Shield,
-    title: "ISO Standards & Compliance Frameworks",
+    title: "ISO Standards & Compliance Standards",
     description: "End-to-end implementation starting with Scoping, Gap Assessment, and Design & Development of documentation. We guide your implementation and perform internal audits for readiness before the final certification audit.",
     technologies: ["ISO/IEC 27001", "ISO 9001", "SOC 2", "HIPAA", "NCA", "SAMA", "PDPL", "NDMO"]
   },
   {
     icon: GraduationCap,
     title: "Compliance Assessments & Training",
-    description: "Ensure ongoing adherence to frameworks with comprehensive Assessments, Audit & Compliance reviews. We also deliver targeted Training programs including general Awareness, advanced Implementer, and Auditor tracks.",
+    description: "Ensure ongoing adherence to standards with comprehensive Assessments, Audit & Compliance reviews. We also deliver targeted Training programs including general Awareness, advanced Implementer, and Auditor tracks.",
     technologies: ["Gap Assessment", "Compliance Audit", "Awareness Training", "Implementer Training", "Auditor Training"]
   }
 ];
@@ -107,7 +107,7 @@ export const INDUSTRIES = [
       },
       {
         title: 'Strict Architecture',
-        description: 'Deep SAMA, NDMO, and ISO 27701 frameworks to secure highly sensitive financial and citizen data.',
+        description: 'Deep SAMA, NDMO, and ISO 27701 standards to secure highly sensitive financial and citizen data.',
       },
     ],
   },

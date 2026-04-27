@@ -61,7 +61,7 @@ export default function PrivacyPolicyPage() {
               <h2 id="data-usage">2. How We Use Data</h2>
               <p>ASAR Global does not, and will never, sell corporate data to third-party data brokers. Data is processed exclusively to:</p>
               <ul className="space-y-2 text-zinc-600">
-                <li>Deliver exact ISO consulting frameworks and data engineering blueprints.</li>
+                <li>Deliver exact ISO consulting standards and data engineering blueprints.</li>
                 <li>Communicate critical infrastructural updates or structural revisions.</li>
                 <li>Comply with binding legal obligations including audit trailing.</li>
                 <li>Enhance site architecture by analyzing telemetry patterns.</li>

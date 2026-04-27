@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     url: baseUrl,
     siteName: 'ASAR Global',
     title: 'ASAR GLOBAL | Enterprise Technology & Compliance Solutions',
-    description: 'Transform your operational infrastructure with precision data engineering and uncompromising global compliance frameworks.',
+    description: 'Transform your operational infrastructure with precision data engineering and uncompromising global compliance standards.',
   },
   twitter: {
     card: 'summary_large_image',

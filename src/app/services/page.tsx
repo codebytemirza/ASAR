@@ -3,16 +3,17 @@ import { ArrowRight, Database, Shield, GraduationCap, CheckCircle2 } from 'lucid
 import { PipelineDiagram } from '@/components/illustrations/PipelineDiagram';
 import { CorporateGrid, AmbientGlow, DotsPattern, HexGrid, DiagonalLines, SweepingGradient, FloatingISOAccents, HeroFloatingIcons } from '@/components/ui/AbstractDecorators';
 import { NewsTicker } from '@/components/ui/NewsTicker';
+import { AIServices } from '@/components/ui/AIServices';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Enterprise Services',
-  description: 'ISO Compliance Frameworks, Corporate Governance Training, Enterprise Data Engineering, and exactly-once ETL pipelines.',
+  description: 'ISO Compliance Standards, Corporate Governance Training, Enterprise Data Engineering, and exactly-once ETL pipelines.',
   openGraph: {
     title: 'Enterprise Services | ASAR Global',
-    description: 'ISO Compliance Frameworks, Corporate Governance Training, Enterprise Data Engineering, and exactly-once ETL pipelines.',
+    description: 'ISO Compliance Standards, Corporate Governance Training, Enterprise Data Engineering, and exactly-once ETL pipelines.',
     url: '/services',
   },
 };
@@ -29,12 +30,12 @@ export default function ServicesPage() {
         <HeroFloatingIcons />
         <div className="container relative z-10">
           <div className="max-w-4xl">
-            <span className="section-label">Enterprise Services</span>
+            <span className="section-label animate-fade-in">Enterprise Services</span>
             <h1 className="hero-h1 text-5xl md:text-7xl mb-6">
               Solutions That <br /><span className="text-primary">Secure & Scale.</span>
             </h1>
-            <p className="text-xl md:text-2xl font-medium max-w-2xl leading-relaxed text-zinc-600">
-              Transform your operational infrastructure with uncompromising global compliance frameworks and precision data engineering.
+            <p className="text-xl md:text-2xl font-medium max-w-2xl leading-relaxed text-zinc-600 animate-fade-up delay-300">
+              Transform your operational infrastructure with uncompromising global compliance standards and precision data engineering.
             </p>
           </div>
         </div>
@@ -43,24 +44,21 @@ export default function ServicesPage() {
       {/* ── News Ticker ── Between page header and first service pillar */}
       <NewsTicker />
 
-      {/* PILLAR 2: ISO Frameworks */}
-      <section id="iso" className="section-padding bg-secondary border-b border-border relative overflow-hidden">
-        {/* HexGrid: hexagonal pattern reinforces structured framework narrative */}
+      {/* PILLAR 2: ISO Standards */}
+      <section id="iso" className="section-padding bg-white border-b border-border relative overflow-hidden">
         <HexGrid />
         <FloatingISOAccents />
         <div className="container relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start flex-col-reverse lg:flex-row-reverse">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
             <div className="order-1 lg:order-2">
-              <div className="w-16 h-16 bg-primary/10 flex items-center justify-center rounded-xl mb-6 border border-primary/20">
-                <Shield className="h-8 w-8 text-primary" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4">ISO & Compliance Frameworks</h2>
+              <span className="section-label animate-fade-in">ISO & Compliance</span>
+              <h2 className="text-3xl md:text-5xl font-extrabold text-primary mb-6 leading-tight">ISO & Compliance<br />Standards</h2>
               <p className="text-lg text-zinc-600 mb-4 leading-relaxed">
                 Navigating the complex landscape of regulatory requirements. We offer end-to-end support—from scoping and documentation design to full implementation—for global standards.
               </p>
               <p className="text-sm font-medium text-zinc-500 mb-8 leading-relaxed">
-                Whether you require <strong>ISO 27001 Consultancy</strong> to secure your Information Security Management System (ISMS), or you need strict alignment with regional mandates like Saudi Arabia's <strong>NCA</strong> and <strong>SAMA</strong> frameworks, our enterprise IT governance architects ensure you pass external audits with zero friction. We specialize in mapping corporate risk profiles to actionable security protocols.
+                Whether you require <strong>ISO 27001 Consultancy</strong> to secure your ISMS, or need strict alignment with <strong>NCA</strong> and <strong>SAMA</strong> standards, our enterprise governance architects ensure you pass external audits seamlessly.
               </p>
 
               <div className="mb-8">
@@ -79,11 +77,11 @@ export default function ServicesPage() {
               <div className="mb-10">
                 <h3 className="font-bold text-sm uppercase tracking-widest text-primary w-full border-b border-border pb-2 mb-4">Real-World Use Cases</h3>
                 <div className="space-y-4">
-                  <div className="bg-white border border-border p-4 rounded-lg shadow-sm">
-                    <h4 className="font-bold text-primary mb-1">SOC 2 Cloud Compliance</h4>
-                    <p className="text-sm text-zinc-600">Restructuring corporate cloud access policies to meet strict SOC 2 Type II trust service criteria for an enterprise SaaS deployment.</p>
+                  <div className="group bg-primary p-5 rounded-xl border border-primary/20 hover:bg-[#0a2f6b] transition-colors">
+                    <h4 className="font-bold text-white mb-1">SOC 2 Compliance</h4>
+                    <p className="text-sm text-white/70">Restructuring corporate access policies to meet strict SOC 2 Type II trust service criteria for an enterprise deployment.</p>
                   </div>
-                  <div className="bg-white border border-border p-4 rounded-lg shadow-sm">
+                  <div className="group bg-secondary border border-border p-5 rounded-xl hover:border-accent transition-colors">
                     <h4 className="font-bold text-primary mb-1">Healthcare PDPL Alignment</h4>
                     <p className="text-sm text-zinc-600">Auditing and restricting patient data pipelines to ensure local PDPL and HIPAA regulatory compliance preceding a major health portal launch.</p>
                   </div>
@@ -96,13 +94,13 @@ export default function ServicesPage() {
             </div>
 
             <div className="order-2 lg:order-1 border border-border bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="font-extrabold text-lg uppercase mb-6 text-primary">16 Supported Frameworks</h3>
+              <h3 className="font-extrabold text-lg uppercase mb-6 text-primary">17 Supported Standards</h3>
               <div className="grid grid-cols-2 gap-3">
                 {[
                   'ISO/IEC 20000-1', 'ISO/IEC 27001', 'ISO/IEC 27701', 'ISO/IEC 42001',
-                  'ISO 9001', 'ISO 18295', 'ISO 14001', 'ISO 45001',
-                  'ISO 50001', 'ISO 55001', 'NCA', 'SAMA',
-                  'PDPL', 'NDMO', 'SOC 2', 'HIPAA'
+                  'ISO 9001', 'ISO 18295', 'ISO 14001', 'ISO 22301',
+                  'ISO 45001', 'ISO 50001', 'ISO 55001', 'NCA',
+                  'SAMA', 'PDPL', 'NDMO', 'SOC 2', 'HIPAA'
                 ].map((iso) => (
                   <div key={iso} className="flex items-center gap-2 bg-secondary border border-border p-3 rounded-lg text-xs font-bold text-primary">
                     <ArrowRight className="h-3 w-3 text-primary" /> {iso}
@@ -136,7 +134,7 @@ export default function ServicesPage() {
                 <div className="gradient-rule"></div>
                 <h3 className="font-bold text-sm uppercase tracking-widest text-primary w-full border-b border-border pb-2 mb-4">Key Benefits</h3>
                 <ul className="space-y-3">
-                  {['Identifies critical operational gaps before external penalties.', 'Eliminates compliance fatigue through practical instruction.', 'Generates a self-sustaining culture of internal governance.'].map((benefit, i) => (
+                  {['Identifies critical operational gaps before external penalties.', 'Streamlines compliance through practical instruction.', 'Generates a self-sustaining culture of internal governance.'].map((benefit, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 shrink-0 text-accent" />
                       <span className="text-zinc-700 font-medium">{benefit}</span>
@@ -154,7 +152,7 @@ export default function ServicesPage() {
                   </div>
                   <div className="bg-secondary border border-border p-4 rounded-lg">
                     <h4 className="font-bold text-primary mb-1">Implementer Workshops</h4>
-                    <p className="text-sm text-zinc-600">Training your internal IT leads on the exact architectural standards necessary to maintain newly minted compliance frameworks sustainably.</p>
+                    <p className="text-sm text-zinc-600">Training your internal IT leads on the exact architectural standards necessary to maintain newly minted compliance standards sustainably.</p>
                   </div>
                 </div>
               </div>
@@ -184,7 +182,7 @@ export default function ServicesPage() {
                   <h4 className="font-bold text-primary mb-1 uppercase tracking-wider text-sm flex items-center gap-2">
                     <Database className="w-4 h-4" /> Certified Implementer
                   </h4>
-                  <p className="text-sm text-zinc-400 font-medium">Technical curriculum for mid-level managers tasked with deploying and administering frameworks.</p>
+                  <p className="text-sm text-zinc-400 font-medium">Technical curriculum for mid-level managers tasked with deploying and administering standards.</p>
                 </div>
                 <div className="bg-white/10 h-px w-full"></div>
                 <div>
@@ -215,7 +213,7 @@ export default function ServicesPage() {
                 We engineer robust ETL/ELT pipelines and data architectures designed to process massive corporate payloads with exactly-once precision. We turn fragmented data into intelligent business outcomes.
               </p>
               <p className="text-sm font-medium text-zinc-500 mb-8 leading-relaxed">
-                In today's corporate landscape, <strong>Enterprise Data Engineering</strong> is the backbone of strategic decision making. Our architects build zero-friction, scalable data pipelines that unify siloed databases into secure data lakes and warehouses. By leveraging exactly-once processing guarantees, we ensure your business intelligence dashboards reflect absolute truth, eliminating data loss or duplication.
+                In today's corporate landscape, <strong>Enterprise Data Engineering</strong> is the backbone of strategic decision making. Our architects build seamless, scalable data pipelines that unify siloed databases into secure data lakes and warehouses. By leveraging exactly-once processing guarantees, we ensure your business intelligence dashboards reflect absolute truth, eliminating data loss or duplication.
               </p>
 
               <div className="mb-8">
@@ -257,35 +255,45 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <AIServices />
+
       {/* Services FAQ Section for SEO */}
-      <section className="section-padding bg-muted/10 border-b border-border relative overflow-hidden">
-        <CorporateGrid />
-        <FloatingISOAccents />
-        <div className="container max-w-4xl relative z-10">
-          <div className="text-center mb-12">
-            <span className="section-label mx-auto">Service Inquiries</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-primary">Enterprise Compliance FAQs</h2>
+      <section className="section-padding bg-primary border-b border-border relative overflow-hidden">
+        <CorporateGrid color="white" />
+        <FloatingISOAccents color="white" />
+        <div className="container relative z-10">
+          <div className="text-center mb-16">
+            <span className="section-label mx-auto bg-white/10 text-white border-white/20">Service Inquiries</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-4">Enterprise Compliance FAQs</h2>
+            <p className="text-white/60 mt-3 font-medium">Common questions from enterprise clients across the MEA region.</p>
           </div>
-          <Accordion type="single" collapsible className="w-full bg-white rounded-xl border border-border shadow-sm p-2">
-            <AccordionItem value="faq-1">
-              <AccordionTrigger className="text-left font-bold text-primary hover:no-underline hover:text-accent px-4 py-4">How does ASAR approach ISO 27001 implementation?</AccordionTrigger>
-              <AccordionContent className="text-zinc-600 font-medium px-4 pb-4 leading-relaxed">
-                Our ISO 27001 implementation strategy begins with a comprehensive gap analysis of your current IT infrastructure. We then blueprint the necessary Information Security Management System (ISMS) controls, draft mandatory documentation, and deploy the required technical architecture. Finally, our corporate governance training ensures your team is ready for the external certification audit.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="faq-2">
-              <AccordionTrigger className="text-left font-bold text-primary hover:no-underline hover:text-accent px-4 py-4">What makes an exactly-once ETL pipeline necessary?</AccordionTrigger>
-              <AccordionContent className="text-zinc-600 font-medium px-4 pb-4 leading-relaxed">
-                Exactly-once ETL processing guarantees that data is neither lost nor duplicated as it moves from source to destination. This level of enterprise data engineering precision is absolutely critical for financial institutions and healthcare providers where even a single duplicated record could trigger severe regulatory compliance violations under SAMA or HIPAA.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="faq-3">
-              <AccordionTrigger className="text-left font-bold text-primary hover:no-underline hover:text-accent px-4 py-4">Can you integrate regional frameworks like NCA and NDMO into existing systems?</AccordionTrigger>
-              <AccordionContent className="text-zinc-600 font-medium px-4 pb-4 leading-relaxed">
-                Absolutely. We specialize in mapping strict Middle Eastern regulatory frameworks—such as the National Cybersecurity Authority (NCA) guidelines and the National Data Management Office (NDMO) standards—onto your existing corporate architecture without requiring massive structural rebuilds.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {[
+              {
+                num: '01',
+                q: 'How does ASAR approach ISO 27001 implementation?',
+                a: 'Our ISO 27001 strategy begins with a comprehensive gap analysis of your IT infrastructure. We then blueprint the ISMS controls, draft mandatory documentation, and deploy the required technical architecture. Our governance training ensures your team is fully prepared for the external certification audit.'
+              },
+              {
+                num: '02',
+                q: 'What makes an exactly-once ETL pipeline necessary?',
+                a: 'Exactly-once ETL guarantees data is neither lost nor duplicated from source to destination. This precision is critical for financial institutions and healthcare providers where even a single duplicated record could trigger severe regulatory violations under SAMA or HIPAA.'
+              },
+              {
+                num: '03',
+                q: 'Can you integrate regional standards like NCA and NDMO?',
+                a: 'Absolutely. We specialize in mapping strict MEA regulatory standards — such as the National Cybersecurity Authority (NCA) and National Data Management Office (NDMO) — onto your existing corporate architecture without requiring massive structural rebuilds.'
+              },
+            ].map((faq) => (
+              <div key={faq.num} className="group bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300 flex flex-col">
+                <div className="text-5xl font-black text-white/10 mb-6 group-hover:text-accent/30 transition-colors font-mono">{faq.num}</div>
+                <h3 className="text-lg font-bold text-white mb-4 leading-snug">{faq.q}</h3>
+                <div className="h-px bg-gradient-to-r from-accent/40 to-transparent mb-4" />
+                <p className="text-white/60 text-sm font-medium leading-relaxed flex-grow">{faq.a}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
