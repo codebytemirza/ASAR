@@ -1,6 +1,4 @@
 import { ImageResponse } from 'next/og';
-import { readFileSync } from 'fs';
-import { join } from 'path';
 
 export const alt = 'ASAR GLOBAL - Enterprise Technology & Compliance Solutions';
 export const size = {
@@ -9,16 +7,34 @@ export const size = {
 };
 
 export const contentType = 'image/png';
+export const runtime = 'edge';
+
+function arrayBufferToBase64(buffer: ArrayBuffer) {
+  let binary = '';
+  const bytes = new Uint8Array(buffer);
+  const len = bytes.byteLength;
+  for (let i = 0; i < len; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return btoa(binary);
+}
 
 export default async function Image() {
-  const logoData = readFileSync(join(process.cwd(), 'public', 'logo.png'));
-  const logoBase64 = `data:image/png;base64,${logoData.toString('base64')}`;
+  let logoBase64 = '';
+  try {
+    const logoData = await fetch(new URL('../../public/logo.png', import.meta.url)).then((res) =>
+      res.arrayBuffer()
+    );
+    logoBase64 = `data:image/png;base64,${arrayBufferToBase64(logoData)}`;
+  } catch (e) {
+    console.error('Failed to load logo', e);
+  }
 
   return new ImageResponse(
     (
       <div
         style={{
-          background: 'linear-gradient(135deg, #061833 0%, #0D2B5A 100%)',
+          background: '#082652', // Deep corporate navy
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -26,11 +42,43 @@ export default async function Image() {
           alignItems: 'flex-start',
           justifyContent: 'center',
           padding: '80px',
-          color: 'white',
           fontFamily: 'sans-serif',
+          position: 'relative',
+          overflow: 'hidden',
         }}
       >
-        {/* Subtle geometric background overlay */}
+        {/* Sweeping Gradient / Glow with Shield Icon */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '-20%',
+            right: '-10%',
+            width: '800px',
+            height: '800px',
+            background: 'radial-gradient(circle, rgba(37, 99, 235, 0.4) 0%, rgba(8, 38, 82, 0) 70%)',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="400"
+            height="400"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="rgba(255, 255, 255, 0.05)"
+            strokeWidth="0.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            style={{ transform: 'rotate(15deg)' }}
+          >
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+          </svg>
+        </div>
+
+        {/* Corporate Grid */}
         <div
           style={{
             position: 'absolute',
@@ -38,54 +86,66 @@ export default async function Image() {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: 'radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.05) 2px, transparent 0)',
-            backgroundSize: '100px 100px',
+            backgroundImage: 'linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
           }}
         />
 
-        {/* Top Accent Line */}
-        <div
-          style={{
-            width: '120px',
-            height: '6px',
-            background: '#007BFF',
-            marginBottom: '40px',
-            borderRadius: '3px',
-          }}
-        />
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          {/* Logo or Text Fallback */}
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '40px' }}>
+            {logoBase64 ? (
+              <img src={logoBase64} alt="ASAR GLOBAL Logo" style={{ height: '60px', width: 'auto', marginRight: '20px' }} />
+            ) : (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <div style={{ width: '40px', height: '40px', background: '#2563eb', borderRadius: '4px' }} />
+                <span style={{ color: 'white', fontSize: '40px', fontWeight: 900, letterSpacing: '0.05em' }}>ASAR GLOBAL</span>
+              </div>
+            )}
+          </div>
 
-        <div
-          style={{
-            display: 'flex',
-            marginBottom: '32px',
-          }}
-        >
-          <img src={logoBase64} alt="ASAR GLOBAL Logo" style={{ height: '80px', width: 'auto' }} />
+          {/* Accent Line */}
+          <div style={{ width: '80px', height: '6px', background: '#2563eb', marginBottom: '40px' }} />
+
+          {/* Main Title */}
+          <div
+            style={{
+              color: 'white',
+              fontSize: '64px',
+              fontWeight: 800,
+              letterSpacing: '-0.02em',
+              lineHeight: 1.1,
+              maxWidth: '900px',
+              marginBottom: '24px',
+            }}
+          >
+            Solutions That Secure &amp; Scale.
+          </div>
+
+          {/* Subtitle */}
+          <div
+            style={{
+              color: 'rgba(255, 255, 255, 0.7)',
+              fontSize: '32px',
+              fontWeight: 500,
+              lineHeight: 1.4,
+              maxWidth: '800px',
+            }}
+          >
+            ISO Compliance Frameworks, Corporate Governance Training, and Enterprise Data Engineering.
+          </div>
         </div>
 
-        <div
-          style={{
-            display: 'flex',
-            fontSize: '32px',
-            fontWeight: 500,
-            color: 'rgba(255, 255, 255, 0.8)',
-            maxWidth: '800px',
-            lineHeight: 1.4,
-          }}
-        >
-          Enterprise Data Engineering & Uncompromising Corporate Compliance Architectures.
-        </div>
-        
-        {/* URL at bottom */}
+        {/* Footer URL */}
         <div
           style={{
             position: 'absolute',
-            bottom: '60px',
+            bottom: '80px',
             left: '80px',
             display: 'flex',
+            color: '#2563eb',
             fontSize: '24px',
-            fontWeight: 600,
-            color: '#007BFF',
+            fontWeight: 700,
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
           }}
