@@ -33,9 +33,9 @@ export function Footer() {
           <div className="flex flex-col space-y-6">
             <h4 className="font-bold text-sm uppercase tracking-widest text-white/50">Services</h4>
             <nav className="flex flex-col space-y-3">
-              <Link href="/services#data" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">Data Engineering</Link>
               <Link href="/services#iso" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">ISO & Frameworks</Link>
               <Link href="/services#training" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">Audit & Training</Link>
+              <Link href="/services#data" className="text-sm font-semibold text-white/80 hover:text-white transition-colors">Data Engineering</Link>
             </nav>
           </div>
 

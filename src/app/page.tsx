@@ -1,15 +1,16 @@
 import Link from 'next/link';
 import { ArrowRight, Shield, Brain, Activity, Eye, Play, Database, GraduationCap } from 'lucide-react';
-import { CorporateGrid, TechMesh, AmbientGlow, CornerAccent, DotsPattern, DiagonalLines } from '@/components/ui/AbstractDecorators';
+import { CorporateGrid, TechMesh, AmbientGlow, CornerAccent, DotsPattern, DiagonalLines, SweepingGradient, FloatingISOAccents, HeroFloatingIcons } from '@/components/ui/AbstractDecorators';
 import { NewsTicker } from '@/components/ui/NewsTicker';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'ASAR GLOBAL | Enterprise Technology & Compliance Solutions',
-  description: 'ASAR Global specializes in Data Engineering, ISO Consultancy, automated ETL pipelines, and uncompromising corporate compliance architectures.',
+  description: 'ASAR Global specializes in ISO Consultancy, uncompromising corporate compliance architectures, automated ETL pipelines, and Data Engineering.',
   openGraph: {
     title: 'ASAR GLOBAL | Enterprise Technology & Compliance Solutions',
-    description: 'Transform your operational infrastructure with precision data engineering and uncompromising global compliance frameworks.',
+    description: 'Transform your operational infrastructure with uncompromising global compliance frameworks and precision data engineering.',
     url: '/',
   },
 };
@@ -17,12 +18,15 @@ export default function Home() {
   return (
     <>
       <section className="hero min-h-screen flex items-center relative overflow-hidden bg-background">
+        {/* Sweeping blue background blur */}
+        <SweepingGradient />
         {/* Grid: fine structural depth across the full hero */}
         <CorporateGrid />
         {/* Soft bloom: perceived depth centered behind the headline */}
         <AmbientGlow position="center" color="primary" size="lg" />
         {/* Corner bracket: top-left corporate framing */}
         <CornerAccent corner="top-left" />
+        <HeroFloatingIcons />
 
         <div className="container grid-2-cols relative z-10 py-20 min-h-screen">
           {/* Text Content */}
@@ -41,14 +45,14 @@ export default function Home() {
             <div className="h-0.5 w-32 bg-foreground mb-12"></div>
 
             <p className="text-xl md:text-2xl font-bold max-w-[45ch] mb-12 leading-relaxed text-[#082652] tracking-tight">
-              Enterprise-grade Data Engineering pipelines, robust ISO frameworks, and precise compliance audits for the modern era.
+              Robust ISO frameworks, precise compliance audits, and enterprise-grade Data Engineering pipelines for the modern era.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
-              <Link href="/contact" className="btn btn-primary h-14 md:h-16 px-8 md:px-10 text-base md:text-lg">
-                Start Protocol
+              <Link href="/contact" className="btn btn-primary h-14 md:h-16 px-8 md:px-10 text-base md:text-lg shadow-lg shadow-primary/20">
+                Request Architectural Blueprint
               </Link>
-              <Link href="/services" className="btn btn-outline h-14 md:h-16 px-8 md:px-10 text-base md:text-lg">
+              <Link href="/services" className="btn btn-outline h-14 md:h-16 px-8 md:px-10 text-base md:text-lg bg-white/50 backdrop-blur-sm border-border">
                 Explore Modules
               </Link>
             </div>
@@ -66,20 +70,20 @@ export default function Home() {
               </div>
               <div className="tech-grid grid-cols-2">
                 <div className="p-8 border-r border-b border-foreground group hover:bg-primary transition-all">
-                  <span className="text-[10px] font-black uppercase text-muted-foreground block mb-4 group-hover:text-white/70 transition-colors">Data_Flow</span>
-                  <div className="text-3xl font-black group-hover:text-white transition-colors">24/7</div>
-                </div>
-                <div className="p-8 border-b border-foreground group hover:bg-primary transition-all">
                   <span className="text-[10px] font-black uppercase text-muted-foreground block mb-4 group-hover:text-white/70 transition-colors">ISO_Status</span>
                   <div className="text-3xl font-black text-accent group-hover:text-white transition-colors">Ready</div>
                 </div>
-                <div className="p-8 border-r border-foreground group hover:bg-primary transition-all">
-                  <span className="text-[10px] font-black uppercase text-muted-foreground block mb-4 group-hover:text-white/70 transition-colors">Pipelines</span>
-                  <div className="text-3xl font-black group-hover:text-white transition-colors">99%</div>
-                </div>
-                <div className="p-8 group hover:bg-primary transition-all">
+                <div className="p-8 border-b border-foreground group hover:bg-primary transition-all">
                   <span className="text-[10px] font-black uppercase text-muted-foreground block mb-4 group-hover:text-white/70 transition-colors">Compliance</span>
                   <div className="badge shadow-none translate-x-0 translate-y-0 text-[8px] group-hover:bg-white group-hover:text-primary transition-colors">ISO_READY</div>
+                </div>
+                <div className="p-8 border-r border-foreground group hover:bg-primary transition-all">
+                  <span className="text-[10px] font-black uppercase text-muted-foreground block mb-4 group-hover:text-white/70 transition-colors">Data_Flow</span>
+                  <div className="text-3xl font-black group-hover:text-white transition-colors">24/7</div>
+                </div>
+                <div className="p-8 group hover:bg-primary transition-all">
+                  <span className="text-[10px] font-black uppercase text-muted-foreground block mb-4 group-hover:text-white/70 transition-colors">Pipelines</span>
+                  <div className="text-3xl font-black group-hover:text-white transition-colors">99%</div>
                 </div>
               </div>
               <div className="p-6 border-t-2 border-foreground bg-gradient-to-r from-primary to-primary-light">
@@ -99,6 +103,8 @@ export default function Home() {
         <TechMesh />
         {/* DotsPattern: fills the wide background area on either side of the content */}
         <DotsPattern />
+        {/* Floating ISO Accents for security theme */}
+        <FloatingISOAccents />
         <div className="container relative z-10">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
             <div className="lg:w-1/2">
@@ -165,9 +171,9 @@ export default function Home() {
 
           <div className="tech-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-2 border-foreground shadow-[12px_12px_0_#000] md:shadow-[16px_16px_0_#000]">
             {[
-              { title: 'Data Analytics', desc: 'Comprehensive Data Engineering, ETL, Data Pipelines, and Exploratory Data Analysis (EDA) driving outcomes.', icon: Database, href: '/services#data' },
               { title: 'ISO Frameworks', desc: 'Implementation for 16 specialized frameworks including ISO 27001, ISO 9001, SOC 2, HIPAA, NCA, SAMA, NDMO, and PDPL.', icon: Shield, href: '/services#iso' },
-              { title: 'Audit & Training', desc: 'End-to-end compliance reviews, with specialized Implementer, Auditor, and general Awareness trainings.', icon: GraduationCap, href: '/services#training' }
+              { title: 'Audit & Training', desc: 'End-to-end compliance reviews, with specialized Implementer, Auditor, and general Awareness trainings.', icon: GraduationCap, href: '/services#training' },
+              { title: 'Data Analytics', desc: 'Comprehensive Data Engineering, ETL, Data Pipelines, and Exploratory Data Analysis (EDA) driving outcomes.', icon: Database, href: '/services#data' }
             ].map((item, i) => (
               <div key={i} className="group hover:bg-primary transition-all duration-300 p-8 md:p-10 border-b md:border-b-0 md:border-l border-foreground first:border-l-0">
                 <div className="card-icon group-hover:bg-white group-hover:text-primary border-foreground transition-all">
@@ -191,12 +197,12 @@ export default function Home() {
               {/* White corner accent: frames the dark block professionally */}
               <CornerAccent corner="bottom-right" color="white" />
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
-                <Activity className="h-64 w-64 rotate-[-15deg] group-hover:text-white" />
+                <Shield className="h-64 w-64 rotate-[-15deg] group-hover:text-white" />
               </div>
               <div className="text-left md:max-w-md relative z-10 w-full">
-                <h3 className="text-3xl lg:text-4xl font-black uppercase mb-6 group-hover:text-white transition-colors leading-tight">Data-Driven<br />Transformation</h3>
+                <h3 className="text-3xl lg:text-4xl font-black uppercase mb-6 group-hover:text-white transition-colors leading-tight">Uncompromising<br />Compliance</h3>
                 <p className="text-zinc-400 group-hover:text-white/80 mb-0 leading-relaxed transition-colors uppercase text-xs font-bold">
-                  "Turn noise into narrative. We help you understand the feeling of your market through precision data."
+                  "Bulletproof security and audit readiness built natively into your core infrastructure."
                 </p>
               </div>
               <div className="flex gap-4 relative z-10 w-full md:w-auto mt-6 md:mt-0 justify-start md:justify-end">
@@ -215,8 +221,11 @@ export default function Home() {
       </section>
 
       {/* CTA Band */}
-      <section className="min-h-[40vh] md:min-h-[50vh] flex flex-col justify-center bg-primary text-white py-16 md:py-20 lg:py-24">
-        <div className="container flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-12">
+      <section className="min-h-[40vh] md:min-h-[50vh] flex flex-col justify-center bg-primary text-white py-16 md:py-20 lg:py-24 relative overflow-hidden">
+        {/* Corporate Grid on background */}
+        <CorporateGrid color="white" />
+        <FloatingISOAccents color="white" />
+        <div className="container relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-12">
           <div className="text-left">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-none mb-4">Ready to <br />Deploy?</h2>
             <p className="text-lg md:text-xl opacity-90 font-bold uppercase tracking-tight">Schedule your consultation today.</p>

@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label";
 import { CheckCircle2, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { CorporateGrid, CornerAccent, DotsPattern } from "@/components/ui/AbstractDecorators";
+import { CorporateGrid, CornerAccent, DotsPattern, FloatingISOAccents, SweepingGradient, AmbientGlow, HeroFloatingIcons } from "@/components/ui/AbstractDecorators";
 
 export default function ContactPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -32,18 +32,24 @@ export default function ContactPage() {
   return (
     <>
       <section className="py-20 md:py-32 min-h-screen bg-secondary border-b border-border relative overflow-hidden">
+        <SweepingGradient />
+        <AmbientGlow position="top-left" color="primary" size="lg" />
         {/* Grid: structural framing on the full page */}
         <CorporateGrid />
         {/* DotsPattern: fills the wide header background above the content */}
         <DotsPattern />
+        <HeroFloatingIcons />
         {/* Corner accent: top-right bracket framing */}
         <CornerAccent corner="top-right" />
         <div className="container overflow-hidden">
           <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24">
             <span className="section-label mx-auto">Initiate Consultation</span>
             <h1 className="hero-h1 mb-6 text-5xl md:text-7xl tracking-tight">Begin your <span className="text-primary">Transformation.</span></h1>
-            <p className="text-xl md:text-2xl text-zinc-600 font-medium">
+            <p className="text-xl md:text-2xl text-zinc-600 font-medium mb-6">
               Fast-track your data engineering pipelines and secure your market position through uncompromising ISO compliance.
+            </p>
+            <p className="text-sm font-medium text-zinc-500 max-w-3xl mx-auto">
+              Contact ASAR Global's expert consultants for <strong>ISO Certification</strong>, <strong>Corporate Governance Training</strong>, and <strong>Enterprise Data Engineering</strong>. Whether you are operating in the MEA region or globally, our architects will blueprint your secure operational infrastructure.
             </p>
           </div>
 
@@ -137,9 +143,9 @@ export default function ContactPage() {
                         <SelectValue placeholder="Select a service" />
                       </SelectTrigger>
                       <SelectContent className="rounded-xl border border-border">
-                        <SelectItem value="data">Data Analysis & Pipelines</SelectItem>
                         <SelectItem value="iso">ISO Frameworks & Certification</SelectItem>
                         <SelectItem value="training">Internal Audit & Training</SelectItem>
+                        <SelectItem value="data">Data Analysis & Pipelines</SelectItem>
                         <SelectItem value="other">General Consulting</SelectItem>
                       </SelectContent>
                     </Select>
@@ -171,7 +177,7 @@ export default function ContactPage() {
               <div className="mt-8 flex flex-col md:flex-row gap-4 items-center justify-center">
                 <div className="text-sm font-bold text-zinc-600">Email: <a href="mailto:contact@asarglobal.com" className="text-primary hover:underline">contact@asarglobal.com</a></div>
                 <div className="hidden md:block w-1.5 h-1.5 bg-border rounded-full"></div>
-                <div className="text-sm font-bold text-zinc-600">HQ: <span className="text-primary">ASAR Global Operations</span></div>
+                <div className="text-sm font-bold text-zinc-600">Global HQ: <span className="text-primary">ASAR Corporate Operations</span></div>
               </div>
             </div>
 

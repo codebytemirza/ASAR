@@ -1,4 +1,5 @@
 import React, { useId } from 'react';
+import { Shield, Lock, FileText, CheckCircle2 } from 'lucide-react';
 
 /**
  * AbstractDecorators — Subtle corporate SVG background elements.
@@ -10,6 +11,7 @@ import React, { useId } from 'react';
 
 interface DecoratorProps {
   className?: string;
+  color?: 'primary' | 'white';
 }
 
 const DecoratorWrapper = ({
@@ -32,9 +34,10 @@ const DecoratorWrapper = ({
 // Purpose: Fine orthogonal grid — adds structural depth to hero/architecture.
 // Use on: Full-bleed sections with solid light backgrounds.
 // ─────────────────────────────────────────────────────────────────────────────
-export const CorporateGrid = ({ className = '' }: DecoratorProps) => {
+export const CorporateGrid = ({ className = '', color = 'primary' }: DecoratorProps) => {
   const id = useId();
   const patternId = `cg-${id}`.replace(/:/g, '');
+  const stroke = color === 'white' ? '#ffffff' : 'hsl(var(--primary))';
 
   return (
     <DecoratorWrapper className={className}>
@@ -44,7 +47,7 @@ export const CorporateGrid = ({ className = '' }: DecoratorProps) => {
             <path
               d="M 48 0 L 0 0 0 48"
               fill="none"
-              stroke="hsl(var(--primary))"
+              stroke={stroke}
               strokeWidth="0.5"
               strokeOpacity="0.06"
             />
@@ -130,18 +133,38 @@ export const AmbientGlow = ({
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// SWEEPING GRADIENT
+// Purpose: Large, dynamic blue blur sweeping across the background (Tkxel style).
+// Use on: Main Hero sections to add vibrant enterprise energy.
+// ─────────────────────────────────────────────────────────────────────────────
+export const SweepingGradient = ({ className = '' }: DecoratorProps) => {
+  return (
+    <div
+      className={`pointer-events-none absolute inset-0 overflow-hidden select-none z-0 ${className}`}
+      aria-hidden="true"
+    >
+      <div className="absolute top-[-10%] left-[-10%] w-[120%] h-[120%] opacity-40">
+        <div className="absolute top-[20%] left-[30%] w-[70vw] h-[70vw] max-w-[1000px] max-h-[1000px] bg-accent/30 rounded-full blur-[120px] mix-blend-multiply md:blur-[180px] animate-pulse" />
+        <div className="absolute top-[10%] right-[10%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-primary/20 rounded-full blur-[100px] mix-blend-multiply md:blur-[160px]" />
+        <div className="absolute bottom-[-10%] left-[10%] w-[80vw] h-[80vw] max-w-[1200px] max-h-[1200px] bg-accent/20 rounded-full blur-[140px] mix-blend-multiply md:blur-[200px]" />
+      </div>
+    </div>
+  );
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // CORNER ACCENT
 // Purpose: Minimal L-bracket — corporate framing on section headers.
 // Use on: Top corners of hero or major page headers.
 // ─────────────────────────────────────────────────────────────────────────────
 interface CornerAccentProps extends DecoratorProps {
   corner?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
-  color?: 'navy' | 'white';
+  color?: 'primary' | 'white';
 }
 
 export const CornerAccent = ({
   corner = 'top-left',
-  color = 'navy',
+  color = 'primary',
   className = '',
 }: CornerAccentProps) => {
   const posMap = {
@@ -174,12 +197,12 @@ export const CornerAccent = ({
 // ─────────────────────────────────────────────────────────────────────────────
 interface RadialLinesProps extends DecoratorProps {
   corner?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';
-  color?: 'navy' | 'white';
+  color?: 'primary' | 'white';
 }
 
 export const RadialLines = ({
   corner = 'top-right',
-  color = 'navy',
+  color = 'primary',
   className = '',
 }: RadialLinesProps) => {
   const stroke = color === 'white' ? '#ffffff' : 'hsl(var(--primary))';
@@ -295,6 +318,44 @@ export const HexGrid = ({ className = '' }: DecoratorProps) => {
         </defs>
         <rect width="100%" height="100%" fill={`url(#${patternId})`} />
       </svg>
+    </DecoratorWrapper>
+  );
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// FLOATING ISO ACCENTS
+// Purpose: Scattered, low-opacity security/compliance SVG icons in the background.
+// Use on: All pages to reinforce the core ISO messaging.
+// ─────────────────────────────────────────────────────────────────────────────
+export const FloatingISOAccents = ({ className = '', color = 'primary' }: DecoratorProps) => {
+  const textColor = color === 'white' ? 'text-white' : 'text-primary';
+  return (
+    <DecoratorWrapper className={className}>
+      <div className="absolute inset-0 overflow-hidden opacity-[0.05] pointer-events-none">
+        <Shield className={`absolute top-[15%] left-[10%] w-32 h-32 ${textColor} rotate-[-10deg]`} />
+        <Lock className={`absolute bottom-[20%] right-[15%] w-40 h-40 ${textColor} rotate-[15deg]`} />
+        <FileText className={`absolute top-[40%] right-[10%] w-24 h-24 ${textColor} rotate-[5deg]`} />
+        <CheckCircle2 className={`absolute bottom-[30%] left-[20%] w-28 h-28 ${textColor} rotate-[-5deg]`} />
+      </div>
+    </DecoratorWrapper>
+  );
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// HERO FLOATING ICONS
+// Purpose: Fills empty space on the right side of hero sections with compliance icons.
+// ─────────────────────────────────────────────────────────────────────────────
+export const HeroFloatingIcons = ({ className = '', color = 'primary' }: DecoratorProps) => {
+  const textColor = color === 'white' ? 'text-white' : 'text-primary';
+  return (
+    <DecoratorWrapper className={className}>
+      <div className="absolute inset-0 overflow-hidden opacity-[0.06] pointer-events-none">
+        {/* Placed predominantly on the middle-to-right side to fill empty space */}
+        <Shield className={`absolute top-[20%] right-[30%] w-48 h-48 ${textColor} rotate-[12deg]`} />
+        <CheckCircle2 className={`absolute bottom-[15%] right-[15%] w-32 h-32 ${textColor} rotate-[-15deg]`} />
+        <Lock className={`absolute top-[60%] right-[40%] w-20 h-20 ${textColor} rotate-[5deg]`} />
+        <FileText className={`absolute top-[10%] right-[5%] w-24 h-24 ${textColor} rotate-[-8deg]`} />
+      </div>
     </DecoratorWrapper>
   );
 };
