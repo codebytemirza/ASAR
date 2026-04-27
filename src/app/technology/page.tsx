@@ -98,46 +98,128 @@ export default function TechnologyPage() {
                 </div>
             </section>
 
-            {/* ── Deployment Stack ── */}
+            {/* ── Deployment Stack — Hierarchy Flow Diagram ── */}
             <section className="section-padding bg-secondary relative overflow-hidden">
                 <TechMesh />
-                <FloatingISOAccents />
                 <CorporateGrid />
                 <div className="container px-4 md:px-8 relative z-10">
-                    <div className="flex flex-col lg:flex-row gap-12 mb-16 items-start">
-                        <div className="lg:w-1/2">
-                            <span className="section-label">Deployment Stack</span>
-                            <h2 className="text-3xl md:text-5xl font-extrabold text-primary mb-0 leading-tight">The Deployment Stack</h2>
-                        </div>
-                        <div className="lg:w-1/2 space-y-4">
-                            <p className="text-lg text-zinc-600 leading-relaxed">While our focus is strictly on business outcomes, our underlying architectural stack is built from industry-leading enterprise tooling.</p>
-                            <p className="text-sm font-medium text-zinc-500 leading-relaxed">Our use of <strong className="text-primary">dbt</strong> and <strong className="text-primary">Apache Airflow</strong> ensures complete, transparent data lineage and exact reproducibility — allowing auditors to verify data integrity instantly, seamlessly merging data engineering with rigorous compliance requirements.</p>
-                        </div>
+
+                    {/* Section header */}
+                    <div className="text-center mb-14">
+                        <span className="section-label mx-auto mb-4">Deployment Stack</span>
+                        <h2 className="text-3xl md:text-5xl font-extrabold text-primary leading-tight mb-4">The Architecture Map</h2>
+                        <p className="text-zinc-500 max-w-xl mx-auto font-medium text-sm leading-relaxed">
+                            Our integrated service architecture spans ISO compliance, regional regulatory alignment, data engineering, and AI — all converging into a single enterprise delivery system.
+                        </p>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                        {[
-                            { id: '01', title: 'ISO STANDARDS', color: 'border-t-[3px] border-t-accent', techs: ['ISO 27001', 'ISO 9001', 'ISO 27701', 'ISO 42001', 'ISO 18295', 'ISO 14001', 'ISO 45001', 'ISO 50001', 'ISO 55001', 'ISO 20000-1', 'ISO 22301'] },
-                            { id: '02', title: 'REGIONAL REGULATORY', color: 'border-t-[3px] border-t-primary', techs: ['NCA', 'SAMA', 'PDPL', 'NDMO', 'SOC 2', 'HIPAA'] },
-                            { id: '03', title: 'ASSESSMENTS & READINESS', color: 'border-t-[3px] border-t-accent', techs: ['Gap Analysis', 'Documentation Design', 'Compliance Audits', 'Awareness Training', 'Implementer Training', 'Auditor Training'] },
-                            { id: '04', title: 'AI-POWERED DATA ENGINEERING', color: 'border-t-[3px] border-t-primary', techs: ['Python', 'SQL', 'Apache Spark', 'Kafka', 'Airflow', 'dbt', 'BigQuery', 'Snowflake', 'LangChain', 'OpenAI GPT-4o', 'LlamaIndex', 'CrewAI', 'LangGraph', 'Vector Databases'] },
-                            { id: '05', title: 'AI AGENT SERVICES', color: 'border-t-[3px] border-t-accent', techs: ['Autonomous Customer Agents', 'RAG Knowledge Systems', 'Multi-Agent Orchestration', 'AI Compliance Co-Pilot', 'ISO 42001 AI Governance', 'LLM Pipeline Automation'] },
-                        ].map((category) => (
-                            <div key={category.id} className={`group bg-white ${category.color} rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full shadow-sm border border-border`}>
-                                <div className="p-5 lg:p-6 border-b border-border flex items-center gap-2 bg-white">
-                                    <div className="w-2 h-2 rounded-full bg-accent flex-shrink-0 group-hover:scale-125 transition-transform"></div>
-                                    <h3 className="font-black text-xs uppercase tracking-widest text-primary">{category.title}</h3>
-                                </div>
-                                <div className="p-6 flex flex-col gap-3 flex-grow">
-                                    {category.techs.map((tech) => (
-                                        <div key={tech} className="flex items-center gap-2.5 group/item">
-                                            <div className="w-1.5 h-1.5 bg-accent rounded-full flex-shrink-0 group-hover/item:scale-150 transition-transform"></div>
-                                            <span className="text-sm font-medium text-zinc-600 group-hover/item:text-primary transition-colors">{tech}</span>
+                    {/* ── Flow Diagram ── */}
+                    <div className="flex flex-col items-center">
+
+                        {/* ROOT NODE */}
+                        <div className="bg-primary text-white px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest flex items-center gap-3 shadow-xl shadow-primary/20 relative z-10">
+                            <span className="relative flex h-2.5 w-2.5 flex-shrink-0">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
+                            </span>
+                            ASAR Global — Integrated Service Architecture
+                            <span className="relative flex h-2.5 w-2.5 flex-shrink-0">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
+                            </span>
+                        </div>
+
+                        {/* Root → Horizontal bridge */}
+                        <div className="relative w-full flex flex-col items-center">
+                            {/* Vertical stem from root */}
+                            <div className="w-px h-8 bg-primary/30" />
+
+                            {/* Horizontal bar */}
+                            <div className="relative w-full">
+                                <div className="absolute top-0 left-[10%] right-[10%] h-px bg-primary/20" />
+
+                                {/* 5 Pillar columns */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 pt-0">
+                                    {[
+                                        {
+                                            id: '01', title: 'ISO Standards',
+                                            accent: 'border-accent bg-accent/5',
+                                            dot: 'bg-accent',
+                                            items: ['ISO 27001', 'ISO 9001', 'ISO 27701', 'ISO 42001', 'ISO 18295', 'ISO 14001', 'ISO 45001', 'ISO 50001', 'ISO 55001', 'ISO 20000-1', 'ISO 22301'],
+                                        },
+                                        {
+                                            id: '02', title: 'Regional Regulatory',
+                                            accent: 'border-primary bg-primary/5',
+                                            dot: 'bg-primary',
+                                            items: ['NCA', 'SAMA', 'PDPL', 'NDMO', 'SOC 2', 'HIPAA'],
+                                        },
+                                        {
+                                            id: '03', title: 'Assessments & Readiness',
+                                            accent: 'border-accent bg-accent/5',
+                                            dot: 'bg-accent',
+                                            items: ['Gap Analysis', 'Documentation Design', 'Compliance Audits', 'Awareness Training', 'Implementer Training', 'Auditor Training'],
+                                        },
+                                        {
+                                            id: '04', title: 'Data Engineering',
+                                            accent: 'border-primary bg-primary/5',
+                                            dot: 'bg-primary',
+                                            items: ['Python', 'SQL', 'Apache Spark', 'Kafka', 'Airflow', 'dbt', 'BigQuery', 'Snowflake', 'LangChain', 'OpenAI GPT-4o', 'LlamaIndex', 'LangGraph', 'Vector Databases'],
+                                        },
+                                        {
+                                            id: '05', title: 'AI Agent Services',
+                                            accent: 'border-accent bg-accent/5',
+                                            dot: 'bg-accent',
+                                            items: ['Autonomous Customer Agents', 'RAG Knowledge Systems', 'Multi-Agent Orchestration', 'AI Compliance Co-Pilot', 'ISO 42001 AI Governance', 'LLM Pipeline Automation'],
+                                        },
+                                    ].map((col) => (
+                                        <div key={col.id} className="flex flex-col items-center">
+                                            {/* Vertical drop from horizontal bar to pillar */}
+                                            <div className="w-px h-8 bg-primary/20" />
+
+                                            {/* Pillar node */}
+                                            <div className={`w-full border-2 ${col.accent} rounded-xl px-4 py-3 flex items-center gap-2 shadow-sm mb-0`}>
+                                                <div className={`w-2 h-2 rounded-full ${col.dot} flex-shrink-0`} />
+                                                <h3 className="font-black text-[11px] uppercase tracking-widest text-primary leading-tight">{col.title}</h3>
+                                            </div>
+
+                                            {/* Vertical drop to items */}
+                                            <div className="w-px h-4 bg-primary/20" />
+
+                                            {/* Leaf items */}
+                                            <div className="w-full flex flex-col gap-1.5">
+                                                {col.items.map((item) => (
+                                                    <div key={item} className="group flex items-center gap-2 bg-white border border-border rounded-lg px-3 py-2 hover:border-accent hover:bg-accent/5 transition-all duration-200">
+                                                        <div className={`w-1 h-1 rounded-full ${col.dot} opacity-60 flex-shrink-0 group-hover:opacity-100`} />
+                                                        <span className="text-[11px] font-semibold text-zinc-600 group-hover:text-primary transition-colors leading-tight">{item}</span>
+                                                    </div>
+                                                ))}
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
                             </div>
-                        ))}
+                        </div>
+
+                        {/* Bottom convergence — all pillars flow into delivery */}
+                        <div className="flex flex-col items-center mt-8 w-full">
+                            <div className="relative w-full flex justify-center">
+                                <div className="absolute top-0 left-[10%] right-[10%] h-px bg-primary/20" />
+                            </div>
+                            <div className="w-px h-8 bg-primary/30 mt-0" />
+                            <div className="bg-white border-2 border-primary/20 rounded-2xl px-8 py-4 flex items-center gap-4 shadow-sm">
+                                <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center flex-shrink-0">
+                                    <Zap className="w-4 h-4 text-white" />
+                                </div>
+                                <div>
+                                    <p className="text-[10px] uppercase tracking-widest font-black text-accent mb-0.5">Unified Delivery</p>
+                                    <p className="text-sm font-bold text-primary">Audit-Ready Enterprise Outcome</p>
+                                </div>
+                                <Link href="/contact" className="ml-4 btn btn-primary px-5 h-10 text-xs">
+                                    Get Started <ArrowRight className="ml-1 w-3 h-3" />
+                                </Link>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>

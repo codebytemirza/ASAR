@@ -1,185 +1,255 @@
 "use client";
 
 import Link from 'next/link';
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { CheckCircle2, ChevronDown } from "lucide-react";
+import { ChevronDown, Mail, MapPin, Shield, Clock, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
-import { CorporateGrid, DotsPattern, FloatingISOAccents, SweepingGradient, AmbientGlow, HeroFloatingIcons } from "@/components/ui/AbstractDecorators";
+import { CorporateGrid, FloatingISOAccents, AmbientGlow } from "@/components/ui/AbstractDecorators";
 
 export default function ContactPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const faqs = [
     {
-      q: "How long does the ISO certification process take?",
-      a: "Depending on your current infrastructure, timelines typically range from 3 to 6 months. We provide an exact roadmap during the initial blueprinting phase."
+      q: "How long does ISO certification take?",
+      a: "Typically 3–6 months depending on your infrastructure. We deliver an exact roadmap during the initial blueprinting phase.",
     },
     {
       q: "Do you offer post-certification support?",
-      a: "Yes. Our audit and training tracks are designed to ensure your workforce sustains compliance long after the auditors leave. We offer continuous fractional support."
+      a: "Yes. Our audit and training tracks ensure your workforce sustains compliance long after the auditors leave.",
     },
     {
-      q: "How do you price your data engineering and compliance services?",
-      a: "We operate on massive organizational scale, so pricing is custom-architected based on exact data payload size and the number of legal standards required. We provide transparent, flat-fee quotes post-discovery."
-    }
+      q: "How is pricing determined?",
+      a: "Pricing is custom-architected based on data payload size and required standards. Transparent flat-fee quotes are provided post-discovery.",
+    },
+  ];
+
+  const steps = [
+    { num: "01", title: "Discovery Call", desc: "30-min deep dive with a senior architect to analyze your goals." },
+    { num: "02", title: "Architectural Blueprint", desc: "Comprehensive roadmap and transparent pricing within 48 hours." },
+    { num: "03", title: "Execution & Handover", desc: "Rapid deployment, team training, and full audit support." },
   ];
 
   return (
     <>
-      <section className="py-20 md:py-32 min-h-screen bg-secondary border-b border-border relative overflow-hidden">
-        <SweepingGradient />
-        <AmbientGlow position="top-left" color="primary" size="lg" />
-        {/* Grid: structural framing on the full page */}
+      <section className="bg-secondary relative overflow-hidden">
         <CorporateGrid />
-        {/* DotsPattern: fills the wide header background above the content */}
-        <DotsPattern />
-        <HeroFloatingIcons />
+        <FloatingISOAccents />
+        <AmbientGlow position="top-left" color="primary" size="lg" />
 
-        <div className="container overflow-hidden">
-          <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24">
-            <span className="section-label mx-auto">Initiate Consultation</span>
-            <h1 className="hero-h1 mb-6 text-5xl md:text-7xl tracking-tight">Begin your <span className="text-primary">Transformation.</span></h1>
-            <p className="text-xl md:text-2xl text-zinc-600 font-medium mb-6">
-              Fast-track your data engineering pipelines and secure your market position through uncompromising ISO compliance.
-            </p>
-            <p className="text-sm font-medium text-zinc-500 max-w-3xl mx-auto">
-              Contact ASAR Global's expert consultants for <strong>ISO Certification</strong>, <strong>Corporate Governance Training</strong>, and <strong>Enterprise Data Engineering</strong>. Whether you are operating in the MEA region or globally, our architects will blueprint your secure operational infrastructure.
-            </p>
-          </div>
+        {/* ── Hero ── */}
+        <div className="container pt-24 pb-10 md:pt-32 md:pb-16 text-center relative z-10">
+          <span className="section-label mx-auto mb-4">Initiate Consultation</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-primary leading-[1.05] mb-4">
+            Begin Your<br />
+            <span className="text-accent">Transformation.</span>
+          </h1>
+          <p className="text-base md:text-xl text-zinc-600 font-medium max-w-2xl mx-auto">
+            ISO Certification · Corporate Governance · Enterprise Data Engineering
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-            {/* Left Side: Funnel Copy, Timeline, and FAQs */}
-            <div className="lg:col-span-7 flex flex-col gap-12">
+        <div className="container relative z-10 pb-20 md:pb-32">
+          {/* Mobile: Form first, then steps + FAQ below */}
+          {/* Desktop: Side-by-side with sticky form */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
 
-              {/* Trust Section */}
-              <div className="bg-white p-8 md:p-10 border border-border shadow-sm rounded-2xl">
-                <h2 className="text-2xl font-extrabold text-primary mb-6">What Happens Next?</h2>
-                <div className="space-y-8 relative before:absolute before:inset-0 before:ml-[1.1rem] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
-                  {/* Step 1 */}
-                  <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                    <div className="flex items-center justify-center w-9 h-9 rounded-full bg-primary text-white font-bold text-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-sm border-4 border-white">
-                      1
-                    </div>
-                    <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-border bg-secondary">
-                      <h3 className="font-bold text-primary mb-1">Discovery Call</h3>
-                      <p className="text-sm text-zinc-600 font-medium">A 30-minute deep dive with a senior architect to analyze your regulatory or operational expansion goals.</p>
-                    </div>
+            {/* ── Form — shown first on mobile via order ── */}
+            <div className="lg:col-span-5 lg:order-2 w-full lg:sticky lg:top-8">
+              <div className="bg-white border border-border rounded-2xl shadow-lg overflow-hidden">
+                {/* Form header */}
+                <div className="bg-primary px-7 py-5">
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></div>
+                    <span className="text-accent text-[10px] font-black uppercase tracking-widest">Secure Channel</span>
                   </div>
-                  {/* Step 2 */}
-                  <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                    <div className="flex items-center justify-center w-9 h-9 rounded-full bg-primary text-white font-bold text-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-sm border-4 border-white">
-                      2
-                    </div>
-                    <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-border bg-secondary">
-                      <h3 className="font-bold text-primary mb-1">Architectural Blueprint</h3>
-                      <p className="text-sm text-zinc-600 font-medium">Within 48 hours, receive a comprehensive project roadmap and transparent pricing protocol.</p>
-                    </div>
-                  </div>
-                  {/* Step 3 */}
-                  <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                    <div className="flex items-center justify-center w-9 h-9 rounded-full bg-primary text-white font-bold text-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-sm border-4 border-white">
-                      3
-                    </div>
-                    <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-border bg-secondary">
-                      <h3 className="font-bold text-primary mb-1">Execution & Handover</h3>
-                      <p className="text-sm text-zinc-600 font-medium">We deploy the solution rapidly, train your internal teams, and support your final audits.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* FAQs */}
-              <div className="bg-white p-8 md:p-10 border border-border shadow-sm rounded-2xl">
-                <h2 className="text-2xl font-extrabold text-primary mb-6">Frequently Asked Questions</h2>
-                <div className="space-y-4">
-                  {faqs.map((faq, i) => (
-                    <div key={i} className="border border-border rounded-xl overflow-hidden text-left bg-secondary">
-                      <button
-                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                        className="w-full flex items-center justify-between p-5 text-left font-bold text-primary hover:bg-zinc-100 transition-colors"
-                      >
-                        {faq.q}
-                        <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${openFaq === i ? 'rotate-180' : ''}`} />
-                      </button>
-                      <div className={`px-5 pb-5 text-sm text-zinc-600 font-medium leading-relaxed ${openFaq === i ? 'block' : 'hidden'}`}>
-                        {faq.a}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Right Side: Form */}
-            <div className="lg:col-span-5 relative w-full lg:sticky lg:top-8">
-              {/* Form card: very light backdrop-blur for depth — corporate, not trendy */}
-              <div className="border border-border bg-white p-8 md:p-10 rounded-2xl shadow-md">
-                <div className="mb-8 border-b border-border pb-6">
-                  <h3 className="font-extrabold uppercase text-xl text-primary mb-2">Request Proposal</h3>
-                  <p className="text-xs text-zinc-500 font-semibold uppercase tracking-widest line-clamp-1">Secure Enterprise Funnel</p>
+                  <h3 className="text-xl font-extrabold text-white">Request a Proposal</h3>
                 </div>
 
-                <form className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-xs uppercase font-bold tracking-widest text-zinc-500">Corporate Name</Label>
-                    <Input id="name" placeholder="Enter your full name" className="h-14 border border-border focus:border-primary rounded-xl font-medium bg-secondary px-4" />
+                <form className="p-6 md:p-8 space-y-5" suppressHydrationWarning>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div className="space-y-1.5">
+                      <Label htmlFor="name" className="text-[11px] uppercase font-bold tracking-widest text-zinc-500">
+                        Full Name
+                      </Label>
+                      <Input
+                        id="name"
+                        placeholder="Your name"
+                        className="h-12 border border-border rounded-xl font-medium bg-secondary px-4 text-sm"
+                      />
+                    </div>
+                    <div className="space-y-1.5">
+                      <Label htmlFor="email" className="text-[11px] uppercase font-bold tracking-widest text-zinc-500">
+                        Email
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="you@company.com"
+                        className="h-12 border border-border rounded-xl font-medium bg-secondary px-4 text-sm"
+                      />
+                    </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-xs uppercase font-bold tracking-widest text-zinc-500">Official Email</Label>
-                    <Input id="email" type="email" placeholder="contact@company.com" className="h-14 border border-border focus:border-primary rounded-xl font-medium bg-secondary px-4" />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="interest" className="text-xs uppercase font-bold tracking-widest text-zinc-500">Service Required</Label>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="interest" className="text-[11px] uppercase font-bold tracking-widest text-zinc-500">
+                      Service Required
+                    </Label>
                     <Select>
-                      <SelectTrigger className="h-14 border border-border focus:border-primary rounded-xl font-medium bg-secondary px-4">
+                      <SelectTrigger className="h-12 border border-border rounded-xl font-medium bg-secondary px-4 text-sm">
                         <SelectValue placeholder="Select a service" />
                       </SelectTrigger>
                       <SelectContent className="rounded-xl border border-border">
-                        <SelectItem value="iso">ISO Standards & Certification</SelectItem>
-                        <SelectItem value="training">Internal Audit & Training</SelectItem>
-                        <SelectItem value="data">Data Analysis & Pipelines</SelectItem>
+                        <SelectItem value="iso">ISO Standards &amp; Certification</SelectItem>
+                        <SelectItem value="training">Internal Audit &amp; Training</SelectItem>
+                        <SelectItem value="data">Data Analysis &amp; Pipelines</SelectItem>
                         <SelectItem value="other">General Consulting</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="message" className="text-xs uppercase font-bold tracking-widest text-zinc-500">Project Specifics</Label>
-                    <Textarea id="message" placeholder="Provide a brief overview of your infrastructure or compliance expansion goals..." rows={4} className="resize-none border border-border focus:border-primary rounded-xl font-medium p-4 bg-secondary" />
+                  <div className="space-y-1.5">
+                    <Label htmlFor="message" className="text-[11px] uppercase font-bold tracking-widest text-zinc-500">
+                      Project Overview
+                    </Label>
+                    <Textarea
+                      id="message"
+                      placeholder="Brief overview of your compliance or data engineering goals..."
+                      rows={4}
+                      className="resize-none border border-border rounded-xl font-medium p-4 bg-secondary text-sm"
+                    />
                   </div>
 
-                  <div className="flex items-start space-x-3 pt-2">
-                    <input type="checkbox" id="terms" className="mt-1 h-4 w-4 rounded border-border text-primary focus:ring-primary" required />
+                  <div className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      id="terms"
+                      className="mt-0.5 h-4 w-4 rounded border-border text-primary focus:ring-primary flex-shrink-0"
+                      required
+                    />
                     <Label htmlFor="terms" className="text-xs text-zinc-500 font-medium leading-relaxed">
-                      I agree to the <Link href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</Link> and <Link href="/terms-of-service" className="text-primary hover:underline">Terms of Service</Link>. I understand my data will be processed securely.
+                      I agree to the{" "}
+                      <Link href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</Link>{" "}
+                      and{" "}
+                      <Link href="/terms-of-service" className="text-primary hover:underline">Terms of Service</Link>.
                     </Label>
                   </div>
 
-                  <Button type="button" className="btn btn-primary w-full h-14 text-base mt-2 shadow-sm rounded-xl">
+                  <Button
+                    type="button"
+                    className="btn btn-primary w-full h-13 text-base rounded-xl shadow-md"
+                  >
                     Submit Secure Request
                   </Button>
 
-                  <p className="text-[10px] text-center text-zinc-400 font-medium px-4 mt-4">
-                    By submitting, you agree to our corporate privacy policy. We never share enterprise data.
+                  <p className="text-[10px] text-center text-zinc-400 font-medium">
+                    We never share your enterprise data.
                   </p>
                 </form>
               </div>
 
-              {/* Direct Contacts embedded under form seamlessly */}
-              <div className="mt-8 flex flex-col md:flex-row gap-4 items-center justify-center">
-                <div className="text-sm font-bold text-zinc-600">Email: <a href="mailto:contact@asarglobal.com" className="text-primary hover:underline">contact@asarglobal.com</a></div>
-                <div className="hidden md:block w-1.5 h-1.5 bg-border rounded-full"></div>
-                <div className="text-sm font-bold text-zinc-600">Global HQ: <span className="text-primary">ASAR Corporate Operations</span></div>
+              {/* Contact strip */}
+              <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <a
+                  href="mailto:contact@asarsystech.com"
+                  className="flex items-center gap-3 bg-white border border-border rounded-xl px-4 py-3.5 hover:border-primary transition-colors group"
+                >
+                  <div className="w-9 h-9 rounded-lg bg-primary/5 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
+                    <Mail className="w-4 h-4 text-primary group-hover:text-white" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Email</p>
+                    <p className="text-xs font-bold text-primary truncate">contact@asarsystech.com</p>
+                  </div>
+                </a>
+                <div className="flex items-center gap-3 bg-white border border-border rounded-xl px-4 py-3.5">
+                  <div className="w-9 h-9 rounded-lg bg-primary/5 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-4 h-4 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Region</p>
+                    <p className="text-xs font-bold text-primary">MEA · Global Operations</p>
+                  </div>
+                </div>
               </div>
             </div>
 
+            {/* ── Left: Steps + Trust stats + FAQs ── */}
+            <div className="lg:col-span-7 lg:order-1 flex flex-col gap-6">
+
+              {/* What Happens Next — vertical timeline */}
+              <div className="bg-white border border-border rounded-2xl p-6 md:p-8 shadow-sm">
+                <h2 className="text-xl md:text-2xl font-extrabold text-primary mb-6">What Happens Next?</h2>
+                <div className="flex flex-col gap-0">
+                  {steps.map((step, i) => (
+                    <div key={step.num} className="flex gap-4 group">
+                      {/* Timeline track */}
+                      <div className="flex flex-col items-center">
+                        <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+                          <span className="text-white text-xs font-black">{step.num}</span>
+                        </div>
+                        {i < steps.length - 1 && (
+                          <div className="w-0.5 flex-1 bg-gradient-to-b from-primary/30 to-transparent my-2" />
+                        )}
+                      </div>
+                      {/* Content */}
+                      <div className={`pb-6 ${i === steps.length - 1 ? '' : ''}`}>
+                        <h3 className="font-bold text-primary text-base mb-1">{step.title}</h3>
+                        <p className="text-sm text-zinc-600 font-medium leading-relaxed">{step.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Trust stats row */}
+              <div className="grid grid-cols-3 gap-3">
+                {[
+                  { icon: Shield, value: "100%", label: "Audit Success" },
+                  { icon: Clock, value: "48h", label: "Blueprint Turnaround" },
+                  { icon: CheckCircle2, value: "17", label: "ISO Standards" },
+                ].map((stat) => (
+                  <div key={stat.label} className="bg-white border border-border rounded-xl p-4 text-center hover:border-accent transition-colors">
+                    <stat.icon className="w-5 h-5 text-accent mx-auto mb-2" />
+                    <div className="text-xl md:text-2xl font-black text-primary">{stat.value}</div>
+                    <div className="text-[10px] uppercase tracking-wider text-zinc-400 font-bold mt-0.5">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* FAQs */}
+              <div className="bg-white border border-border rounded-2xl p-6 md:p-8 shadow-sm">
+                <h2 className="text-xl md:text-2xl font-extrabold text-primary mb-5">FAQs</h2>
+                <div className="space-y-3">
+                  {faqs.map((faq, i) => (
+                    <div
+                      key={i}
+                      className={`border rounded-xl overflow-hidden transition-colors ${openFaq === i ? 'border-primary/30 bg-primary/5' : 'border-border bg-secondary'}`}
+                    >
+                      <button
+                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                        className="w-full flex items-start justify-between gap-3 p-4 md:p-5 text-left font-bold text-primary text-sm"
+                      >
+                        <span className="leading-snug">{faq.q}</span>
+                        <ChevronDown
+                          className={`w-4 h-4 flex-shrink-0 mt-0.5 transition-transform duration-300 ${openFaq === i ? 'rotate-180 text-accent' : 'text-zinc-400'}`}
+                        />
+                      </button>
+                      {openFaq === i && (
+                        <div className="px-4 md:px-5 pb-4 md:pb-5 text-sm text-zinc-600 font-medium leading-relaxed border-t border-primary/10 pt-3">
+                          {faq.a}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </section>

@@ -84,18 +84,20 @@ export default function AboutPage() {
 
       <ValuesAnimation />
 
-      {/* Global Methodology & Governance Focus */}
-      <section className="bg-primary py-24 border-b border-white/10 relative overflow-hidden">
-        <CorporateGrid color="white" />
-        <FloatingISOAccents color="white" />
-        <AmbientGlow position="top-right" color="white" size="lg" />
+      {/* Global Methodology & Governance Focus — Light section to contrast ValuesAnimation dark bg */}
+      <section className="bg-secondary py-24 border-b border-border relative overflow-hidden">
+        <CorporateGrid />
+        <FloatingISOAccents />
+        <AmbientGlow position="top-right" color="primary" size="lg" />
         <div className="container relative z-10">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
             <div>
-              <span className="section-label bg-white/10 text-accent border-accent/50 mb-4">Enterprise Governance</span>
-              <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">Our Approach to<br />Data Privacy &amp; Risk Management</h2>
+              <span className="section-label animate-fade-in">Enterprise Governance</span>
+              <h2 className="text-3xl md:text-5xl font-extrabold text-primary leading-tight">
+                Our Approach to<br />Data Privacy &amp; Risk Management
+              </h2>
             </div>
-            <p className="text-white/50 max-w-sm font-medium leading-relaxed lg:text-right">
+            <p className="text-zinc-500 max-w-sm font-medium leading-relaxed lg:text-right">
               AI-enhanced governance that embeds compliance into the operational fabric of your enterprise.
             </p>
           </div>
@@ -124,13 +126,13 @@ export default function AboutPage() {
                 tag: 'AI-Powered Insight',
               },
             ].map((card) => (
-              <div key={card.num} className="group relative bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-accent/40 transition-all duration-300 flex flex-col overflow-hidden">
+              <div key={card.num} className="group relative bg-white border border-border rounded-2xl p-8 hover:border-accent hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden">
                 {/* Ghost number */}
-                <div className="absolute top-4 right-6 text-7xl font-black text-white/5 select-none group-hover:text-white/10 transition-colors font-mono">{card.num}</div>
+                <div className="absolute top-4 right-6 text-7xl font-black text-primary/5 select-none group-hover:text-accent/10 transition-colors font-mono">{card.num}</div>
                 {/* Icon + tag row */}
                 <div className="flex items-start justify-between mb-6 relative z-10">
-                  <div className="w-12 h-12 rounded-xl bg-accent/15 border border-accent/20 flex items-center justify-center group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
-                    <card.icon className="w-6 h-6 text-accent group-hover:text-white transition-colors" />
+                  <div className="w-12 h-12 rounded-xl bg-primary/5 border border-primary/10 flex items-center justify-center group-hover:bg-accent group-hover:border-accent group-hover:scale-110 transition-all duration-300">
+                    <card.icon className="w-6 h-6 text-primary group-hover:text-white transition-colors" />
                   </div>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 text-accent text-[10px] font-black uppercase tracking-widest border border-accent/20">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
@@ -138,9 +140,9 @@ export default function AboutPage() {
                   </span>
                 </div>
                 {/* Accent line */}
-                <div className="h-px bg-gradient-to-r from-accent/40 to-transparent mb-5 relative z-10" />
-                <h3 className="text-xl font-black text-white mb-4 relative z-10 leading-snug">{card.title}</h3>
-                <p className="text-white/60 leading-relaxed font-medium relative z-10 text-sm flex-grow">{card.text}</p>
+                <div className="h-px bg-gradient-to-r from-accent/30 to-transparent mb-5 relative z-10" />
+                <h3 className="text-xl font-black text-primary mb-4 relative z-10 leading-snug">{card.title}</h3>
+                <p className="text-zinc-600 leading-relaxed font-medium relative z-10 text-sm flex-grow">{card.text}</p>
               </div>
             ))}
           </div>
