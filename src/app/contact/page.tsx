@@ -7,11 +7,16 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { ChevronDown, Mail, MapPin, Shield, Clock, CheckCircle2 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CorporateGrid, FloatingISOAccents, AmbientGlow } from "@/components/ui/AbstractDecorators";
 
 export default function ContactPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const faqs = [
     {
@@ -33,6 +38,8 @@ export default function ContactPage() {
     { num: "02", title: "Architectural Blueprint", desc: "Comprehensive roadmap and transparent pricing within 48 hours." },
     { num: "03", title: "Execution & Handover", desc: "Rapid deployment, team training, and full audit support." },
   ];
+
+  if (!mounted) return null;
 
   return (
     <>
