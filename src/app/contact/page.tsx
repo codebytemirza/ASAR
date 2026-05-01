@@ -13,10 +13,47 @@ import { CorporateGrid, FloatingISOAccents, AmbientGlow } from "@/components/ui/
 export default function ContactPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [mounted, setMounted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    service: '',
+    message: '',
+  });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const handleSubmit = async () => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = (await response.json()) as { success?: boolean; error?: string };
+
+      if (!response.ok) {
+        setError(result.error || 'Failed to submit request.');
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError('Failed to submit request.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const faqs = [
     {
@@ -87,6 +124,8 @@ export default function ContactPage() {
                         id="name"
                         placeholder="Your name"
                         className="h-12 border border-border rounded-xl font-medium bg-secondary px-4 text-sm"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       />
                     </div>
                     <div className="space-y-1.5">
@@ -98,6 +137,8 @@ export default function ContactPage() {
                         type="email"
                         placeholder="you@company.com"
                         className="h-12 border border-border rounded-xl font-medium bg-secondary px-4 text-sm"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       />
                     </div>
                   </div>
@@ -106,7 +147,7 @@ export default function ContactPage() {
                     <Label htmlFor="interest" className="text-[11px] uppercase font-bold tracking-widest text-zinc-500">
                       Service Required
                     </Label>
-                    <Select>
+                    <Select onValueChange={(val) => setFormData({ ...formData, service: val })}>
                       <SelectTrigger className="h-12 border border-border rounded-xl font-medium bg-secondary px-4 text-sm">
                         <SelectValue placeholder="Select a service" />
                       </SelectTrigger>
@@ -129,6 +170,8 @@ export default function ContactPage() {
                       placeholder="Brief overview of your compliance or data engineering goals..."
                       rows={4}
                       className="resize-none border border-border rounded-xl font-medium p-4 bg-secondary text-sm"
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     />
                   </div>
 
@@ -150,9 +193,23 @@ export default function ContactPage() {
                   <Button
                     type="button"
                     className="btn btn-primary w-full h-13 text-base rounded-xl shadow-md"
+                    onClick={handleSubmit}
+                    disabled={loading || submitted}
                   >
-                    Submit Secure Request
+                    {loading ? 'Sending...' : submitted ? '✓ Request Sent!' : 'Submit Secure Request'}
                   </Button>
+
+                  {submitted && (
+                    <p className="text-sm text-green-600 font-medium">
+                      We'll be in touch within 24 hours.
+                    </p>
+                  )}
+
+                  {error && (
+                    <p className="text-sm text-red-600 font-medium">
+                      {error}
+                    </p>
+                  )}
 
                   <p className="text-[10px] text-center text-zinc-400 font-medium">
                     We never share your enterprise data.
