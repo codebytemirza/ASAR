@@ -3,7 +3,6 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  output: 'standalone',
   // [FIXED: TypeScript errors now BLOCK the build — no silent bugs in prod]
   typescript: {
     ignoreBuildErrors: false,
@@ -92,4 +91,5 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
 
