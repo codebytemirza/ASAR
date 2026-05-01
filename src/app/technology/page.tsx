@@ -145,7 +145,7 @@ export default function TechnologyPage() {
                                             id: '01', title: 'ISO Standards',
                                             accent: 'border-accent bg-accent/5',
                                             dot: 'bg-accent',
-                                            items: ['ISO 27001', 'ISO 9001', 'ISO 27701', 'ISO 42001', 'ISO 18295', 'ISO 14001', 'ISO 45001', 'ISO 50001', 'ISO 55001', 'ISO 20000-1', 'ISO 22301'],
+                                            items: ['ISO/IEC 27001', 'ISO 9001', 'ISO/IEC 27701', 'ISO/IEC 42001', 'ISO 18295', 'ISO 14001', 'ISO 45001', 'ISO 50001', 'ISO 55001', 'ISO/IEC 20000-1', 'ISO 22301'],
                                         },
                                         {
                                             id: '02', title: 'Regional Regulatory',
