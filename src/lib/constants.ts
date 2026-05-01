@@ -1,4 +1,4 @@
-import { Database, Shield, GraduationCap, Building, Laptop, Factory, HeartPulse, Scale, Server } from 'lucide-react';
+import { Database, Shield, GraduationCap, Building, Laptop, Factory, HeartPulse, Scale, Server, Bot } from 'lucide-react';
 
 export const NAV_LINKS = [
   { href: '/', label: 'Home' },
@@ -44,6 +44,12 @@ export const SERVICES = [
     title: "ISO Standards & Compliance Standards",
     description: "End-to-end implementation starting with Scoping, Gap Assessment, and Design & Development of documentation. We guide your implementation and perform internal audits for readiness before the final certification audit.",
     technologies: ["ISO/IEC 27001", "ISO 9001", "SOC 2", "HIPAA", "NCA", "SAMA", "PDPL", "NDMO"]
+  },
+  {
+    icon: Bot,
+    title: "AI Services & Automation",
+    description: "Enterprise AI services including intelligent agents, workflow automation, and AI governance readiness aligned to ISO/IEC 42001 standards.",
+    technologies: ["AI Agents", "Workflow Automation", "RAG Systems", "AI Governance", "ISO/IEC 42001"]
   },
   {
     icon: GraduationCap,
