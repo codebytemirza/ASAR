@@ -11,6 +11,8 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  const isDev = process.env.NODE_ENV === 'development';
+
   useEffect(() => {
     // Log the error to an error reporting service
     console.error('System Exception:', error);
@@ -37,8 +39,8 @@ export default function Error({
           <div className="bg-red-950/30 border border-red-900/30 rounded-lg p-6 mb-8 overflow-x-auto">
             <p className="text-red-300 font-medium mb-2 text-sm uppercase">Stack Trace / Error Digest:</p>
             <code className="text-red-200/80 text-xs leading-relaxed">
-              {error.message || 'An unexpected runtime error occurred.'}
-              {error.digest && <span className="block mt-2 opacity-50">Digest: {error.digest}</span>}
+              {isDev ? (error.message || 'An unexpected runtime error occurred.') : 'An unexpected runtime error occurred.'}
+              {isDev && error.digest && <span className="block mt-2 opacity-50">Digest: {error.digest}</span>}
             </code>
           </div>
 
