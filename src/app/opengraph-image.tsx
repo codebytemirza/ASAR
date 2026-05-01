@@ -1,4 +1,6 @@
 import { ImageResponse } from 'next/og';
+import { readFile } from 'node:fs/promises';
+import path from 'node:path';
 
 export const alt = 'ASAR GLOBAL - Enterprise Technology & Compliance Solutions';
 export const size = {
@@ -7,25 +9,14 @@ export const size = {
 };
 
 export const contentType = 'image/png';
-export const runtime = 'edge';
-
-function arrayBufferToBase64(buffer: ArrayBuffer) {
-  let binary = '';
-  const bytes = new Uint8Array(buffer);
-  const len = bytes.byteLength;
-  for (let i = 0; i < len; i++) {
-    binary += String.fromCharCode(bytes[i]);
-  }
-  return btoa(binary);
-}
+export const runtime = 'nodejs';
 
 export default async function Image() {
   let logoBase64 = '';
   try {
-    const logoData = await fetch(new URL('../../public/logo.png', import.meta.url)).then((res) =>
-      res.arrayBuffer()
-    );
-    logoBase64 = `data:image/png;base64,${arrayBufferToBase64(logoData)}`;
+    const logoPath = path.join(process.cwd(), 'public', 'logo.png');
+    const logoData = await readFile(logoPath);
+    logoBase64 = `data:image/png;base64,${logoData.toString('base64')}`;
   } catch (e) {
     console.error('Failed to load logo', e);
   }
