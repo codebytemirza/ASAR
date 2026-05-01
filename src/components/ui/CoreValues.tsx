@@ -1,18 +1,18 @@
 "use client";
 
 import React from 'react';
-import { Globe, Users, Eye, Award, ChevronsRight } from 'lucide-react';
+import { ShieldCheck, Handshake, Layers, TrendingUp, ShieldAlert, Globe } from 'lucide-react';
 import { ScrollReveal } from '@/components/scroll-reveal';
 import { DotsPattern } from '@/components/ui/AbstractDecorators';
 
 export function CoreValues() {
   const values = [
-    { name: 'Integrity', icon: Globe },
-    { name: 'Trust', icon: Users },
-    { name: 'Focus', icon: Eye },
-    { name: 'Excellence', icon: Award },
-    { name: 'Consistency', icon: ChevronsRight },
-    { name: 'Teamwork', icon: Users },
+    { name: 'Compliance Excellence', icon: ShieldCheck },
+    { name: 'Client Trust', icon: Handshake },
+    { name: 'Process Precision', icon: Layers },
+    { name: 'Continuous Improvement', icon: TrendingUp },
+    { name: 'Risk Management', icon: ShieldAlert },
+    { name: 'Global Standards', icon: Globe },
   ];
 
   return (
@@ -23,7 +23,7 @@ export function CoreValues() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4 uppercase">Our Core Values</h2>
             <p className="text-lg text-zinc-400 font-medium max-w-2xl mx-auto">
-              guide every engagement and define our client success.
+              Built around compliance, precision, and long-term enterprise reliability.
             </p>
           </div>
         </ScrollReveal>

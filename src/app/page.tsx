@@ -215,10 +215,10 @@ export default function Home() {
           <div className="text-center mb-14">
             <h2 className="text-4xl md:text-6xl font-extrabold text-primary leading-tight mb-4">
               ISO Compliance.<br />
-              <span className="text-accent">Not a Feature. Our Foundation.</span>
+              <span className="text-accent">Structured for Certification. Built for Trust.</span>
             </h2>
             <p className="text-zinc-500 max-w-2xl mx-auto font-medium leading-relaxed">
-              ASAR Global was built on ISO consultancy. Every tool, every engineer, every process is aligned to one outcome — getting your enterprise certified and keeping it that way.
+              ASAR Global delivers end-to-end ISO consultancy services that help organizations achieve certification, strengthen operational standards, and maintain long-term compliance through structured expert guidance.
             </p>
           </div>
 
