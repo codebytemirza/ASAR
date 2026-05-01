@@ -105,6 +105,7 @@ export default function ContactPage() {
                       </SelectTrigger>
                       <SelectContent className="rounded-xl border border-border">
                         <SelectItem value="iso">ISO Standards &amp; Certification</SelectItem>
+                        <SelectItem value="ai">AI Services &amp; Automation</SelectItem>
                         <SelectItem value="training">Internal Audit &amp; Training</SelectItem>
                         <SelectItem value="data">Data Analysis &amp; Pipelines</SelectItem>
                         <SelectItem value="other">General Consulting</SelectItem>
