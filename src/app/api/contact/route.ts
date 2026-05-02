@@ -213,7 +213,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Contact API error:', error);
+    console.error('Contact API error is:', error);
     return NextResponse.json(
       { error: 'Invalid request payload.' },
       { status: 400 }
