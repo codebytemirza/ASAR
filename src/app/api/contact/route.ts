@@ -2,8 +2,6 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { createClient } from '@/utils/supabase/server';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 type ContactPayload = {
   name?: string;
   email?: string;
@@ -57,6 +55,10 @@ function formatLeadTimestamp(date: Date) {
 
 export async function POST(request: Request) {
   try {
+    // ✅ FIXED: moved inside handler — no module-level crash
+    const apiKey = process.env.RESEND_API_KEY;
+    const resend = apiKey ? new Resend(apiKey) : null;
+
     const body = (await request.json()) as ContactPayload;
     const name = body.name?.trim() ?? '';
     const email = body.email?.trim() ?? '';
@@ -94,7 +96,6 @@ export async function POST(request: Request) {
     const safeMessage = escapeHtml(message).replaceAll('\n', '<br/>');
     const firstName = escapeHtml(getFirstName(name));
 
-    // Theme values sourced from src/app/globals.css tokens.
     const theme = {
       background: 'hsl(0 0% 100%)',
       card: 'hsl(0 0% 100%)',
@@ -184,31 +185,35 @@ export async function POST(request: Request) {
       </div>
     `;
 
-    const [internalResult, clientResult] = await Promise.all([
-      resend.emails.send({
-        from: 'ASAR Global <contact@asarglobal.com>',
-        to: process.env.NOTIFY_EMAIL || 'contact@asarglobal.com',
-        subject: `New Lead: ${name} — ${getServiceLabel(service)}`,
-        replyTo: email,
-        tags: [{ name: 'category', value: 'contact-form' }],
-        html: teamEmailHtml,
-      }),
-      resend.emails.send({
-        from: 'ASAR Global <contact@asarglobal.com>',
-        to: email,
-        subject: 'We received your request — ASAR Global',
-        html: clientEmailHtml,
-      }),
-    ]);
+    if (resend) {
+      const [internalResult, clientResult] = await Promise.all([
+        resend.emails.send({
+          from: 'ASAR Global <contact@asarglobal.com>',
+          to: process.env.NOTIFY_EMAIL || 'contact@asarglobal.com',
+          subject: `New Lead: ${name} — ${getServiceLabel(service)}`,
+          replyTo: email,
+          tags: [{ name: 'category', value: 'contact-form' }],
+          html: teamEmailHtml,
+        }),
+        resend.emails.send({
+          from: 'ASAR Global <contact@asarglobal.com>',
+          to: email,
+          subject: 'We received your request — ASAR Global',
+          html: clientEmailHtml,
+        }),
+      ]);
 
-    const { error: internalEmailError } = internalResult;
-    const { error: clientEmailError } = clientResult;
+      const { error: internalEmailError } = internalResult;
+      const { error: clientEmailError } = clientResult;
 
-    if (internalEmailError || clientEmailError) {
-      console.error('Email send failed:', {
-        internalEmailError,
-        clientEmailError,
-      });
+      if (internalEmailError || clientEmailError) {
+        console.error('Email send failed:', {
+          internalEmailError,
+          clientEmailError,
+        });
+      }
+    } else {
+      console.warn('RESEND_API_KEY not set — emails skipped');
     }
 
     return NextResponse.json({ success: true });
