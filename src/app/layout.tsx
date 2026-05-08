@@ -65,10 +65,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationUrl = 'https://asarglobal.com';
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'ASAR Global',
+    url: organizationUrl,
+    logo: `${organizationUrl}/logo.png`,
+    sameAs: ['https://www.linkedin.com/company/asar-global'],
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800;900&display=swap" rel="stylesheet" />
