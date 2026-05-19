@@ -19,6 +19,10 @@ const baseUrl = configuredSiteUrl.startsWith('http')
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+  },
   title: {
     default: 'ASAR GLOBAL | Enterprise Technology & Compliance Solutions',
     template: '%s | ASAR GLOBAL',
