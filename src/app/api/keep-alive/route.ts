@@ -7,7 +7,7 @@ import { createClient } from '@/utils/supabase/server';
  * Sends a lightweight ping to the Supabase database to prevent the free-tier
  * project from pausing due to inactivity (Supabase pauses after ~7 days idle).
  *
- * Call this endpoint every 3–4 days via:
+ * Call this endpoint every 4 hours via:
  *  - Vercel Cron (vercel.json)
  *  - UptimeRobot (free, https://uptimerobot.com)
  *  - cron-job.org (free, https://cron-job.org)
