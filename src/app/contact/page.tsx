@@ -220,7 +220,7 @@ export default function ContactPage() {
               {/* Contact strip */}
               <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <a
-                  href="mailto:contact@asarsystech.com"
+                  href="mailto:contact@asarglobal.com"
                   className="flex items-center gap-3 bg-white border border-border rounded-xl px-4 py-3.5 hover:border-primary transition-colors group"
                 >
                   <div className="w-9 h-9 rounded-lg bg-primary/5 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
@@ -228,7 +228,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Email</p>
-                    <p className="text-xs font-bold text-primary truncate">contact@asarsystech.com</p>
+                    <p className="text-xs font-bold text-primary truncate">contact@asarglobal.com</p>
                   </div>
                 </a>
                 <div className="flex items-center gap-3 bg-white border border-border rounded-xl px-4 py-3.5">
